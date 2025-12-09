@@ -3,16 +3,18 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Activity, BookOpen, AlertTriangle, HelpCircle } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   const navItems = [
-    { href: "/", label: "Home", icon: Activity },
-    { href: "/science", label: "The Science", icon: BookOpen },
-    { href: "/benefits", label: "Benefits & Risks", icon: AlertTriangle },
-    { href: "/guide", label: "Start Guide", icon: HelpCircle },
+    { href: "/", label: t("nav.home"), icon: Activity },
+    { href: "/science", label: t("nav.science"), icon: BookOpen },
+    { href: "/benefits", label: t("nav.benefits"), icon: AlertTriangle },
+    { href: "/guide", label: t("nav.guide"), icon: HelpCircle },
   ];
 
   return (
@@ -45,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <Button variant="default" size="sm" className="ml-4">
-              Get Started
+              {t("nav.getStarted")}
             </Button>
           </nav>
 
@@ -77,7 +79,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </span>
               </Link>
             ))}
-            <Button className="w-full mt-2">Get Started</Button>
+            <Button className="w-full mt-2">{t("nav.getStarted")}</Button>
           </nav>
         </div>
       )}
@@ -98,44 +100,60 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="text-lg font-bold text-primary">Keto<span className="text-foreground">Guide</span></span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A comprehensive, science-backed resource for understanding and implementing the ketogenic diet safely and effectively.
+              {t("footer.desc")}
             </p>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Content</h3>
+            <h3 className="font-semibold mb-4 text-foreground">{t("footer.content")}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/science"><span className="hover:text-primary cursor-pointer">The Science</span></Link></li>
-              <li><Link href="/benefits"><span className="hover:text-primary cursor-pointer">Benefits & Risks</span></Link></li>
-              <li><Link href="/guide"><span className="hover:text-primary cursor-pointer">Start Guide</span></Link></li>
+              <li><Link href="/science"><span className="hover:text-primary cursor-pointer">{t("nav.science")}</span></Link></li>
+              <li><Link href="/benefits"><span className="hover:text-primary cursor-pointer">{t("nav.benefits")}</span></Link></li>
+              <li><Link href="/guide"><span className="hover:text-primary cursor-pointer">{t("nav.guide")}</span></Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Legal</h3>
+            <h3 className="font-semibold mb-4 text-foreground">{t("footer.legal")}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><span className="hover:text-primary cursor-pointer">Privacy Policy</span></li>
-              <li><span className="hover:text-primary cursor-pointer">Terms of Service</span></li>
-              <li><span className="hover:text-primary cursor-pointer">Medical Disclaimer</span></li>
+              <li><span className="hover:text-primary cursor-pointer">{t("footer.privacy")}</span></li>
+              <li><span className="hover:text-primary cursor-pointer">{t("footer.terms")}</span></li>
+              <li><span className="hover:text-primary cursor-pointer">{t("footer.disclaimer")}</span></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Language</h3>
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm" className="w-full justify-start">
+            <h3 className="font-semibold mb-4 text-foreground">{t("footer.language")}</h3>
+            <div className="flex flex-col gap-2">
+              <Button 
+                variant={language === 'en' ? "default" : "outline"} 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => setLanguage('en')}
+              >
                 🇺🇸 English
               </Button>
-            </div>
-            <div className="mt-2">
-              <Button variant="ghost" size="sm" className="w-full justify-start text-muted-foreground">
-                🇸🇰 Slovak (Coming Soon)
+              <Button 
+                variant={language === 'es' ? "default" : "outline"} 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => setLanguage('es')}
+              >
+                🇪🇸 Español
+              </Button>
+              <Button 
+                variant={language === 'cn' ? "default" : "outline"} 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => setLanguage('cn')}
+              >
+                🇨🇳 中文
               </Button>
             </div>
           </div>
         </div>
         <div className="container mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} KetoGuide. All rights reserved. Information is for educational purposes only.</p>
+          <p>© {new Date().getFullYear()} {t("footer.rights")}</p>
         </div>
       </footer>
     </div>

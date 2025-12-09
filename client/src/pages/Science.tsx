@@ -3,8 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Microscope, Dna, Flame, Zap } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Science() {
+  const { t } = useLanguage();
+
   return (
     <div className="container max-w-4xl py-12 md:py-24 space-y-12">
       {/* Header */}
@@ -12,18 +15,17 @@ export default function Science() {
         <Link href="/">
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-sm font-medium">Back to Home</span>
+            <span className="text-sm font-medium">{t("science.back")}</span>
           </div>
         </Link>
         <Badge variant="outline" className="px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
-          Molecular Mechanisms
+          {t("science.badge")}
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-foreground">
-          How the Ketogenic Diet Works: <br className="hidden md:block" />
-          <span className="text-primary">A Molecular Deep Dive</span>
+          {t("science.title")}
         </h1>
         <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-          Understanding the metabolic shift from glucose to fat metabolism and the signaling power of ketone bodies.
+          {t("science.subtitle")}
         </p>
       </div>
 
@@ -33,33 +35,29 @@ export default function Science() {
           <div className="bg-primary/10 p-2 rounded-lg">
             <Flame className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">From Glucose to Fat Metabolism</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("science.section1.title")}</h2>
         </div>
         
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none text-muted-foreground">
-          <p>
-            In a typical Western diet, our cells primarily run on glucose. After a carbohydrate-rich meal, blood glucose rises, prompting the pancreas to release insulin. Insulin helps cells absorb glucose for energy and storage, while simultaneously halting the breakdown of fat.
-          </p>
-          <p>
-            The ketogenic diet fundamentally shifts this metabolic paradigm. By restricting carbohydrate intake to less than 50 grams per day (typically 5-10% of total energy) and increasing fat intake (70-80%), the body enters a state of <strong>ketosis</strong>.
-          </p>
+          <p>{t("science.section1.p1")}</p>
+          <p dangerouslySetInnerHTML={{ __html: t("science.section1.p2") }} />
         </div>
 
         <Card className="bg-muted/30 border-none">
           <CardContent className="p-6 md:p-8">
-            <h3 className="font-bold text-lg mb-4">The Metabolic Shift Triggers:</h3>
+            <h3 className="font-bold text-lg mb-4">{t("science.card.triggers")}</h3>
             <ul className="grid gap-4 md:grid-cols-3">
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
-                <div className="font-bold text-primary mb-1">Lower Insulin</div>
-                <div className="text-sm text-muted-foreground">Blood glucose and insulin levels drop significantly.</div>
+                <div className="font-bold text-primary mb-1">{t("science.card.insulin")}</div>
+                <div className="text-sm text-muted-foreground">{t("science.card.insulin.desc")}</div>
               </li>
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
-                <div className="font-bold text-primary mb-1">Fat Breakdown</div>
-                <div className="text-sm text-muted-foreground">Hormone-sensitive lipase breaks down triglycerides into free fatty acids.</div>
+                <div className="font-bold text-primary mb-1">{t("science.card.fat")}</div>
+                <div className="text-sm text-muted-foreground">{t("science.card.fat.desc")}</div>
               </li>
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
-                <div className="font-bold text-primary mb-1">Ketone Production</div>
-                <div className="text-sm text-muted-foreground">Liver converts acetyl-CoA into ketone bodies (BHB, AcAc, Acetone).</div>
+                <div className="font-bold text-primary mb-1">{t("science.card.ketone")}</div>
+                <div className="text-sm text-muted-foreground">{t("science.card.ketone.desc")}</div>
               </li>
             </ul>
           </CardContent>
@@ -74,17 +72,13 @@ export default function Science() {
           <div className="bg-primary/10 p-2 rounded-lg">
             <Zap className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">Ketones as a Superior Fuel Source</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("science.section2.title")}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="prose prose-lg prose-slate dark:prose-invert text-muted-foreground">
-            <p>
-              Ketone bodies are water-soluble and easily transported through the bloodstream to various tissues, including the muscle, heart, and brain. Once inside the cells, they are converted back to acetyl-CoA and enter the Krebs cycle to generate ATP—the body's energy currency.
-            </p>
-            <p>
-              A key advantage is that the brain can derive a significant portion of its energy from ketones, reducing its reliance on glucose. This metabolic flexibility is why individuals on a ketogenic diet can maintain sharp cognitive function despite very low carbohydrate intake.
-            </p>
+            <p>{t("science.section2.p1")}</p>
+            <p>{t("science.section2.p2")}</p>
           </div>
           <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
             <img 
@@ -100,7 +94,7 @@ export default function Science() {
 
         {/* Infographic Feature */}
         <div className="mt-12 bg-muted/30 rounded-2xl p-6 md:p-8 border border-border/50">
-          <h3 className="text-xl font-bold font-serif mb-6 text-center">Visualizing the Impact: High Insulin vs. Ketones</h3>
+          <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
             <img 
               src="/images/info-keto.png" 
@@ -109,7 +103,7 @@ export default function Science() {
             />
           </div>
           <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
-            This infographic illustrates the "fuel switch" in the brain. While high insulin levels can create metabolic debris, ketones provide a cleaner, more efficient fuel source that easily penetrates the blood-brain barrier.
+            {t("science.infographic.desc")}
           </p>
         </div>
       </section>
@@ -122,13 +116,11 @@ export default function Science() {
           <div className="bg-primary/10 p-2 rounded-lg">
             <Dna className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">More Than Just Fuel: Signaling Molecules</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("science.section3.title")}</h2>
         </div>
 
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none text-muted-foreground mb-6">
-          <p>
-            Modern research reveals that ketones are not just fuel; they are powerful signaling molecules that regulate critical cellular processes.
-          </p>
+          <p>{t("science.section3.p1")}</p>
         </div>
 
         <div className="grid gap-6">
@@ -136,11 +128,11 @@ export default function Science() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <Microscope className="h-5 w-5 text-secondary-foreground" />
-                Anti-Inflammatory Effects
+                {t("science.card.anti_inflammatory")}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              BHB directly inhibits the NLRP3 inflammasome, a key driver of chronic inflammation. This helps reduce the production of inflammatory cytokines like IL-1β and IL-18.
+              {t("science.card.anti_inflammatory.desc")}
             </CardContent>
           </Card>
 
@@ -148,11 +140,11 @@ export default function Science() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
                 <Dna className="h-5 w-5 text-secondary-foreground" />
-                Epigenetic Regulation
+                {t("science.card.epigenetic")}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              BHB acts as a histone deacetylase (HDAC) inhibitor, influencing gene expression related to oxidative stress resistance, metabolism, and cellular longevity. This has protective implications for cardiovascular and neurodegenerative diseases.
+              {t("science.card.epigenetic.desc")}
             </CardContent>
           </Card>
         </div>
@@ -160,7 +152,7 @@ export default function Science() {
 
       {/* References */}
       <section className="bg-muted/30 p-8 rounded-xl space-y-4 mt-12">
-        <h3 className="font-bold text-foreground">Scientific References</h3>
+        <h3 className="font-bold text-foreground">{t("science.references")}</h3>
         <ul className="space-y-2 text-sm text-muted-foreground list-decimal list-inside">
           <li>How the ketogenic diet works – down to the molecular level. (2022). <em>Online Library</em>.</li>
           <li>Ketone body metabolism. (2022). <em>PMC</em>.</li>

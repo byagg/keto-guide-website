@@ -3,8 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle2, XCircle, AlertTriangle, Scale } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Benefits() {
+  const { t } = useLanguage();
+
   return (
     <div className="container max-w-4xl py-12 md:py-24 space-y-12">
       {/* Header */}
@@ -12,17 +15,17 @@ export default function Benefits() {
         <Link href="/">
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-sm font-medium">Back to Home</span>
+            <span className="text-sm font-medium">{t("benefits.back")}</span>
           </div>
         </Link>
         <Badge variant="outline" className="px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
-          Indications & Contraindications
+          {t("benefits.badge")}
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-foreground">
-          Is Keto Right for You?
+          {t("benefits.title")}
         </h1>
         <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-          A balanced look at who can benefit most from the ketogenic diet and who should avoid it for safety reasons.
+          {t("benefits.subtitle")}
         </p>
       </div>
 
@@ -32,43 +35,43 @@ export default function Benefits() {
           <div className="bg-secondary/10 p-2 rounded-lg">
             <CheckCircle2 className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">Who Can Benefit?</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section1.title")}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="border-l-4 border-l-secondary">
             <CardHeader>
-              <CardTitle className="text-lg">Obesity & Metabolic Syndrome</CardTitle>
+              <CardTitle className="text-lg">{t("benefits.card.obesity")}</CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground text-sm">
-              Powerful tool for achieving clinically meaningful weight loss and improving key metabolic markers like waist circumference, triglycerides, HDL cholesterol, and blood pressure.
+              {t("benefits.card.obesity.desc")}
             </CardContent>
           </Card>
 
           <Card className="border-l-4 border-l-secondary">
             <CardHeader>
-              <CardTitle className="text-lg">Type 2 Diabetes</CardTitle>
+              <CardTitle className="text-lg">{t("benefits.card.diabetes")}</CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground text-sm">
-              Supervised ketogenic diets can lead to dramatic improvements in blood sugar control (HbA1c), reduce fasting glucose, and often allow for medication reduction.
+              {t("benefits.card.diabetes.desc")}
             </CardContent>
           </Card>
 
           <Card className="border-l-4 border-l-secondary">
             <CardHeader>
-              <CardTitle className="text-lg">NAFLD / MASLD</CardTitle>
+              <CardTitle className="text-lg">{t("benefits.card.nafld")}</CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground text-sm">
-              Emerging research shows that ketogenic diets can reduce liver fat and lower liver enzymes in non-alcoholic fatty liver disease.
+              {t("benefits.card.nafld.desc")}
             </CardContent>
           </Card>
 
           <Card className="border-l-4 border-l-secondary">
             <CardHeader>
-              <CardTitle className="text-lg">PCOS</CardTitle>
+              <CardTitle className="text-lg">{t("benefits.card.pcos")}</CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground text-sm">
-              Shown to improve weight, insulin resistance, androgen levels, and menstrual regularity in women with Polycystic Ovary Syndrome.
+              {t("benefits.card.pcos.desc")}
             </CardContent>
           </Card>
         </div>
@@ -82,28 +85,28 @@ export default function Benefits() {
           <div className="bg-destructive/10 p-2 rounded-lg">
             <XCircle className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">Absolute Contraindications</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section2.title")}</h2>
         </div>
 
         <Card className="bg-destructive/5 border-destructive/20">
           <CardContent className="p-6">
-            <p className="font-medium text-destructive mb-4">Do NOT start a ketogenic diet if you have:</p>
+            <p className="font-medium text-destructive mb-4">{t("benefits.contra.warning")}</p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-foreground/80">
                 <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
-                <span>Known disorders of fatty acid oxidation (e.g., CPT-II deficiency)</span>
+                <span>{t("benefits.contra.1")}</span>
               </li>
               <li className="flex items-start gap-3 text-foreground/80">
                 <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
-                <span>Defects in ketone body metabolism</span>
+                <span>{t("benefits.contra.2")}</span>
               </li>
               <li className="flex items-start gap-3 text-foreground/80">
                 <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
-                <span>Acute or severe chronic pancreatitis</span>
+                <span>{t("benefits.contra.3")}</span>
               </li>
               <li className="flex items-start gap-3 text-foreground/80">
                 <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
-                <span>Porphyria or severe liver failure</span>
+                <span>{t("benefits.contra.4")}</span>
               </li>
             </ul>
           </CardContent>
@@ -116,20 +119,20 @@ export default function Benefits() {
           <div className="bg-amber-500/10 p-2 rounded-lg">
             <AlertTriangle className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-bold font-serif text-foreground">Relative Contraindications</h2>
+          <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section3.title")}</h2>
         </div>
         
         <p className="text-muted-foreground">
-          These conditions require experienced medical supervision before and during the diet:
+          {t("benefits.caution")}
         </p>
 
         <div className="grid gap-4 md:grid-cols-2">
           {[
-            "Type 1 Diabetes",
-            "Chronic Kidney Disease",
-            "Pregnancy & Breastfeeding",
-            "History of Eating Disorders",
-            "Uncontrolled Dyslipidemia"
+            t("benefits.caution.1"),
+            t("benefits.caution.2"),
+            t("benefits.caution.3"),
+            t("benefits.caution.4"),
+            t("benefits.caution.5")
           ].map((item) => (
             <div key={item} className="flex items-center gap-3 p-4 rounded-lg border bg-card">
               <Scale className="h-5 w-5 text-amber-500" />
@@ -141,9 +144,9 @@ export default function Benefits() {
 
       {/* Bottom Line */}
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center space-y-4">
-        <h3 className="text-xl font-bold text-primary">The Bottom Line</h3>
+        <h3 className="text-xl font-bold text-primary">{t("benefits.bottomline.title")}</h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          For people with obesity and insulin resistance, the ketogenic diet can be a highly effective tool, but it is crucial to consult with a healthcare professional before starting.
+          {t("benefits.bottomline.desc")}
         </p>
       </div>
     </div>
