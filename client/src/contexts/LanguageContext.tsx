@@ -20,7 +20,8 @@ const translations = {
     // Home
     "home.badge": "Science-Backed Nutrition",
     "home.title": "Unlock Metabolic Health: The Definitive Keto Guide",
-    "home.subtitle": "A comprehensive exploration of how the ketogenic diet can transform your health, from molecular mechanisms to practical application.",
+    "home.subtitle": "A science-driven exploration of how the ketogenic diet can transform your metabolism — from molecular mechanisms inside your cells to real-world application for weight loss, type 2 diabetes, fatty liver, and metabolic syndrome.",
+    "home.subtitle2": "Learn how to safely switch from sugar-dependence to fat-burning, improve insulin sensitivity, and support long-term health with evidence-based ketogenic strategies.",
     "home.cta.start": "Start Your Journey",
     "home.cta.science": "Explore the Science",
     "home.card.metabolic": "Metabolic Switch",
@@ -153,7 +154,8 @@ const translations = {
     // Home
     "home.badge": "Nutrición Respaldada por la Ciencia",
     "home.title": "Desbloquea tu Salud Metabólica: La Guía Definitiva Keto",
-    "home.subtitle": "Una exploración completa de cómo la dieta cetogénica puede transformar tu salud, desde mecanismos moleculares hasta la aplicación práctica.",
+    "home.subtitle": "Una exploración científica de cómo la dieta cetogénica puede transformar su metabolismo, desde los mecanismos moleculares dentro de sus células hasta la aplicación en el mundo real para la pérdida de peso, la diabetes tipo 2, el hígado graso y el síndrome metabólico.",
+    "home.subtitle2": "Aprenda a cambiar de forma segura de la dependencia del azúcar a la quema de grasa, mejorar la sensibilidad a la insulina y apoyar la salud a largo plazo con estrategias cetogénicas basadas en evidencia.",
     "home.cta.start": "Comienza tu Viaje",
     "home.cta.science": "Explora la Ciencia",
     "home.card.metabolic": "Cambio Metabólico",
@@ -286,7 +288,8 @@ const translations = {
     // Home
     "home.badge": "科学循证营养",
     "home.title": "解锁代谢健康：生酮饮食终极指南",
-    "home.subtitle": "全面探索生酮饮食如何从分子机制到实际应用改变您的健康。",
+    "home.subtitle": "科学探索生酮饮食如何改变您的新陈代谢——从细胞内的分子机制到减肥、2型糖尿病、脂肪肝和代谢综合征的实际应用。",
+    "home.subtitle2": "了解如何安全地从依赖糖分转变为燃烧脂肪，提高胰岛素敏感性，并通过基于证据的生酮策略支持长期健康。",
     "home.cta.start": "开启您的旅程",
     "home.cta.science": "探索科学原理",
     "home.card.metabolic": "代谢转换",

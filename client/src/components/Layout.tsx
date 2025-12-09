@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="bg-primary text-primary-foreground p-1.5 rounded-md">
                 <Activity className="h-6 w-6" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-primary">Keto<span className="text-foreground">Guide</span></span>
+              <span className="text-xl font-bold tracking-tight text-primary">Keto<span className="text-foreground">Mindset</span></span>
             </div>
           </Link>
 
@@ -97,7 +97,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="bg-primary text-primary-foreground p-1 rounded-md">
                 <Activity className="h-5 w-5" />
               </div>
-              <span className="text-lg font-bold text-primary">Keto<span className="text-foreground">Guide</span></span>
+              <span className="text-lg font-bold text-primary">Keto<span className="text-foreground">Mindset</span></span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("footer.desc")}

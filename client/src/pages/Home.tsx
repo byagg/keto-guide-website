@@ -24,6 +24,9 @@ export default function Home() {
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
                 {t("home.subtitle")}
               </p>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mt-4">
+                {t("home.subtitle2")}
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/guide">
                   <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20">
@@ -73,6 +76,21 @@ export default function Home() {
           <h2 className="text-3xl font-bold font-serif text-foreground">{t("home.benefits.title")}</h2>
           <p className="text-lg text-muted-foreground">
             {t("home.benefits.subtitle")}
+          </p>
+        </div>
+
+        {/* Infographic Feature */}
+        <div className="mb-16 bg-muted/30 rounded-2xl p-6 md:p-8 border border-border/50">
+          <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
+            <img 
+              src="/images/info-keto.png" 
+              alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
+            {t("science.infographic.desc")}
           </p>
         </div>
 
