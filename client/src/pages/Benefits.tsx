@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle2, XCircle, AlertTriangle, Scale, Activity, Heart
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { BMICalculator } from "@/components/BMICalculator";
 
 export default function Benefits() {
   const { t } = useLanguage();
@@ -33,19 +34,22 @@ export default function Benefits() {
         </p>
       </div>
 
+      {/* BMI Calculator */}
+      <BMICalculator />
+
       {/* Who Can Benefit */}
       <section className="space-y-8">
-        <div className="flex items-center gap-3 text-secondary-foreground">
-          <div className="bg-secondary/10 p-2 rounded-lg">
-            <CheckCircle2 className="h-6 w-6 text-green-600" />
+        <div className="flex items-center gap-3">
+          <div className="bg-primary/10 p-2 rounded-none">
+            <CheckCircle2 className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section1.title")}</h2>
         </div>
 
         <div className="grid gap-6">
-          <Card className="border-l-4 border-l-green-500">
+          <Card className="border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-lg flex items-center gap-2 text-foreground">
                 <Scale className="w-5 h-5 text-primary" />
                 {t("benefits.card.obesity")}
               </CardTitle>
@@ -54,23 +58,23 @@ export default function Benefits() {
               <p className="text-muted-foreground text-sm">
                 {t("benefits.card.obesity.desc")}
               </p>
-              <div className="bg-muted/50 p-4 rounded-lg">
-                <p className="font-medium mb-2 text-sm">{t("benefits.card.obesity.improvements")}</p>
-                <ul className="grid sm:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              <div className="bg-primary/5 p-6 rounded-none border-l-2 border-primary/20">
+                <p className="font-medium mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.card.obesity.improvements")}</p>
+                <ul className="grid sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {t("benefits.card.obesity.list1")}
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {t("benefits.card.obesity.list2")}
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {t("benefits.card.obesity.list3")}
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {t("benefits.card.obesity.list4")}
                   </li>
                 </ul>
@@ -78,9 +82,9 @@ export default function Benefits() {
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-green-500">
+          <Card className="border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-lg flex items-center gap-2 text-foreground">
                 <Activity className="w-5 h-5 text-primary" />
                 {t("benefits.card.diabetes")}
               </CardTitle>
@@ -89,37 +93,37 @@ export default function Benefits() {
               <p className="text-muted-foreground text-sm">
                 {t("benefits.card.diabetes.desc")}
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                   {t("benefits.card.diabetes.list1")}
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                <li className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                   {t("benefits.card.diabetes.list2")}
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                <li className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                   {t("benefits.card.diabetes.list3")}
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                <li className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                   {t("benefits.card.diabetes.list4")}
                 </li>
               </ul>
-              <Alert variant="default" className="bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-900">
-                <AlertTriangle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <AlertDescription className="text-blue-800 dark:text-blue-200 text-sm">
+              <div className="bg-primary/5 border border-primary/20 p-4 rounded-none flex gap-3 items-start">
+                <AlertTriangle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <p className="text-sm text-muted-foreground">
                   {t("benefits.card.diabetes.warning")}
-                </AlertDescription>
-              </Alert>
+                </p>
+              </div>
             </CardContent>
           </Card>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-l-4 border-l-green-500">
+            <Card className="border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow">
               <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
+                <CardTitle className="text-lg flex items-center gap-2 text-foreground">
                   <HeartPulse className="w-5 h-5 text-primary" />
                   {t("benefits.card.nafld")}
                 </CardTitle>
@@ -145,9 +149,9 @@ export default function Benefits() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-green-500">
+            <Card className="border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow">
               <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
+                <CardTitle className="text-lg flex items-center gap-2 text-foreground">
                   <Baby className="w-5 h-5 text-primary" />
                   {t("benefits.card.pcos")}
                 </CardTitle>
@@ -180,45 +184,61 @@ export default function Benefits() {
 
       {/* Absolute Contraindications */}
       <section className="space-y-8">
-        <div className="flex items-center gap-3 text-destructive">
-          <div className="bg-destructive/10 p-2 rounded-lg">
-            <XCircle className="h-6 w-6" />
+        <div className="flex items-center gap-3">
+          <div className="bg-primary/10 p-2 rounded-none">
+            <XCircle className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section2.title")}</h2>
         </div>
 
-        <Alert variant="destructive" className="bg-destructive/5 border-destructive/20">
-          <AlertTriangle className="h-4 w-4" />
-          <AlertTitle>{t("benefits.contra.warning")}</AlertTitle>
-          <AlertDescription>
-            <div className="grid md:grid-cols-2 gap-4 mt-4">
-              <div>
-                <h4 className="font-semibold mb-2 text-sm">{t("benefits.contra.group1")}</h4>
-                <ul className="list-disc list-inside space-y-1 text-sm opacity-90">
-                  <li>{t("benefits.contra.1")}</li>
-                  <li>{t("benefits.contra.2")}</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2 text-sm">{t("benefits.contra.group2")}</h4>
-                <ul className="list-disc list-inside space-y-1 text-sm opacity-90">
-                  <li>{t("benefits.contra.3")}</li>
-                  <li>{t("benefits.contra.4")}</li>
-                </ul>
-              </div>
+        <div className="bg-muted/30 border border-border p-8 rounded-none">
+          <div className="flex items-center gap-3 mb-6">
+            <AlertTriangle className="h-5 w-5 text-primary" />
+            <h3 className="font-bold text-lg text-foreground">{t("benefits.contra.warning")}</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-semibold mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.contra.group1")}</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">•</span>
+                  {t("benefits.contra.1")}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">•</span>
+                  {t("benefits.contra.2")}
+                </li>
+              </ul>
             </div>
-            <p className="mt-4 text-sm font-medium opacity-90">
+            <div>
+              <h4 className="font-semibold mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.contra.group2")}</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">•</span>
+                  {t("benefits.contra.3")}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">•</span>
+                  {t("benefits.contra.4")}
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-6 pt-6 border-t border-border/50">
+            <p className="text-sm font-medium text-muted-foreground">
               {t("benefits.contra.note")}
             </p>
-          </AlertDescription>
-        </Alert>
+          </div>
+        </div>
       </section>
 
       {/* Relative Contraindications */}
       <section className="space-y-8">
-        <div className="flex items-center gap-3 text-amber-500">
-          <div className="bg-amber-500/10 p-2 rounded-lg">
-            <AlertTriangle className="h-6 w-6" />
+        <div className="flex items-center gap-3">
+          <div className="bg-primary/10 p-2 rounded-none">
+            <AlertTriangle className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section3.title")}</h2>
         </div>
@@ -228,31 +248,82 @@ export default function Benefits() {
         </p>
 
         <div className="grid gap-6">
-          <Card className="border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/10">
+          {/* Pregnancy & Breastfeeding */}
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-amber-800 dark:text-amber-200 text-lg">
+              <CardTitle className="text-lg text-foreground">Pregnancy & Breastfeeding</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-2">
+                Insufficient safety data. Fetal development relies on a reliable supply of nutrients.
+              </p>
+              <p className="text-sm font-medium text-primary">
+                The safest route is to avoid strict ketogenic diets.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Eating Disorders */}
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-lg text-foreground">History of Eating Disorders</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-2">
+                The rigid rules of keto can trigger disordered eating patterns.
+              </p>
+              <p className="text-sm font-medium text-primary">
+                Ideally avoided unless approved by a mental health professional.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Dyslipidemia */}
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-lg text-foreground">Uncontrolled Dyslipidemia</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-2">
+                Keto can cause a marked rise in LDL-cholesterol in some individuals.
+              </p>
+              <p className="text-sm font-medium text-primary">
+                A cardiologist or lipid specialist should be involved.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-foreground text-lg">
                 {t("benefits.caution.1")}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">{t("benefits.caution.1.desc")}</p>
-              <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
+              <p className="text-muted-foreground text-sm mb-3">{t("benefits.caution.1.desc")}</p>
+              <p className="text-sm font-medium text-primary">
                 {t("benefits.caution.1.note")}
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/10">
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-amber-800 dark:text-amber-200 text-lg">
+              <CardTitle className="text-foreground text-lg">
                 {t("benefits.caution.ckd")}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">{t("benefits.caution.ckd.desc")}</p>
-              <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                <li>{t("benefits.caution.ckd.list1")}</li>
-                <li>{t("benefits.caution.ckd.list2")}</li>
+              <p className="text-muted-foreground text-sm mb-3">{t("benefits.caution.ckd.desc")}</p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary/50">•</span>
+                  {t("benefits.caution.ckd.list1")}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary/50">•</span>
+                  {t("benefits.caution.ckd.list2")}
+                </li>
               </ul>
             </CardContent>
           </Card>

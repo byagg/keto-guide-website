@@ -141,6 +141,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               >
                 🇨🇳 中文
               </Button>
+              <Button 
+                variant={language === 'sk' ? "default" : "outline"} 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => setLanguage('sk')}
+              >
+                🇸🇰 Slovenčina
+              </Button>
             </div>
           </div>
         </div>
