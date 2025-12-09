@@ -24,10 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
-              <div className="bg-primary text-primary-foreground p-1.5 rounded-md">
-                <Activity className="h-6 w-6" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-primary">Keto<span className="text-foreground">Mindset</span></span>
+              <span className="text-2xl font-bold tracking-tight text-foreground hover:text-primary/90 transition-colors">KetoMindset</span>
             </div>
           </Link>
 
@@ -37,11 +34,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link key={item.href} href={item.href}>
                 <span 
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary cursor-pointer flex items-center gap-1.5",
+                    "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
                     location === item.href ? "text-primary" : "text-muted-foreground"
                   )}
                 >
-                  {item.icon && <item.icon className="h-4 w-4" />}
                   {item.label}
                 </span>
               </Link>
@@ -69,12 +65,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link key={item.href} href={item.href}>
                 <span 
                   className={cn(
-                    "text-base font-medium transition-colors hover:text-primary cursor-pointer flex items-center gap-2 p-2 rounded-md hover:bg-muted",
+                    "text-base font-medium transition-colors hover:text-primary cursor-pointer block p-2 rounded-md hover:bg-muted",
                     location === item.href ? "bg-primary/10 text-primary" : "text-muted-foreground"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <item.icon className="h-5 w-5" />
                   {item.label}
                 </span>
               </Link>
@@ -94,10 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="bg-primary text-primary-foreground p-1 rounded-md">
-                <Activity className="h-5 w-5" />
-              </div>
-              <span className="text-lg font-bold text-primary">Keto<span className="text-foreground">Mindset</span></span>
+              <span className="text-xl font-bold text-foreground">KetoMindset</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("footer.desc")}

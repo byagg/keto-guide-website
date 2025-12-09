@@ -15,9 +15,9 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-in slide-in-from-left-10 duration-700 fade-in">
-              <Badge variant="outline" className="px-4 py-1 text-sm border-primary/20 text-primary bg-primary/5">
+              <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide uppercase text-primary border border-primary/20 bg-primary/5">
                 {t("home.badge")}
-              </Badge>
+              </div>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground font-serif leading-tight">
                 {t("home.title")}
               </h1>
@@ -50,14 +50,11 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-xl border border-border max-w-xs hidden md:block animate-in fade-in zoom-in delay-500 duration-500">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="bg-secondary/20 p-2 rounded-full text-secondary-foreground">
-                    <Zap className="h-5 w-5" />
-                  </div>
-                  <span className="font-semibold text-sm">{t("home.card.metabolic")}</span>
+              <div className="absolute -bottom-6 -left-6 bg-card p-6 shadow-xl border border-border max-w-xs hidden md:block animate-in fade-in zoom-in delay-500 duration-500">
+                <div className="mb-2">
+                  <span className="font-semibold text-sm text-foreground block mb-1">{t("home.card.metabolic")}</span>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {t("home.card.metabolic.desc")}
                 </p>
               </div>
@@ -103,12 +100,11 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-6 space-y-4">
-              <div className="flex items-center gap-2 text-primary font-semibold">
-                <Brain className="h-5 w-5" />
+            <CardContent className="p-8 space-y-4">
+              <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.cognitive")}</span>
               </div>
-              <h3 className="text-xl font-bold">{t("home.card.neuroprotection")}</h3>
+              <h3 className="text-xl font-bold text-foreground">{t("home.card.neuroprotection")}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {t("home.card.neuroprotection.desc")}
               </p>
@@ -123,12 +119,11 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-6 space-y-4">
-              <div className="flex items-center gap-2 text-secondary-foreground font-semibold">
-                <Activity className="h-5 w-5" />
+            <CardContent className="p-8 space-y-4">
+              <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.metabolic_health")}</span>
               </div>
-              <h3 className="text-xl font-bold">{t("home.card.inflammation")}</h3>
+              <h3 className="text-xl font-bold text-foreground">{t("home.card.inflammation")}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {t("home.card.inflammation.desc")}
               </p>
@@ -143,12 +138,11 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-6 space-y-4">
-              <div className="flex items-center gap-2 text-primary font-semibold">
-                <Heart className="h-5 w-5" />
+            <CardContent className="p-8 space-y-4">
+              <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.cardio")}</span>
               </div>
-              <h3 className="text-xl font-bold">{t("home.card.weight")}</h3>
+              <h3 className="text-xl font-bold text-foreground">{t("home.card.weight")}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {t("home.card.weight.desc")}
               </p>
@@ -171,10 +165,19 @@ export default function Home() {
               </div>
               <div className="absolute -top-6 -right-6 bg-background p-6 rounded-xl shadow-lg border border-border max-w-xs hidden lg:block">
                 <h4 className="font-bold mb-2 text-primary">The Fuel Switch</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-secondary-foreground" /> {t("science.card.insulin")}</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-secondary-foreground" /> {t("science.card.fat")}</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-secondary-foreground" /> {t("science.card.ketone")}</li>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {t("science.card.insulin")}
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {t("science.card.fat")}
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {t("science.card.ketone")}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -185,25 +188,15 @@ export default function Home() {
                 {t("home.how.desc")}
               </p>
               
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg h-fit">
-                    <Zap className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">{t("home.how.fuel")}</h3>
-                    <p className="text-muted-foreground text-sm">{t("home.how.fuel.desc")}</p>
-                  </div>
+              <div className="space-y-8">
+                <div className="border-l-2 border-primary pl-6">
+                  <h3 className="font-bold text-lg mb-2 text-foreground">{t("home.how.fuel")}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t("home.how.fuel.desc")}</p>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg h-fit">
-                    <Activity className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">{t("home.how.hormones")}</h3>
-                    <p className="text-muted-foreground text-sm">{t("home.how.hormones.desc")}</p>
-                  </div>
+                <div className="border-l-2 border-primary pl-6">
+                  <h3 className="font-bold text-lg mb-2 text-foreground">{t("home.how.hormones")}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t("home.how.hormones.desc")}</p>
                 </div>
               </div>
 
