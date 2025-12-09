@@ -46,20 +46,36 @@ export default function Science() {
         <Card className="bg-muted/30 border-none">
           <CardContent className="p-6 md:p-8">
             <h3 className="font-bold text-lg mb-4">{t("science.card.triggers")}</h3>
+            <p className="text-muted-foreground mb-6">{t("science.card.triggers.desc")}</p>
             <ul className="grid gap-4 md:grid-cols-3">
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
                 <div className="font-bold text-primary mb-1">{t("science.card.insulin")}</div>
-                <div className="text-sm text-muted-foreground">{t("science.card.insulin.desc")}</div>
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p>{t("science.card.insulin.desc1")}</p>
+                  <p>{t("science.card.insulin.desc2")}</p>
+                  <p>{t("science.card.insulin.desc3")}</p>
+                </div>
               </li>
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
                 <div className="font-bold text-primary mb-1">{t("science.card.fat")}</div>
-                <div className="text-sm text-muted-foreground">{t("science.card.fat.desc")}</div>
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p>{t("science.card.fat.desc1")}</p>
+                  <p>{t("science.card.fat.desc2")}</p>
+                  <p>{t("science.card.fat.desc3")}</p>
+                </div>
               </li>
               <li className="bg-background p-4 rounded-lg shadow-sm border border-border/50">
                 <div className="font-bold text-primary mb-1">{t("science.card.ketone")}</div>
-                <div className="text-sm text-muted-foreground">{t("science.card.ketone.desc")}</div>
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p>{t("science.card.ketone.desc1")}</p>
+                  <p>{t("science.card.ketone.desc2")}</p>
+                  <p>{t("science.card.ketone.desc3")}</p>
+                </div>
               </li>
             </ul>
+            <div className="mt-6 p-4 bg-background rounded-lg border border-border/50 text-sm text-muted-foreground">
+              <strong>Important:</strong> {t("science.card.note")}
+            </div>
           </CardContent>
         </Card>
       </section>
@@ -78,17 +94,38 @@ export default function Science() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="prose prose-lg prose-slate dark:prose-invert text-muted-foreground">
             <p>{t("science.section2.p1")}</p>
+            <h3 className="text-xl font-bold font-serif text-foreground mt-6 mb-4">{t("science.section2.subtitle")}</h3>
             <p>{t("science.section2.p2")}</p>
+            <ul className="list-disc pl-5 space-y-2 mt-4">
+              <li>{t("science.section2.list1")}</li>
+              <li>{t("science.section2.list2")}</li>
+              <li>{t("science.section2.list3")}</li>
+            </ul>
+            <p className="mt-4 font-medium text-primary">{t("science.section2.flexibility")}</p>
           </div>
-          <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
-            <img 
-              src="/images/keto_molecular.png" 
-              alt="Ketone molecular structure" 
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <p className="text-white text-xs font-medium">Visualizing Ketone Transport</p>
+          <div className="space-y-6">
+            <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
+              <img 
+                src="/images/keto_molecular.png" 
+                alt="Ketone molecular structure" 
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <p className="text-white text-xs font-medium">Visualizing Ketone Transport</p>
+              </div>
             </div>
+            <Card className="bg-muted/30 border-none">
+              <CardContent className="p-6">
+                <h4 className="font-bold mb-3">{t("science.transport.title")}</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex gap-2"><span className="text-primary">•</span> {t("science.transport.1")}</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> {t("science.transport.2")}</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> {t("science.transport.3")}</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> {t("science.transport.4")}</li>
+                </ul>
+                <p className="text-sm text-muted-foreground mt-4 italic">{t("science.transport.note")}</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -102,9 +139,25 @@ export default function Science() {
               className="w-full h-auto"
             />
           </div>
-          <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
-            {t("science.infographic.desc")}
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
+            <div>
+              <h4 className="font-bold text-destructive mb-2">{t("science.infographic.high_insulin")}</h4>
+              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
+                <li>{t("science.infographic.high_insulin.1")}</li>
+                <li>{t("science.infographic.high_insulin.2")}</li>
+                <li>{t("science.infographic.high_insulin.3")}</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-2">{t("science.infographic.ketone_state")}</h4>
+              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
+                <li>{t("science.infographic.ketone_state.1")}</li>
+                <li>{t("science.infographic.ketone_state.2")}</li>
+                <li>{t("science.infographic.ketone_state.3")}</li>
+                <li>{t("science.infographic.ketone_state.4")}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -131,8 +184,12 @@ export default function Science() {
                 {t("science.card.anti_inflammatory")}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-muted-foreground">
-              {t("science.card.anti_inflammatory.desc")}
+            <CardContent className="text-muted-foreground space-y-4">
+              <p className="font-medium text-foreground">{t("science.card.anti_inflammatory.subtitle")}</p>
+              <p>{t("science.card.anti_inflammatory.desc1")}</p>
+              <p>{t("science.card.anti_inflammatory.desc2")}</p>
+              <p>{t("science.card.anti_inflammatory.desc3")}</p>
+              <p className="italic">{t("science.card.anti_inflammatory.desc4")}</p>
             </CardContent>
           </Card>
 
@@ -143,8 +200,20 @@ export default function Science() {
                 {t("science.card.epigenetic")}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-muted-foreground">
-              {t("science.card.epigenetic.desc")}
+            <CardContent className="text-muted-foreground space-y-4">
+              <p className="font-medium text-foreground">{t("science.card.epigenetic.subtitle")}</p>
+              <p>{t("science.card.epigenetic.desc1")}</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{t("science.card.epigenetic.list1")}</li>
+                <li>{t("science.card.epigenetic.list2")}</li>
+              </ul>
+              <p>{t("science.card.epigenetic.desc2")}</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{t("science.card.epigenetic.list3")}</li>
+                <li>{t("science.card.epigenetic.list4")}</li>
+                <li>{t("science.card.epigenetic.list5")}</li>
+              </ul>
+              <p>{t("science.card.epigenetic.desc3")}</p>
             </CardContent>
           </Card>
         </div>
