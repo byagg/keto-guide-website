@@ -6,6 +6,8 @@ import Home from "@/pages/Home";
 import Science from "@/pages/Science";
 import Benefits from "@/pages/Benefits";
 import Guide from "@/pages/Guide";
+import Blog from "@/pages/Blog";
+import RSSFeed from "@/pages/RSSFeed";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -19,6 +21,8 @@ function Router() {
         <Route path="/science" component={Science} />
         <Route path="/benefits" component={Benefits} />
         <Route path="/guide" component={Guide} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/rss" component={RSSFeed} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

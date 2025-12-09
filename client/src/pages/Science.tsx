@@ -29,6 +29,19 @@ export default function Science() {
         </p>
       </div>
 
+      {/* Hero Image */}
+      <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border/50">
+        <img 
+          src="https://images.pexels.com/photos/163117/calories-diet-fitness-health-163117.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+          alt="Molecular science and ketogenic diet research" 
+          className="w-full h-96 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <p className="text-white text-lg font-medium max-w-2xl">Understanding the metabolic shift from glucose to fat metabolism and the signaling power of ketone bodies</p>
+        </div>
+      </div>
+
       {/* Section 1: Glucose to Fat */}
       <section className="space-y-8">
         <div className="flex items-center gap-3 text-primary">
@@ -41,6 +54,43 @@ export default function Science() {
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none text-muted-foreground">
           <p>{t("science.section1.p1")}</p>
           <p dangerouslySetInnerHTML={{ __html: t("science.section1.p2") }} />
+        </div>
+
+        {/* Ketogenesis Infographic */}
+        <div className="mt-12 bg-muted/30 rounded-2xl p-6 md:p-8 border border-border/50">
+          <h3 className="text-xl font-bold font-serif mb-6 text-center">Ketogenesis: The Body's Alternative Fuel Factory</h3>
+          <p className="text-sm text-muted-foreground text-center mb-6 max-w-3xl mx-auto">
+            The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs.
+          </p>
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
+            <img 
+              src="/images/ketogenesis.png" 
+              alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs" 
+              className="w-full h-auto"
+              onError={(e) => {
+                // Fallback to placeholder if image not found
+                (e.target as HTMLImageElement).src = "https://images.pexels.com/photos/163117/calories-diet-fitness-health-163117.jpeg?auto=compress&cs=tinysrgb&w=1200";
+              }}
+            />
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
+            <div>
+              <h4 className="font-bold text-foreground mb-3">Ketone Synthesis (In the Liver)</h4>
+              <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
+                <li>Beta-oxidation generates a large supply of acetyl-CoA in the liver</li>
+                <li>Three acetyl-CoA molecules combine to form β-hydroxy-β-methylglutaryl-CoA (HMG-CoA)</li>
+                <li>HMG-CoA lyase breaks HMG-CoA into acetoacetate, which converts to β-hydroxybutyrate and acetone</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-foreground mb-3">Ketone Utilization (In Peripheral Tissues)</h4>
+              <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-4">
+                <li>The liver releases ketone bodies to be used by the brain, heart, and skeletal muscle</li>
+                <li>An enzyme absent in the liver (β-ketoacyl-CoA transferase) converts ketones back to acetoacetyl-CoA</li>
+                <li>Thiolase splits acetoacetyl-CoA into two acetyl-CoA molecules, which enter the TCA cycle to generate ATP (energy)</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <Card className="bg-muted/30 border-none">
@@ -135,29 +185,13 @@ export default function Science() {
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
             <img 
               src="/images/info-keto.png" 
-              alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
+              alt="Infographic: Why Keto Works for Weight Loss (Especially in Obesity)" 
               className="w-full h-auto"
             />
           </div>
-          <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-            <div>
-              <h4 className="font-bold text-destructive mb-2">{t("science.infographic.high_insulin")}</h4>
-              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
-                <li>{t("science.infographic.high_insulin.1")}</li>
-                <li>{t("science.infographic.high_insulin.2")}</li>
-                <li>{t("science.infographic.high_insulin.3")}</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-primary mb-2">{t("science.infographic.ketone_state")}</h4>
-              <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-4">
-                <li>{t("science.infographic.ketone_state.1")}</li>
-                <li>{t("science.infographic.ketone_state.2")}</li>
-                <li>{t("science.infographic.ketone_state.3")}</li>
-                <li>{t("science.infographic.ketone_state.4")}</li>
-              </ul>
-            </div>
-          </div>
+          <p className="text-sm text-muted-foreground text-center mt-6 max-w-3xl mx-auto leading-relaxed">
+            {t("science.infographic.desc")}
+          </p>
         </div>
       </section>
 

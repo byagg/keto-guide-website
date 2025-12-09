@@ -42,9 +42,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </span>
               </Link>
             ))}
-            <Button variant="default" size="sm" className="ml-4">
-              {t("nav.getStarted")}
-            </Button>
+            <Link href="/guide">
+              <Button variant="default" size="sm" className="ml-4">
+                {t("nav.getStarted")}
+              </Button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -74,7 +76,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </span>
               </Link>
             ))}
-            <Button className="w-full mt-2">{t("nav.getStarted")}</Button>
+            <Link href="/guide" className="w-full">
+              <Button className="w-full mt-2">{t("nav.getStarted")}</Button>
+            </Link>
           </nav>
         </div>
       )}

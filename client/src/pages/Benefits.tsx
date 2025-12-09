@@ -29,7 +29,7 @@ export default function Benefits() {
         <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
           {t("benefits.subtitle")}
         </p>
-        <p className="text-muted-foreground max-w-2xl">
+        <p className="text-muted-foreground max-w-2xl leading-relaxed">
           {t("benefits.intro")}
         </p>
       </div>
@@ -44,6 +44,15 @@ export default function Benefits() {
             <CheckCircle2 className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section1.title")}</h2>
+        </div>
+
+        {/* Image 1 */}
+        <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
+          <img 
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+            alt="Healthy keto lifestyle" 
+            className="w-full h-64 object-cover"
+          />
         </div>
 
         <div className="grid gap-6">
@@ -184,6 +193,14 @@ export default function Benefits() {
 
       {/* Absolute Contraindications */}
       <section className="space-y-8">
+        {/* Image 2 */}
+        <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
+          <img 
+            src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+            alt="Medical consultation and health assessment" 
+            className="w-full h-64 object-cover"
+          />
+        </div>
         <div className="flex items-center gap-3">
           <div className="bg-primary/10 p-2 rounded-none">
             <XCircle className="h-6 w-6 text-primary" />
@@ -251,13 +268,13 @@ export default function Benefits() {
           {/* Pregnancy & Breastfeeding */}
           <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-foreground">Pregnancy & Breastfeeding</CardTitle>
+              <CardTitle className="text-lg text-foreground">{t("benefits.caution.pregnancy")}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-sm mb-2">
-                Insufficient safety data. Fetal development relies on a reliable supply of nutrients.
+                {t("benefits.caution.pregnancy.desc")}
               </p>
-              <p className="text-sm font-medium text-primary">
+              <p className="text-sm font-medium text-foreground">
                 The safest route is to avoid strict ketogenic diets.
               </p>
             </CardContent>
@@ -266,13 +283,13 @@ export default function Benefits() {
           {/* Eating Disorders */}
           <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-foreground">History of Eating Disorders</CardTitle>
+              <CardTitle className="text-lg text-foreground">{t("benefits.caution.ed")}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-sm mb-2">
-                The rigid rules of keto can trigger disordered eating patterns.
+                {t("benefits.caution.ed.desc")}
               </p>
-              <p className="text-sm font-medium text-primary">
+              <p className="text-sm font-medium text-foreground">
                 Ideally avoided unless approved by a mental health professional.
               </p>
             </CardContent>
@@ -281,14 +298,14 @@ export default function Benefits() {
           {/* Dyslipidemia */}
           <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-foreground">Uncontrolled Dyslipidemia</CardTitle>
+              <CardTitle className="text-lg text-foreground">{t("benefits.caution.lipids")}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-sm mb-2">
-                Keto can cause a marked rise in LDL-cholesterol in some individuals.
+                {t("benefits.caution.lipids.desc")}
               </p>
-              <p className="text-sm font-medium text-primary">
-                A cardiologist or lipid specialist should be involved.
+              <p className="text-sm font-medium text-foreground">
+                {t("benefits.caution.lipids.note")}
               </p>
             </CardContent>
           </Card>
@@ -301,7 +318,7 @@ export default function Benefits() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-sm mb-3">{t("benefits.caution.1.desc")}</p>
-              <p className="text-sm font-medium text-primary">
+              <p className="text-sm font-medium text-foreground">
                 {t("benefits.caution.1.note")}
               </p>
             </CardContent>
@@ -329,9 +346,9 @@ export default function Benefits() {
           </Card>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/10">
+            <Card className="border-l-4 border-l-primary/50 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-amber-800 dark:text-amber-200 text-lg">
+                <CardTitle className="text-foreground text-lg">
                   {t("benefits.caution.pregnancy")}
                 </CardTitle>
               </CardHeader>
@@ -342,9 +359,9 @@ export default function Benefits() {
               </CardContent>
             </Card>
 
-            <Card className="border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/10">
+            <Card className="border-l-4 border-l-primary/50 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-amber-800 dark:text-amber-200 text-lg">
+                <CardTitle className="text-foreground text-lg">
                   {t("benefits.caution.ed")}
                 </CardTitle>
               </CardHeader>
@@ -356,15 +373,15 @@ export default function Benefits() {
             </Card>
           </div>
 
-          <Card className="border-amber-200 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/10">
+          <Card className="border-l-4 border-l-primary/50 shadow-sm">
             <CardHeader>
-              <CardTitle className="text-amber-800 dark:text-amber-200 text-lg">
+              <CardTitle className="text-foreground text-lg">
                 {t("benefits.caution.lipids")}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-sm mb-2">{t("benefits.caution.lipids.desc")}</p>
-              <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
+              <p className="text-sm font-medium text-foreground">
                 {t("benefits.caution.lipids.note")}
               </p>
             </CardContent>
@@ -372,21 +389,30 @@ export default function Benefits() {
         </div>
       </section>
 
+      {/* Image 3 */}
+      <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
+        <img 
+          src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+          alt="Keto diet benefits and wellness" 
+          className="w-full h-64 object-cover"
+        />
+      </div>
+
       {/* Bottom Line */}
       <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center space-y-6">
         <h3 className="text-2xl font-bold text-primary">{t("benefits.bottomline.title")}</h3>
         
         <div className="grid md:grid-cols-3 gap-6 text-left">
-          <div className="bg-background p-4 rounded-lg shadow-sm border">
-            <CheckCircle2 className="w-6 h-6 text-green-500 mb-2" />
+          <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
+            <CheckCircle2 className="w-6 h-6 text-primary mb-2" />
             <p className="text-sm text-muted-foreground">{t("benefits.bottomline.1")}</p>
           </div>
-          <div className="bg-background p-4 rounded-lg shadow-sm border">
+          <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
             <Activity className="w-6 h-6 text-primary mb-2" />
             <p className="text-sm text-muted-foreground">{t("benefits.bottomline.2")}</p>
           </div>
-          <div className="bg-background p-4 rounded-lg shadow-sm border">
-            <AlertTriangle className="w-6 h-6 text-amber-500 mb-2" />
+          <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
+            <AlertTriangle className="w-6 h-6 text-primary mb-2" />
             <p className="text-sm text-muted-foreground">{t("benefits.bottomline.3")}</p>
           </div>
         </div>
