@@ -6,13 +6,13 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Guide() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
 
   return (
-    <div className="container max-w-4xl py-12 md:py-24 space-y-12">
+    <div className="container max-w-4xl py-6 md:py-12 lg:py-16 space-y-6 md:space-y-8 lg:space-y-12">
       {/* Header */}
-      <div className="space-y-6">
-        <Link href="/">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
+        <Link href={getLocalizedPath("/")}>
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
             <span className="text-sm font-medium">{t("guide.back")}</span>
@@ -21,10 +21,10 @@ export default function Guide() {
         <Badge variant="outline" className="px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
           {t("guide.badge")}
         </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-foreground">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-serif tracking-tight text-foreground">
           {t("guide.title")}
         </h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
           {t("guide.subtitle")}
         </p>
       </div>
@@ -37,14 +37,14 @@ export default function Guide() {
           className="w-full h-96 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
           <p className="text-white text-lg font-medium max-w-2xl">A step-by-step guide to navigating the induction phase, managing side effects, and setting yourself up for long-term success</p>
         </div>
       </div>
 
       <div className="space-y-6">
         {/* Introduction */}
-        <div className="bg-muted/30 rounded-xl p-6 border border-border/50 space-y-3">
+        <div className="bg-muted/30 rounded-xl p-4 md:p-6 border border-border/50 space-y-3">
           <p className="text-muted-foreground leading-relaxed">{t("guide.intro")}</p>
           <ul className="list-disc list-inside space-y-2 ml-4 text-muted-foreground">
             <li>{t("guide.intro.list1")}</li>
@@ -58,7 +58,7 @@ export default function Guide() {
       <Separator />
 
       {/* Step 1: Medical Prep */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-6 lg:space-y-8">
         <div className="flex items-center gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20">1</div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("guide.step1.title")}</h2>
@@ -162,7 +162,7 @@ export default function Guide() {
             className="w-full h-64 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
             <p className="text-white text-sm font-medium">Preparing medically ensures a safe and successful keto journey</p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function Guide() {
       <Separator />
 
       {/* Step 2: Induction */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-6 lg:space-y-8">
         <div className="flex items-center gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20">2</div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("guide.step2.title")}</h2>
@@ -267,7 +267,7 @@ export default function Guide() {
             className="w-full h-64 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
             <p className="text-white text-sm font-medium">The induction phase transitions your body to fat-burning mode</p>
           </div>
         </div>
@@ -276,7 +276,7 @@ export default function Guide() {
       <Separator />
 
       {/* Step 3: Side Effects */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-6 lg:space-y-8">
         <div className="flex items-center gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20">3</div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("guide.step3.title")}</h2>
@@ -398,7 +398,7 @@ export default function Guide() {
             className="w-full h-64 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
             <p className="text-white text-sm font-medium">Proper hydration and electrolytes are key to managing side effects</p>
           </div>
         </div>
@@ -407,7 +407,7 @@ export default function Guide() {
       <Separator />
 
       {/* Step 4: Long-Term */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-6 lg:space-y-8">
         <div className="flex items-center gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20">4</div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("guide.step4.title")}</h2>
@@ -542,7 +542,7 @@ export default function Guide() {
             className="w-full h-64 object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
             <p className="text-white text-sm font-medium">Long-term success comes from sustainable habits and support</p>
           </div>
         </div>
@@ -553,7 +553,7 @@ export default function Guide() {
       {/* Conclusion */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold font-serif text-foreground">{t("guide.conclusion.title")}</h2>
-        <div className="bg-primary/5 rounded-xl p-6 border border-primary/20 space-y-4">
+        <div className="bg-primary/5 rounded-xl p-4 md:p-6 border border-primary/20 space-y-3 md:space-y-4">
           <p className="text-muted-foreground leading-relaxed">{t("guide.conclusion.desc")}</p>
           <div>
             <p className="font-semibold text-foreground mb-2">{t("guide.conclusion.success")}</p>

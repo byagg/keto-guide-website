@@ -8,21 +8,24 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t, language, setLanguage } = useLanguage();
+  const { t, language, setLanguage, getLocalizedPath } = useLanguage();
 
   const navItems = [
-    { href: "/", label: t("nav.home"), icon: Activity },
-    { href: "/science", label: t("nav.science"), icon: BookOpen },
-    { href: "/benefits", label: t("nav.benefits"), icon: AlertTriangle },
-    { href: "/guide", label: t("nav.guide"), icon: HelpCircle },
+    { href: getLocalizedPath("/"), label: t("nav.home"), icon: Activity },
+    { href: getLocalizedPath("/science"), label: t("nav.science"), icon: BookOpen },
+    { href: getLocalizedPath("/benefits"), label: t("nav.benefits"), icon: AlertTriangle },
+    { href: getLocalizedPath("/guide"), label: t("nav.guide"), icon: HelpCircle },
   ];
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground flex flex-col">
+    <div className="min-h-screen font-sans text-foreground flex flex-col relative">
+      {/* Gradient Background - White to Light Blue to Dark Blue */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-white via-blue-100 via-blue-400 via-blue-600 to-blue-900" />
+      <div className="relative z-0 min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/">
+          <Link href={getLocalizedPath("/")}>
             <div className="flex items-center gap-2 cursor-pointer">
               <span className="text-2xl font-bold tracking-tight text-foreground hover:text-primary/90 transition-colors">KetoMindset</span>
             </div>
@@ -30,21 +33,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <span 
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
-                    location === item.href ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-            <Link href="/guide">
+            {navItems.map((item) => {
+              const isActive = location === item.href || location.startsWith(item.href + '/');
+              return (
+                <Link key={item.href} href={item.href}>
+                  <span 
+                    className={cn(
+                      "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
+                      isActive ? "text-primary" : "text-muted-foreground"
+                    )}
+                  >
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
+            <Link href={getLocalizedPath("/recipes")}>
               <Button variant="default" size="sm" className="ml-4">
-                {t("nav.getStarted")}
+                {t("nav.recipes")}
               </Button>
             </Link>
           </nav>
@@ -63,21 +69,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {isMobileMenuOpen && (
         <div className="md:hidden border-b bg-background p-4 space-y-4 animate-in slide-in-from-top-5">
           <nav className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <span 
-                  className={cn(
-                    "text-base font-medium transition-colors hover:text-primary cursor-pointer block p-2 rounded-md hover:bg-muted",
-                    location === item.href ? "bg-primary/10 text-primary" : "text-muted-foreground"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-            <Link href="/guide" className="w-full">
-              <Button className="w-full mt-2">{t("nav.getStarted")}</Button>
+            {navItems.map((item) => {
+              const isActive = location === item.href || location.startsWith(item.href + '/');
+              return (
+                <Link key={item.href} href={item.href}>
+                  <span 
+                    className={cn(
+                      "text-base font-medium transition-colors hover:text-primary cursor-pointer block p-2 rounded-md hover:bg-muted",
+                      isActive ? "bg-primary/10 text-primary" : "text-muted-foreground"
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
+            <Link href={getLocalizedPath("/recipes")} className="w-full">
+              <Button className="w-full mt-2">{t("nav.recipes")}</Button>
             </Link>
           </nav>
         </div>
@@ -103,9 +112,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div>
             <h3 className="font-semibold mb-4 text-foreground">{t("footer.content")}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/science"><span className="hover:text-primary cursor-pointer">{t("nav.science")}</span></Link></li>
-              <li><Link href="/benefits"><span className="hover:text-primary cursor-pointer">{t("nav.benefits")}</span></Link></li>
-              <li><Link href="/guide"><span className="hover:text-primary cursor-pointer">{t("nav.guide")}</span></Link></li>
+              <li><Link href={getLocalizedPath("/science")}><span className="hover:text-primary cursor-pointer">{t("nav.science")}</span></Link></li>
+              <li><Link href={getLocalizedPath("/benefits")}><span className="hover:text-primary cursor-pointer">{t("nav.benefits")}</span></Link></li>
+              <li><Link href={getLocalizedPath("/guide")}><span className="hover:text-primary cursor-pointer">{t("nav.guide")}</span></Link></li>
             </ul>
           </div>
 
@@ -160,6 +169,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <p>© {new Date().getFullYear()} {t("footer.rights")}</p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }

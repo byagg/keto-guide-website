@@ -6,34 +6,34 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
 
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-muted/30 pt-16 pb-24 lg:pt-32 lg:pb-40">
+      <section className="relative overflow-hidden bg-muted/30 pt-8 pb-12 md:pt-16 md:pb-24 lg:pt-32 lg:pb-40">
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-in slide-in-from-left-10 duration-700 fade-in">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 md:space-y-6 lg:space-y-8 animate-in slide-in-from-left-10 duration-700 fade-in">
               <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide uppercase text-primary border border-primary/20 bg-primary/5">
                 {t("home.badge")}
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground font-serif leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight text-foreground font-serif leading-tight">
                 {t("home.title")}
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
                 {t("home.subtitle")}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mt-4">
+              <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl mt-3 md:mt-4">
                 {t("home.subtitle2")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/guide">
+                <Link href={getLocalizedPath("/guide")}>
                   <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20">
                     {t("home.cta.start")} <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/science">
+                <Link href={getLocalizedPath("/science")}>
                   <Button variant="outline" size="lg" className="text-base px-8 h-12 bg-background/50 backdrop-blur">
                     {t("home.cta.science")}
                   </Button>
@@ -67,162 +67,17 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 -z-10 w-1/3 h-1/3 bg-secondary/5 rounded-full blur-3xl" />
       </section>
 
-      {/* Keto Recipes */}
-      <section className="container py-16 space-y-8">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold font-serif text-foreground">{t("guide.recipes.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">{t("guide.recipes.subtitle")}</p>
-        </div>
-
-        <div className="grid gap-8">
-          {/* Breakfast */}
-          <Card className="overflow-hidden bg-card border-border">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto">
-                <img 
-                  src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-                  alt="Keto scrambled eggs with avocado" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t("guide.recipes.breakfast.title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{t("guide.recipes.breakfast.desc")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.breakfast.ingredients")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.breakfast.ingredients.list")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.breakfast.instructions")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.breakfast.instructions.list")}</p>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-
-          {/* Lunch */}
-          <Card className="overflow-hidden bg-card border-border">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto order-2 md:order-1">
-                <img 
-                  src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-                  alt="Grilled chicken salad" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 space-y-4 order-1 md:order-2">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t("guide.recipes.lunch.title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{t("guide.recipes.lunch.desc")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.lunch.ingredients")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.lunch.ingredients.list")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.lunch.instructions")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.lunch.instructions.list")}</p>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-
-          {/* Dinner */}
-          <Card className="overflow-hidden bg-card border-border">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto">
-                <img 
-                  src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-                  alt="Salmon with roasted vegetables" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t("guide.recipes.dinner.title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{t("guide.recipes.dinner.desc")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.dinner.ingredients")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.dinner.ingredients.list")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.dinner.instructions")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.dinner.instructions.list")}</p>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-
-          {/* Dessert */}
-          <Card className="overflow-hidden bg-card border-border">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto order-2 md:order-1">
-                <img 
-                  src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-                  alt="Keto chocolate mousse" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 space-y-4 order-1 md:order-2">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t("guide.recipes.dessert.title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{t("guide.recipes.dessert.desc")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.dessert.ingredients")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.dessert.ingredients.list")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.dessert.instructions")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.dessert.instructions.list")}</p>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-
-          {/* Snack & Drink */}
-          <Card className="overflow-hidden bg-card border-border">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto">
-                <img 
-                  src="https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-                  alt="Keto smoothie" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{t("guide.recipes.snack.title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{t("guide.recipes.snack.desc")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.snack.ingredients")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.snack.ingredients.list")}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground mb-2">{t("guide.recipes.snack.instructions")}</p>
-                  <p className="text-sm text-muted-foreground">{t("guide.recipes.snack.instructions.list")}</p>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-        </div>
-      </section>
-
       {/* Key Benefits Section */}
       <section className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-3xl font-bold font-serif text-foreground">{t("home.benefits.title")}</h2>
-          <p className="text-lg text-muted-foreground">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16 space-y-3 md:space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-foreground">{t("home.benefits.title")}</h2>
+          <p className="text-base md:text-lg text-muted-foreground">
             {t("home.benefits.subtitle")}
           </p>
         </div>
 
         {/* Infographic Feature */}
-        <div className="mb-16 bg-muted/30 rounded-2xl p-6 md:p-8 border border-border/50">
+        <div className="mb-8 md:mb-12 lg:mb-16 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
           <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
             <img 
@@ -236,7 +91,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="space-y-6 md:space-y-8 lg:space-y-12">
           <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
             <div className="h-48 overflow-hidden">
               <img 
@@ -245,12 +100,12 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-8 space-y-4">
+            <CardContent className="p-4 md:p-6 lg:p-8 space-y-3 md:space-y-4">
               <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.cognitive")}</span>
               </div>
               <h3 className="text-xl font-bold text-foreground">{t("home.card.neuroprotection")}</h3>
-              <div className="text-muted-foreground text-sm leading-relaxed space-y-4">
+              <div className="text-muted-foreground text-sm leading-relaxed space-y-3 md:space-y-4">
                 <div className="space-y-2">
                   <h4 className="font-bold text-foreground mb-2">The brain's energy problem</h4>
                   <p>Your brain is small in size but huge in energy demand, using about <strong>20% of your resting energy</strong> even though it's only ~2% of your body weight. Under a typical high-carb diet, that energy comes primarily from glucose. When glucose supply is unstable (skipped meals, blood sugar swings, insulin resistance), many people feel:</p>
@@ -302,12 +157,12 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-8 space-y-4">
+            <CardContent className="p-4 md:p-6 lg:p-8 space-y-3 md:space-y-4">
               <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.metabolic_health")}</span>
               </div>
               <h3 className="text-xl font-bold text-foreground">{t("home.card.inflammation")}</h3>
-              <div className="text-muted-foreground text-sm leading-relaxed space-y-4">
+              <div className="text-muted-foreground text-sm leading-relaxed space-y-3 md:space-y-4">
                 <div className="space-y-2">
                   <h4 className="font-bold text-foreground mb-2">Chronic inflammation: the hidden driver</h4>
                   <p>Obesity, type 2 diabetes, fatty liver, and cardiovascular disease share a common thread: <strong>chronic low-grade inflammation</strong>. This persistent inflammatory state:</p>
@@ -363,12 +218,12 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <CardContent className="p-8 space-y-4">
+            <CardContent className="p-4 md:p-6 lg:p-8 space-y-3 md:space-y-4">
               <div className="text-primary font-semibold tracking-wide text-sm uppercase">
                 <span>{t("home.card.cardio")}</span>
               </div>
               <h3 className="text-xl font-bold text-foreground">{t("home.card.weight")}</h3>
-              <div className="text-muted-foreground text-sm leading-relaxed space-y-4">
+              <div className="text-muted-foreground text-sm leading-relaxed space-y-3 md:space-y-4">
                 <div className="space-y-2">
                   <h4 className="font-bold text-foreground mb-2">Why weight loss is biologically hard</h4>
                   <p>Most diets fail not because people are weak, but because the body fights weight loss:</p>
@@ -429,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-muted/30 py-24">
+      <section className="bg-muted/30 py-12 md:py-16 lg:py-24">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
@@ -459,13 +314,13 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 space-y-8">
-              <h2 className="text-3xl lg:text-4xl font-bold font-serif">{t("home.how.title")}</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="order-1 lg:order-2 space-y-4 md:space-y-6 lg:space-y-8">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{t("home.how.title")}</h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 {t("home.how.desc")}
               </p>
               
-              <div className="space-y-8">
+              <div className="space-y-4 md:space-y-6 lg:space-y-8">
                 <div className="border-l-2 border-primary pl-6">
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t("home.how.fuel")}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{t("home.how.fuel.desc")}</p>
@@ -477,7 +332,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <Link href="/science">
+              <Link href={getLocalizedPath("/science")}>
                 <Button variant="outline" className="mt-4">
                   {t("home.how.deepdive")}
                 </Button>
@@ -488,20 +343,20 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mb-12">
-        <div className="bg-primary rounded-3xl p-8 md:p-16 text-center text-primary-foreground relative overflow-hidden">
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold font-serif">{t("home.cta.transform")}</h2>
-            <p className="text-primary-foreground/80 text-lg">
+      <section className="container mb-6 md:mb-8 lg:mb-12">
+        <div className="bg-primary rounded-3xl p-6 md:p-8 lg:p-16 text-center text-primary-foreground relative overflow-hidden">
+          <div className="relative z-10 max-w-2xl mx-auto space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{t("home.cta.transform")}</h2>
+            <p className="text-primary-foreground/80 text-base md:text-lg">
               {t("home.cta.transform.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link href="/guide">
+              <Link href={getLocalizedPath("/guide")}>
                 <Button size="lg" variant="secondary" className="text-secondary-foreground font-bold">
                   {t("nav.guide")}
                 </Button>
               </Link>
-              <Link href="/benefits">
+              <Link href={getLocalizedPath("/benefits")}>
                 <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                   {t("home.cta.check")}
                 </Button>

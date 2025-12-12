@@ -8,13 +8,13 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { BMICalculator } from "@/components/BMICalculator";
 
 export default function Benefits() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
 
   return (
-    <div className="container max-w-4xl py-12 md:py-24 space-y-12">
+    <div className="container max-w-4xl py-6 md:py-12 lg:py-16 space-y-6 md:space-y-8 lg:space-y-12">
       {/* Header */}
-      <div className="space-y-6">
-        <Link href="/">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
+        <Link href={getLocalizedPath("/")}>
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
             <span className="text-sm font-medium">{t("benefits.back")}</span>
@@ -23,13 +23,13 @@ export default function Benefits() {
         <Badge variant="outline" className="px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
           {t("benefits.badge")}
         </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-foreground">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-serif tracking-tight text-foreground">
           {t("benefits.title")}
         </h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
           {t("benefits.subtitle")}
         </p>
-        <p className="text-muted-foreground max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-base font-sans text-muted-foreground max-w-2xl leading-relaxed">
           {t("benefits.intro")}
         </p>
       </div>
@@ -38,9 +38,9 @@ export default function Benefits() {
       <BMICalculator />
 
       {/* Who Can Benefit */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-6 lg:space-y-8">
         <div className="flex items-center gap-3">
-          <div className="bg-primary/10 p-2 rounded-none">
+          <div className="bg-primary/10 p-2 rounded-lg">
             <CheckCircle2 className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section1.title")}</h2>
@@ -64,12 +64,12 @@ export default function Benefits() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground text-sm">
+              <p className="text-base font-sans text-muted-foreground leading-relaxed">
                 {t("benefits.card.obesity.desc")}
               </p>
-              <div className="bg-primary/5 p-6 rounded-none border-l-2 border-primary/20">
-                <p className="font-medium mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.card.obesity.improvements")}</p>
-                <ul className="grid sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
+              <div className="bg-primary/5 p-6 rounded-lg border-l-2 border-primary/20">
+                <p className="text-base font-semibold mb-3 font-sans text-primary uppercase tracking-wide">{t("benefits.card.obesity.improvements")}</p>
+                <ul className="grid sm:grid-cols-2 gap-3 text-base font-sans text-muted-foreground leading-relaxed">
                   <li className="flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {t("benefits.card.obesity.list1")}
@@ -99,10 +99,10 @@ export default function Benefits() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground text-sm">
+              <p className="text-base font-sans text-muted-foreground leading-relaxed">
                 {t("benefits.card.diabetes.desc")}
               </p>
-              <ul className="space-y-3 text-sm text-muted-foreground">
+              <ul className="space-y-3 text-base font-sans text-muted-foreground leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                   {t("benefits.card.diabetes.list1")}
@@ -120,9 +120,9 @@ export default function Benefits() {
                   {t("benefits.card.diabetes.list4")}
                 </li>
               </ul>
-              <div className="bg-primary/5 border border-primary/20 p-4 rounded-none flex gap-3 items-start">
+              <div className="bg-primary/5 border border-primary/20 p-4 rounded-lg flex gap-3 items-start">
                 <AlertTriangle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base font-sans text-muted-foreground leading-relaxed">
                   {t("benefits.card.diabetes.warning")}
                 </p>
               </div>
@@ -138,10 +138,10 @@ export default function Benefits() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-base font-sans text-muted-foreground mb-4 leading-relaxed">
                   {t("benefits.card.nafld.desc")}
                 </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-base font-sans text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
                     {t("benefits.card.nafld.list1")}
@@ -166,10 +166,10 @@ export default function Benefits() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-base font-sans text-muted-foreground mb-4 leading-relaxed">
                   {t("benefits.card.pcos.desc")}
                 </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-base font-sans text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
                     {t("benefits.card.pcos.list1")}
@@ -202,22 +202,22 @@ export default function Benefits() {
           />
         </div>
         <div className="flex items-center gap-3">
-          <div className="bg-primary/10 p-2 rounded-none">
+          <div className="bg-primary/10 p-2 rounded-lg">
             <XCircle className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section2.title")}</h2>
         </div>
 
-        <div className="bg-muted/30 border border-border p-8 rounded-none">
+        <div className="bg-muted/30 border border-border p-8 rounded-lg">
           <div className="flex items-center gap-3 mb-6">
             <AlertTriangle className="h-5 w-5 text-primary" />
-            <h3 className="font-bold text-lg text-foreground">{t("benefits.contra.warning")}</h3>
+            <h3 className="text-lg md:text-xl font-bold font-serif text-foreground">{t("benefits.contra.warning")}</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h4 className="font-semibold mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.contra.group1")}</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="text-base font-semibold mb-3 font-sans text-primary uppercase tracking-wide">{t("benefits.contra.group1")}</h4>
+              <ul className="space-y-2 text-base font-sans text-muted-foreground leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
                   {t("benefits.contra.1")}
@@ -229,8 +229,8 @@ export default function Benefits() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 text-sm text-primary uppercase tracking-wide">{t("benefits.contra.group2")}</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="text-base font-semibold mb-3 font-sans text-primary uppercase tracking-wide">{t("benefits.contra.group2")}</h4>
+              <ul className="space-y-2 text-base font-sans text-muted-foreground leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="text-primary">•</span>
                   {t("benefits.contra.3")}
@@ -244,7 +244,7 @@ export default function Benefits() {
           </div>
           
           <div className="mt-6 pt-6 border-t border-border/50">
-            <p className="text-sm font-medium text-muted-foreground">
+            <p className="text-base font-medium font-sans text-muted-foreground leading-relaxed">
               {t("benefits.contra.note")}
             </p>
           </div>
@@ -254,13 +254,13 @@ export default function Benefits() {
       {/* Relative Contraindications */}
       <section className="space-y-8">
         <div className="flex items-center gap-3">
-          <div className="bg-primary/10 p-2 rounded-none">
+          <div className="bg-primary/10 p-2 rounded-lg">
             <AlertTriangle className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("benefits.section3.title")}</h2>
         </div>
         
-        <p className="text-muted-foreground">
+        <p className="text-base font-sans text-muted-foreground leading-relaxed">
           {t("benefits.caution")}
         </p>
 
@@ -271,10 +271,10 @@ export default function Benefits() {
               <CardTitle className="text-lg text-foreground">{t("benefits.caution.pregnancy")}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">
+              <p className="text-base font-sans text-muted-foreground mb-2 leading-relaxed">
                 {t("benefits.caution.pregnancy.desc")}
               </p>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-base font-medium font-sans text-foreground leading-relaxed">
                 The safest route is to avoid strict ketogenic diets.
               </p>
             </CardContent>
@@ -286,10 +286,10 @@ export default function Benefits() {
               <CardTitle className="text-lg text-foreground">{t("benefits.caution.ed")}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">
+              <p className="text-base font-sans text-muted-foreground mb-2 leading-relaxed">
                 {t("benefits.caution.ed.desc")}
               </p>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-base font-medium font-sans text-foreground leading-relaxed">
                 Ideally avoided unless approved by a mental health professional.
               </p>
             </CardContent>
@@ -301,10 +301,10 @@ export default function Benefits() {
               <CardTitle className="text-lg text-foreground">{t("benefits.caution.lipids")}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">
+              <p className="text-base font-sans text-muted-foreground mb-2 leading-relaxed">
                 {t("benefits.caution.lipids.desc")}
               </p>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-base font-medium font-sans text-foreground leading-relaxed">
                 {t("benefits.caution.lipids.note")}
               </p>
             </CardContent>
@@ -317,8 +317,8 @@ export default function Benefits() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-3">{t("benefits.caution.1.desc")}</p>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-base font-sans text-muted-foreground mb-3 leading-relaxed">{t("benefits.caution.1.desc")}</p>
+              <p className="text-base font-medium font-sans text-foreground leading-relaxed">
                 {t("benefits.caution.1.note")}
               </p>
             </CardContent>
@@ -331,8 +331,8 @@ export default function Benefits() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-3">{t("benefits.caution.ckd.desc")}</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <p className="text-base font-sans text-muted-foreground mb-3 leading-relaxed">{t("benefits.caution.ckd.desc")}</p>
+              <ul className="space-y-2 text-base font-sans text-muted-foreground leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="text-primary/50">•</span>
                   {t("benefits.caution.ckd.list1")}
@@ -353,7 +353,7 @@ export default function Benefits() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-base font-sans text-muted-foreground leading-relaxed">
                   {t("benefits.caution.pregnancy.desc")}
                 </p>
               </CardContent>
@@ -366,7 +366,7 @@ export default function Benefits() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-base font-sans text-muted-foreground leading-relaxed">
                   {t("benefits.caution.ed.desc")}
                 </p>
               </CardContent>
@@ -380,8 +380,8 @@ export default function Benefits() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm mb-2">{t("benefits.caution.lipids.desc")}</p>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-base font-sans text-muted-foreground mb-2 leading-relaxed">{t("benefits.caution.lipids.desc")}</p>
+              <p className="text-base font-medium font-sans text-foreground leading-relaxed">
                 {t("benefits.caution.lipids.note")}
               </p>
             </CardContent>
@@ -405,15 +405,15 @@ export default function Benefits() {
         <div className="grid md:grid-cols-3 gap-6 text-left">
           <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
             <CheckCircle2 className="w-6 h-6 text-primary mb-2" />
-            <p className="text-sm text-muted-foreground">{t("benefits.bottomline.1")}</p>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed">{t("benefits.bottomline.1")}</p>
           </div>
           <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
             <Activity className="w-6 h-6 text-primary mb-2" />
-            <p className="text-sm text-muted-foreground">{t("benefits.bottomline.2")}</p>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed">{t("benefits.bottomline.2")}</p>
           </div>
           <div className="bg-background p-4 rounded-lg shadow-sm border border-border">
             <AlertTriangle className="w-6 h-6 text-primary mb-2" />
-            <p className="text-sm text-muted-foreground">{t("benefits.bottomline.3")}</p>
+            <p className="text-base font-sans text-muted-foreground leading-relaxed">{t("benefits.bottomline.3")}</p>
           </div>
         </div>
 
@@ -421,7 +421,7 @@ export default function Benefits() {
           <p className="text-lg font-medium text-foreground">
             {t("benefits.bottomline.action")}
           </p>
-          <ul className="text-muted-foreground text-sm space-y-2">
+          <ul className="text-base font-sans text-muted-foreground space-y-2 leading-relaxed">
             <li>{t("benefits.bottomline.step1")}</li>
             <li>{t("benefits.bottomline.step2")}</li>
             <li>{t("benefits.bottomline.step3")}</li>

@@ -20,7 +20,7 @@ interface BlogPost {
 }
 
 export default function Blog() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -76,7 +76,7 @@ export default function Blog() {
     <div className="container max-w-4xl py-12 md:py-24 space-y-12">
       {/* Header */}
       <div className="space-y-6">
-        <Link href="/">
+        <Link href={getLocalizedPath("/")}>
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
             <span className="text-sm font-medium">Back to Home</span>
@@ -101,7 +101,7 @@ export default function Blog() {
       ) : (
         <div className="grid gap-8">
           {posts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`}>
+            <Link key={post.id} href={getLocalizedPath(`/blog/${post.slug}`)}>
               <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden">
                 {post.image && (
                   <div className="h-64 overflow-hidden">

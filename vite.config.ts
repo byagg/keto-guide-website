@@ -6,7 +6,14 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
+const plugins = [
+  react({
+    jsxRuntime: 'automatic',
+  }),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusRuntime()
+];
 
 export default defineConfig({
   plugins,
@@ -15,6 +22,14 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+    },
+    dedupe: ["react", "react-dom"],
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react/jsx-runtime"],
+    force: true,
+    esbuildOptions: {
+      jsx: 'automatic',
     },
   },
   envDir: path.resolve(import.meta.dirname),
@@ -27,6 +42,11 @@ export default defineConfig({
     port: 3000,
     strictPort: false, // Will find next available port if 3000 is busy
     host: true,
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 3000,
+    },
     allowedHosts: [
       ".manuspre.computer",
       ".manus.computer",
@@ -39,6 +59,12 @@ export default defineConfig({
     fs: {
       strict: true,
       deny: ["**/.*"],
+    },
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+      },
     },
   },
 });

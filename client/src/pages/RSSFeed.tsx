@@ -31,7 +31,7 @@ interface RSSFeed {
 }
 
 export default function RSSFeed() {
-  const { t } = useLanguage();
+  const { t, getLocalizedPath } = useLanguage();
   const [rssUrl, setRssUrl] = useState("");
   const [feed, setFeed] = useState<RSSFeed | null>(null);
   const [posts, setPosts] = useState<RSSPost[]>([]);
@@ -81,7 +81,7 @@ export default function RSSFeed() {
     <div className="container max-w-4xl py-12 md:py-24 space-y-12">
       {/* Header */}
       <div className="space-y-6">
-        <Link href="/">
+        <Link href={getLocalizedPath("/")}>
           <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
             <ArrowLeft className="h-4 w-4" />
             <span className="text-sm font-medium">Back to Home</span>

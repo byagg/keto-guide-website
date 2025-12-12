@@ -1,11 +1,16 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useLocation } from 'wouter';
 
 type Language = 'en' | 'es' | 'cn' | 'sk';
+
+const SUPPORTED_LANGUAGES: Language[] = ['en', 'es', 'cn', 'sk'];
+const DEFAULT_LANGUAGE: Language = 'en';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  getLocalizedPath: (path: string) => string;
 }
 
 const translations = {
@@ -15,7 +20,14 @@ const translations = {
     "nav.science": "The Science",
     "nav.benefits": "Benefits & Risks",
     "nav.guide": "Start Guide",
-    "nav.getStarted": "Get Started",
+    "nav.recipes": "Recipes",
+    
+    // Recipes Page
+    "recipes.back": "Back to Home",
+    "recipes.badge": "Keto Recipes",
+    "recipes.cta.title": "Ready to Start Your Keto Journey?",
+    "recipes.cta.desc": "Get comprehensive guidance on starting keto safely, managing side effects, and achieving long-term success.",
+    "recipes.cta.button": "View Start Guide",
     
     // Home
     "home.badge": "Science-Backed Nutrition",
@@ -389,7 +401,14 @@ const translations = {
     "nav.science": "La Ciencia",
     "nav.benefits": "Beneficios y Riesgos",
     "nav.guide": "Guía de Inicio",
-    "nav.getStarted": "Empezar",
+    "nav.recipes": "Recetas",
+    
+    // Recipes Page
+    "recipes.back": "Volver al Inicio",
+    "recipes.badge": "Recetas Keto",
+    "recipes.cta.title": "¿Listo para Comenzar tu Viaje Keto?",
+    "recipes.cta.desc": "Obtén orientación completa sobre cómo comenzar keto de manera segura, manejar efectos secundarios y lograr el éxito a largo plazo.",
+    "recipes.cta.button": "Ver Guía de Inicio",
     
     // Home
     "home.badge": "Nutrición Respaldada por la Ciencia",
@@ -682,7 +701,14 @@ const translations = {
     "nav.science": "Veda",
     "nav.benefits": "Výhody a riziká",
     "nav.guide": "Príručka",
-    "nav.getStarted": "Začať",
+    "nav.recipes": "Recepty",
+    
+    // Recipes Page
+    "recipes.back": "Späť na domov",
+    "recipes.badge": "Keto Recepty",
+    "recipes.cta.title": "Ste pripravení začať svoju keto cestu?",
+    "recipes.cta.desc": "Získajte komplexné vedenie o tom, ako bezpečne začať s keto, zvládnuť vedľajšie účinky a dosiahnuť dlhodobý úspech.",
+    "recipes.cta.button": "Zobraziť Príručku",
     
     // Home
     "home.badge": "Vedecky podložená výživa",
@@ -761,7 +787,14 @@ const translations = {
     "nav.science": "科学原理",
     "nav.benefits": "益处与风险",
     "nav.guide": "入门指南",
-    "nav.getStarted": "立即开始",
+    "nav.recipes": "食谱",
+    
+    // Recipes Page
+    "recipes.back": "返回首页",
+    "recipes.badge": "生酮食谱",
+    "recipes.cta.title": "准备好开始您的生酮之旅了吗？",
+    "recipes.cta.desc": "获取关于安全开始生酮、管理副作用和实现长期成功的全面指导。",
+    "recipes.cta.button": "查看入门指南",
     
     // Home
     "home.badge": "科学循证营养",
@@ -1050,7 +1083,55 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [location, setLocation] = useLocation();
+  const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
+
+  // Extract language from URL path
+  useEffect(() => {
+    const pathSegments = location.split('/').filter(Boolean);
+    const firstSegment = pathSegments[0];
+    
+    if (SUPPORTED_LANGUAGES.includes(firstSegment as Language)) {
+      setLanguageState(firstSegment as Language);
+    } else {
+      // If no language in URL, redirect to default language
+      if (location === '/' || !SUPPORTED_LANGUAGES.includes(firstSegment as Language)) {
+        const pathWithoutLang = pathSegments.length > 0 && !SUPPORTED_LANGUAGES.includes(firstSegment as Language)
+          ? '/' + pathSegments.join('/')
+          : location === '/' ? '' : location;
+        setLocation(`/${DEFAULT_LANGUAGE}${pathWithoutLang}`);
+      }
+    }
+  }, [location, setLocation]);
+
+  const setLanguage = (lang: Language) => {
+    const pathSegments = location.split('/').filter(Boolean);
+    const firstSegment = pathSegments[0];
+    
+    // Remove current language prefix if present
+    const pathWithoutLang = SUPPORTED_LANGUAGES.includes(firstSegment as Language)
+      ? pathSegments.slice(1).join('/')
+      : pathSegments.join('/');
+    
+    // Build new path with new language
+    const newPath = pathWithoutLang ? `/${lang}/${pathWithoutLang}` : `/${lang}`;
+    setLocation(newPath);
+    setLanguageState(lang);
+  };
+
+  const getLocalizedPath = (path: string): string => {
+    // Remove leading slash if present
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    
+    // If path already starts with language code, return as is
+    const pathSegments = cleanPath.split('/').filter(Boolean);
+    if (pathSegments.length > 0 && SUPPORTED_LANGUAGES.includes(pathSegments[0] as Language)) {
+      return `/${cleanPath}`;
+    }
+    
+    // Add current language prefix
+    return `/${language}${cleanPath ? `/${cleanPath}` : ''}`;
+  };
 
   const t = (key: string): string => {
     const langData = translations[language] as Record<string, string>;
@@ -1059,7 +1140,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, getLocalizedPath }}>
       {children}
     </LanguageContext.Provider>
   );
