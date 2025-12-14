@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist && cp _redirects dist/public/_redirects 2>/dev/null || true",
-    "build:pages": "vite build && cp _redirects dist/public/_redirects 2>/dev/null || true",
+    "build:pages": "vite build && cp _redirects dist/public/_redirects 2>/dev/null || true && echo 'Build complete. Output in dist/public/'",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
