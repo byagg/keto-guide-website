@@ -38,7 +38,7 @@ export default function Science() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
-          <p className="text-white text-lg font-medium max-w-2xl">Understanding the metabolic shift from glucose to fat metabolism and the signaling power of ketone bodies</p>
+          <p className="text-blue-100 text-lg font-medium max-w-2xl">Understanding the metabolic shift from glucose to fat metabolism and the signaling power of ketone bodies</p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export default function Science() {
           <p className="text-base font-sans text-muted-foreground text-center mb-6 max-w-3xl mx-auto leading-relaxed">
             The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs.
           </p>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white min-h-[400px] flex items-center justify-center">
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 min-h-[400px] flex items-center justify-center">
             <img 
               src="/images/ketogenesis.png" 
               alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs" 
@@ -172,7 +172,7 @@ export default function Science() {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                <p className="text-white text-xs font-medium">Visualizing Ketone Transport</p>
+                <p className="text-blue-100 text-xs font-medium">Visualizing Ketone Transport</p>
               </div>
             </div>
             <Card className="bg-muted/30 border-none">
@@ -192,8 +192,8 @@ export default function Science() {
 
         {/* Infographic Feature */}
         <div className="mt-6 md:mt-8 lg:mt-12 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
-          <h3 className="text-xl md:text-2xl font-bold font-serif mb-6 text-center text-foreground">{t("science.infographic.title")}</h3>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
+          <h3 className="text-xl md:text-2xl font-bold font-serif mb-6 text-center text-foreground">Why Keto Works for Weight Loss (Especially in Obesity)</h3>
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50">
             <img 
               src="/images/info-keto.png" 
               alt="Infographic: Why Keto Works for Weight Loss (Especially in Obesity)" 
@@ -214,7 +214,7 @@ export default function Science() {
             />
           </div>
           <p className="text-base font-sans text-muted-foreground text-center mt-6 max-w-3xl mx-auto leading-relaxed">
-            {t("science.infographic.desc")}
+            Four primary mechanisms through which ketogenic diets contribute to weight loss and metabolic improvements: appetite suppression, increased energy expenditure, insulin reduction, and fat mobilization.
           </p>
         </div>
       </section>

@@ -6,6 +6,17 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { nanoid } from "nanoid";
 import { parseStringPromise } from "xml2js";
 
+// RSS Feed Cache
+interface CachedFeed {
+  data: any;
+  timestamp: number;
+  url: string;
+}
+
+const RSS_CACHE = new Map<string, CachedFeed>();
+const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes
+const MAX_CACHE_SIZE = 100; // Maximum number of cached feeds
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -24,6 +35,25 @@ interface BlogPost {
 
 function getPostsFilePath(): string {
   return path.resolve(__dirname, "posts.json");
+}
+
+function getImagesFilePath(): string {
+  return path.resolve(__dirname, "images.json");
+}
+
+function readImages(): any[] {
+  const filePath = getImagesFilePath();
+  if (!existsSync(filePath)) {
+    return [];
+  }
+  try {
+    const data = readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(data);
+    return parsed.images || [];
+  } catch (error) {
+    console.error("Error reading images:", error);
+    return [];
+  }
 }
 
 function readPosts(): BlogPost[] {
@@ -47,6 +77,25 @@ function writePosts(posts: BlogPost[]): void {
   } catch (error) {
     console.error("Error writing posts:", error);
     throw error;
+  }
+}
+
+function getImagesFilePath(): string {
+  return path.resolve(__dirname, "images.json");
+}
+
+function readImages(): any[] {
+  const filePath = getImagesFilePath();
+  if (!existsSync(filePath)) {
+    return [];
+  }
+  try {
+    const data = readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(data);
+    return parsed.images || [];
+  } catch (error) {
+    console.error("Error reading images:", error);
+    return [];
   }
 }
 
@@ -186,6 +235,172 @@ async function startServer() {
     }
   });
 
+  // Images/Infographics API endpoint
+  app.get("/api/images", async (req, res) => {
+    try {
+      const { category, usedIn, id, source } = req.query;
+
+      // Try Cloudflare D1 first if configured
+      if (source === "cloudflare" || process.env.CLOUDFLARE_D1_DATABASE_ID) {
+        const { getImageMetadata, isCloudflareConfigured } = await import("./cloudflare.js");
+        if (isCloudflareConfigured()) {
+          const cloudflareImages = await getImageMetadata(
+            id as string | undefined,
+            category as string | undefined,
+            usedIn as string | undefined
+          );
+          if (cloudflareImages.length > 0 || source === "cloudflare") {
+            if (id && cloudflareImages.length > 0) {
+              return res.json(cloudflareImages[0]);
+            }
+            return res.json({ images: cloudflareImages, source: "cloudflare" });
+          }
+        }
+      }
+
+      // Fallback to local JSON
+      const images = readImages();
+      let filtered = images;
+
+      if (category) {
+        filtered = filtered.filter((img: any) => img.category === category);
+      }
+
+      if (usedIn) {
+        const usedInArray = Array.isArray(usedIn) ? usedIn : [usedIn];
+        filtered = filtered.filter((img: any) =>
+          usedInArray.some((ui: string) => img.usedIn?.includes(ui))
+        );
+      }
+
+      if (id) {
+        filtered = filtered.filter((img: any) => img.id === id);
+        if (filtered.length > 0) {
+          return res.json({ ...filtered[0], source: "local" });
+        }
+        return res.status(404).json({ error: "Image not found" });
+      }
+
+      res.json({ images: filtered, source: "local" });
+    } catch (error) {
+      console.error("Error fetching images:", error);
+      res.status(500).json({ error: "Failed to fetch images" });
+    }
+  });
+
+  // Upload image to Cloudflare R2
+  app.post("/api/images/upload", async (req, res) => {
+    try {
+      const { uploadToCloudflare } = await import("./cloudflare.js");
+      const { imageBuffer, filename, contentType, metadata } = req.body;
+
+      if (!imageBuffer || !filename) {
+        return res.status(400).json({ error: "imageBuffer and filename are required" });
+      }
+
+      // Convert base64 to buffer if needed
+      let buffer: Buffer;
+      if (typeof imageBuffer === "string") {
+        buffer = Buffer.from(imageBuffer, "base64");
+      } else {
+        buffer = Buffer.from(imageBuffer);
+      }
+
+      const cloudflareUrl = await uploadToCloudflare(buffer, filename, contentType);
+
+      if (cloudflareUrl && metadata) {
+        const { storeImageMetadata } = await import("./cloudflare.js");
+        await storeImageMetadata({
+          ...metadata,
+          cloudflareUrl,
+          uploadedAt: new Date().toISOString(),
+        });
+      }
+
+      res.json({
+        success: true,
+        url: cloudflareUrl,
+        message: cloudflareUrl ? "Image uploaded to Cloudflare R2" : "Cloudflare not configured, using local storage",
+      });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      res.status(500).json({ error: "Failed to upload image" });
+    }
+  });
+
+  // Helper function to clean old cache entries
+  function cleanCache() {
+    if (RSS_CACHE.size > MAX_CACHE_SIZE) {
+      const entries = Array.from(RSS_CACHE.entries());
+      entries.sort((a, b) => a[1].timestamp - b[1].timestamp);
+      const toRemove = entries.slice(0, RSS_CACHE.size - MAX_CACHE_SIZE);
+      toRemove.forEach(([key]) => RSS_CACHE.delete(key));
+    }
+  }
+
+  // Helper function to get cached feed or fetch new one
+  async function fetchRSSFeed(url: string, retries = 2): Promise<any> {
+    // Check cache first
+    const cached = RSS_CACHE.get(url);
+    if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+      return cached.data;
+    }
+
+    // Fetch with retry logic
+    let lastError: Error | null = null;
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+
+        const response = await fetch(url, {
+          signal: controller.signal,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (compatible; KetoGuide RSS Reader)',
+            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+          },
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const xmlData = await response.text();
+        
+        // Parse XML to JSON
+        const result = await parseStringPromise(xmlData, {
+          explicitArray: false,
+          mergeAttrs: true,
+          explicitCharkey: false,
+          trim: true,
+          normalize: true,
+          normalizeTags: false,
+        });
+
+        // Cache the result
+        cleanCache();
+        RSS_CACHE.set(url, {
+          data: result,
+          timestamp: Date.now(),
+          url: url,
+        });
+
+        return result;
+      } catch (error: any) {
+        lastError = error;
+        if (attempt < retries && error.name !== 'AbortError') {
+          // Wait before retry (exponential backoff)
+          await new Promise(resolve => setTimeout(resolve, 1000 * (attempt + 1)));
+          continue;
+        }
+      }
+    }
+
+    throw lastError || new Error('Failed to fetch RSS feed');
+  }
+
   // RSS Feed endpoint
   app.get("/api/rss", async (req, res) => {
     try {
@@ -195,21 +410,15 @@ async function startServer() {
         return res.status(400).json({ error: "RSS URL is required. Use ?url=YOUR_RSS_URL" });
       }
 
-      // Fetch RSS feed
-      const response = await fetch(url);
-      if (!response.ok) {
-        return res.status(response.status).json({ error: "Failed to fetch RSS feed" });
+      // Validate URL
+      try {
+        new URL(url);
+      } catch {
+        return res.status(400).json({ error: "Invalid URL format" });
       }
 
-      const xmlData = await response.text();
-
-      // Parse XML to JSON
-      const result = await parseStringPromise(xmlData, {
-        explicitArray: false,
-        mergeAttrs: true,
-        explicitCharkey: false,
-        trim: true,
-      });
+      // Fetch RSS feed (with caching and retry)
+      const result = await fetchRSSFeed(url);
 
       // Extract posts from RSS
       const rss = result.rss || result.feed;
@@ -256,15 +465,23 @@ async function startServer() {
                       item["dc:creator"]?.[0] ||
                       "Unknown";
         
-        // Extract image from various sources
-        const image = item["media:thumbnail"]?.[0]?.$.url || 
-                     item["media:content"]?.[0]?.$.url ||
-                     item["media:content"]?.[0]?.$?.url ||
-                     item.enclosure?.[0]?.$.url ||
-                     item.enclosure?.$.url ||
-                     item.image?.url ||
-                     item.image?.[0]?.url ||
-                     "";
+        // Extract image from various sources (more comprehensive)
+        let image = item["media:thumbnail"]?.[0]?.$.url || 
+                    item["media:content"]?.[0]?.$.url ||
+                    item["media:content"]?.[0]?.$?.url ||
+                    item.enclosure?.[0]?.$.url ||
+                    item.enclosure?.$.url ||
+                    item.image?.url ||
+                    item.image?.[0]?.url ||
+                    "";
+
+        // Try to extract image from description/content HTML
+        if (!image && description) {
+          const imgMatch = String(description).match(/<img[^>]+src=["']([^"']+)["']/i);
+          if (imgMatch && imgMatch[1]) {
+            image = imgMatch[1];
+          }
+        }
 
         // Extract tags/categories
         const categories = item.category || [];

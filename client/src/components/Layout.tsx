@@ -19,8 +19,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen font-sans text-foreground flex flex-col relative">
-      {/* Gradient Background - White to Light Blue to Dark Blue */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-white via-blue-100 via-blue-400 via-blue-600 to-blue-900" />
+      {/* Gradient Background - Light Blue to Medium Blue to Dark Blue */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-blue-100 via-blue-300 via-blue-500 via-blue-700 to-blue-900" />
       <div className="relative z-0 min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

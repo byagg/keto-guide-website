@@ -1,0 +1,93 @@
+{
+  "images": [
+    {
+      "id": "info-keto-weightloss",
+      "filename": "info-keto.png",
+      "title": "Why Keto Works for Weight Loss (Especially in Obesity)",
+      "description": "Infographic explaining four primary mechanisms through which ketogenic diets contribute to weight loss and metabolic improvements",
+      "alt": "Infographic: Why Keto Works for Weight Loss (Especially in Obesity)",
+      "category": "infographic",
+      "usedIn": ["science", "home"],
+      "path": "/images/info-keto.png",
+      "keywords": ["weight loss", "obesity", "keto", "metabolism", "insulin", "appetite", "energy expenditure"]
+    },
+    {
+      "id": "ketogenesis-pathway",
+      "filename": "ketogenesis.png",
+      "title": "Ketogenesis: The Body's Alternative Fuel Factory",
+      "description": "The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
+      "alt": "Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
+      "category": "infographic",
+      "usedIn": ["science"],
+      "path": "/images/ketogenesis.png",
+      "keywords": ["ketogenesis", "ketone bodies", "biochemistry", "liver", "fatty acids", "acetyl-CoA"]
+    },
+    {
+      "id": "insulin-ketones-brain",
+      "filename": "info-keto-brain.png",
+      "title": "The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain",
+      "description": "Infographic contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits",
+      "alt": "Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain",
+      "category": "infographic",
+      "usedIn": ["home"],
+      "path": "/images/info-keto-brain.png",
+      "keywords": ["insulin", "brain", "ketones", "Alzheimer's", "brain fog", "metabolic health"]
+    },
+    {
+      "id": "keto-hero",
+      "filename": "keto_hero_v2.png",
+      "title": "Keto Hero Image",
+      "description": "Hero image showing healthy ketogenic meal",
+      "alt": "Healthy ketogenic meal with avocado, salmon, and eggs",
+      "category": "hero",
+      "usedIn": ["home"],
+      "path": "/images/keto_hero_v2.png",
+      "keywords": ["hero", "keto meal", "food"]
+    },
+    {
+      "id": "keto-brain",
+      "filename": "keto_brain.png",
+      "title": "Brain Health Visualization",
+      "description": "Visualization of brain health benefits from ketogenic diet",
+      "alt": "Brain health visualization",
+      "category": "illustration",
+      "usedIn": ["home"],
+      "path": "/images/keto_brain.png",
+      "keywords": ["brain", "cognitive function", "neuroprotection"]
+    },
+    {
+      "id": "keto-molecular",
+      "filename": "keto_molecular.png",
+      "title": "Ketone Molecular Structure",
+      "description": "Molecular structure visualization of ketone bodies",
+      "alt": "Ketone molecular structure",
+      "category": "illustration",
+      "usedIn": ["home", "science"],
+      "path": "/images/keto_molecular.png",
+      "keywords": ["molecular", "ketone bodies", "chemistry"]
+    },
+    {
+      "id": "keto-weightloss",
+      "filename": "keto_weightloss.png",
+      "title": "Weight Loss Visualization",
+      "description": "Visualization of weight loss benefits from ketogenic diet",
+      "alt": "Weight loss visualization",
+      "category": "illustration",
+      "usedIn": ["home"],
+      "path": "/images/keto_weightloss.png",
+      "keywords": ["weight loss", "metabolism", "fat burning"]
+    },
+    {
+      "id": "keto-foods",
+      "filename": "keto_foods.png",
+      "title": "Keto Foods",
+      "description": "Visualization of keto-friendly foods",
+      "alt": "Keto-friendly foods",
+      "category": "illustration",
+      "usedIn": ["home"],
+      "path": "/images/keto_foods.png",
+      "keywords": ["foods", "keto diet", "nutrition"]
+    }
+  ]
+}
+

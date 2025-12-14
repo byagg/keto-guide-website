@@ -78,16 +78,23 @@ export default function Home() {
 
         {/* Infographic Feature */}
         <div className="mb-8 md:mb-12 lg:mb-16 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
-          <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
+          <h3 className="text-xl font-bold font-serif mb-6 text-center">The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain</h3>
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50">
             <img 
-              src="/images/info-keto.png" 
+              src="/images/info-keto-brain.png" 
               alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
               className="w-full h-auto"
+              onError={(e) => {
+                // Fallback to info-keto.png if new image doesn't exist
+                const target = e.target as HTMLImageElement;
+                if (target.src !== window.location.origin + "/images/info-keto.png") {
+                  target.src = "/images/info-keto.png";
+                }
+              }}
             />
           </div>
           <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
-            {t("science.infographic.desc")}
+            Contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits for brain health
           </p>
         </div>
 
@@ -365,8 +372,8 @@ export default function Home() {
           </div>
           
           {/* Abstract shapes */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
         </div>
       </section>
     </div>

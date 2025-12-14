@@ -8,7 +8,6 @@ import Benefits from "@/pages/Benefits";
 import Guide from "@/pages/Guide";
 import Recipes from "@/pages/Recipes";
 import Blog from "@/pages/Blog";
-import RSSFeed from "@/pages/RSSFeed";
 import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -45,9 +44,6 @@ function Router() {
         ))}
         {SUPPORTED_LANGUAGES.map((lang) => (
           <Route key={`${lang}-blog`} path={`/${lang}/blog`} component={Blog} />
-        ))}
-        {SUPPORTED_LANGUAGES.map((lang) => (
-          <Route key={`${lang}-rss`} path={`/${lang}/rss`} component={RSSFeed} />
         ))}
         
         <Route component={NotFound} />

@@ -38,7 +38,7 @@ export default function Guide() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
-          <p className="text-white text-lg font-medium max-w-2xl">A step-by-step guide to navigating the induction phase, managing side effects, and setting yourself up for long-term success</p>
+          <p className="text-blue-100 text-lg font-medium max-w-2xl">A step-by-step guide to navigating the induction phase, managing side effects, and setting yourself up for long-term success</p>
         </div>
       </div>
 
@@ -163,7 +163,7 @@ export default function Guide() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <p className="text-white text-sm font-medium">Preparing medically ensures a safe and successful keto journey</p>
+            <p className="text-blue-100 text-sm font-medium">Preparing medically ensures a safe and successful keto journey</p>
           </div>
         </div>
       </section>
@@ -268,7 +268,7 @@ export default function Guide() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <p className="text-white text-sm font-medium">The induction phase transitions your body to fat-burning mode</p>
+            <p className="text-blue-100 text-sm font-medium">The induction phase transitions your body to fat-burning mode</p>
           </div>
         </div>
       </section>
@@ -373,7 +373,7 @@ export default function Guide() {
         {/* When to Call Doctor */}
         <Card className="border-l-4 border-l-destructive">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-destructive">
+            <CardTitle className="flex items-center gap-2 text-[#8B0000]">
               <AlertTriangle className="h-5 w-5" />
               {t("guide.step3.doctor")}
             </CardTitle>
@@ -399,7 +399,7 @@ export default function Guide() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <p className="text-white text-sm font-medium">Proper hydration and electrolytes are key to managing side effects</p>
+            <p className="text-blue-100 text-sm font-medium">Proper hydration and electrolytes are key to managing side effects</p>
           </div>
         </div>
       </section>
@@ -543,7 +543,7 @@ export default function Guide() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <p className="text-white text-sm font-medium">Long-term success comes from sustainable habits and support</p>
+            <p className="text-blue-100 text-sm font-medium">Long-term success comes from sustainable habits and support</p>
           </div>
         </div>
       </section>
