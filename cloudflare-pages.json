@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm pages:build",
+  "buildCommand": "pnpm build:pages",
   "outputDirectory": "dist/public",
   "rootDirectory": ".",
   "framework": "vite"

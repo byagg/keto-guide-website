@@ -5,8 +5,8 @@
 Go to: **Cloudflare Dashboard > Pages > Your Project > Settings > Builds & deployments**
 
 ### Build Configuration:
-1. **Build command:** `pnpm pages:build`
-   - Alternative: `pnpm install && pnpm build:pages`
+1. **Build command:** `pnpm build:pages`
+   - This command builds the Vite app and copies _redirects file
    
 2. **Build output directory:** `dist/public`
    - ⚠️ MUST be exactly `dist/public` (not `dist` or `public`)
