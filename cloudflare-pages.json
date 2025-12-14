@@ -1,8 +1,7 @@
 {
-  "buildCommand": "pnpm install && pnpm build:pages",
+  "buildCommand": "pnpm pages:build",
   "outputDirectory": "dist/public",
   "rootDirectory": ".",
-  "framework": "vite",
-  "nodeVersion": "18"
+  "framework": "vite"
 }
 

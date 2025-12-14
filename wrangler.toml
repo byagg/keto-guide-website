@@ -1,11 +1,7 @@
 name = "keto-guide-website"
 compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist/public"
 
 [site]
 bucket = "./dist/public"
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
 
