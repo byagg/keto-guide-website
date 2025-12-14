@@ -81,16 +81,9 @@ export default function Home() {
           <h3 className="text-xl font-bold font-serif mb-6 text-center">The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain</h3>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50">
             <img 
-              src="/images/info-keto-brain.png" 
+              src="/images/info-keto.png" 
               alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
               className="w-full h-auto"
-              onError={(e) => {
-                // Fallback to info-keto.png if new image doesn't exist
-                const target = e.target as HTMLImageElement;
-                if (target.src !== window.location.origin + "/images/info-keto.png") {
-                  target.src = "/images/info-keto.png";
-                }
-              }}
             />
           </div>
           <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">

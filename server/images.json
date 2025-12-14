@@ -13,24 +13,24 @@
     },
     {
       "id": "ketogenesis-pathway",
-      "filename": "ketogenesis.png",
+      "filename": "keto_molecular.png",
       "title": "Ketogenesis: The Body's Alternative Fuel Factory",
       "description": "The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
       "alt": "Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
       "category": "infographic",
       "usedIn": ["science"],
-      "path": "/images/ketogenesis.png",
+      "path": "/images/keto_molecular.png",
       "keywords": ["ketogenesis", "ketone bodies", "biochemistry", "liver", "fatty acids", "acetyl-CoA"]
     },
     {
       "id": "insulin-ketones-brain",
-      "filename": "info-keto-brain.png",
+      "filename": "info-keto.png",
       "title": "The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain",
       "description": "Infographic contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits",
       "alt": "Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain",
       "category": "infographic",
       "usedIn": ["home"],
-      "path": "/images/info-keto-brain.png",
+      "path": "/images/info-keto.png",
       "keywords": ["insulin", "brain", "ketones", "Alzheimer's", "brain fog", "metabolic health"]
     },
     {

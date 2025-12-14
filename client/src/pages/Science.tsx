@@ -64,7 +64,7 @@ export default function Science() {
           </p>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 min-h-[400px] flex items-center justify-center">
             <img 
-              src="/images/ketogenesis.png" 
+              src="/images/keto_molecular.png" 
               alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs" 
               className="w-full h-auto object-contain max-w-full"
               loading="lazy"
