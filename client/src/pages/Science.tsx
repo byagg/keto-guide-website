@@ -62,11 +62,11 @@ export default function Science() {
           <p className="text-base font-sans text-muted-foreground text-center mb-6 max-w-3xl mx-auto leading-relaxed">
             The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs.
           </p>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 min-h-[400px] flex items-center justify-center">
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4 md:p-6">
             <img 
               src="/images/keto_molecular.png" 
               alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs" 
-              className="w-full h-auto object-contain max-w-full"
+              className="w-full h-auto object-contain max-w-full mx-auto"
               loading="lazy"
               onError={(e) => {
                 console.error("Failed to load ketogenesis image");
@@ -193,11 +193,11 @@ export default function Science() {
         {/* Infographic Feature */}
         <div className="mt-6 md:mt-8 lg:mt-12 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
           <h3 className="text-xl md:text-2xl font-bold font-serif mb-6 text-center text-foreground">Why Keto Works for Weight Loss (Especially in Obesity)</h3>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50">
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4 md:p-6">
             <img 
               src="/images/info-keto.png" 
               alt="Infographic: Why Keto Works for Weight Loss (Especially in Obesity)" 
-              className="w-full h-auto block"
+              className="w-full h-auto object-contain max-w-full mx-auto block"
               loading="lazy"
               onError={(e) => {
                 console.error("Failed to load infographic image");

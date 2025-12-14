@@ -79,11 +79,12 @@ export default function Home() {
         {/* Infographic Feature */}
         <div className="mb-8 md:mb-12 lg:mb-16 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
           <h3 className="text-xl font-bold font-serif mb-6 text-center">The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain</h3>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50">
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4">
             <img 
               src="/images/info-keto.png" 
               alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
-              className="w-full h-auto"
+              className="w-full h-auto object-contain max-w-full mx-auto"
+              loading="lazy"
             />
           </div>
           <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
