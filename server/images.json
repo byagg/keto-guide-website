@@ -4,34 +4,34 @@
       "id": "info-keto-weightloss",
       "filename": "info-keto.png",
       "title": "Why Keto Works for Weight Loss (Especially in Obesity)",
-      "description": "Infographic explaining four primary mechanisms through which ketogenic diets contribute to weight loss and metabolic improvements",
-      "alt": "Infographic: Why Keto Works for Weight Loss (Especially in Obesity)",
+      "description": "Infographic explaining four primary mechanisms through which ketogenic diets contribute to weight loss and metabolic improvements: 1) Appetite & Hunger Hormones (reduced ghrelin, increased PYY), 2) Energy Expenditure & Metabolic Efficiency (100-300 kcal/day increase), 3) Insulin, Fat Mobilization & Metabolic Flexibility (breaking the insulin-fat lock), 4) Weight Loss Magnitude & Body Composition (superior outcomes in RCTs)",
+      "alt": "Infographic: Why Keto Works for Weight Loss (Especially in Obesity) - Four mechanisms: appetite suppression, increased energy expenditure, insulin reduction, and fat mobilization",
       "category": "infographic",
-      "usedIn": ["science", "home"],
+      "usedIn": ["science"],
       "path": "/images/info-keto.png",
-      "keywords": ["weight loss", "obesity", "keto", "metabolism", "insulin", "appetite", "energy expenditure"]
+      "keywords": ["weight loss", "obesity", "keto", "metabolism", "insulin", "appetite", "energy expenditure", "ghrelin", "PYY", "HOMA-IR", "HbA1c"]
     },
     {
       "id": "ketogenesis-pathway",
       "filename": "keto_molecular.png",
       "title": "Ketogenesis: The Body's Alternative Fuel Factory",
-      "description": "The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
+      "description": "The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs. Shows ketone synthesis in the liver (fatty acid breakdown → acetyl-CoA → HMG-CoA → ketone bodies: acetoacetate, β-hydroxybutyrate, acetone) and ketone utilization in peripheral tissues (brain, heart, skeletal muscle) via TCA cycle to generate ATP",
       "alt": "Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs",
       "category": "infographic",
       "usedIn": ["science"],
       "path": "/images/keto_molecular.png",
-      "keywords": ["ketogenesis", "ketone bodies", "biochemistry", "liver", "fatty acids", "acetyl-CoA"]
+      "keywords": ["ketogenesis", "ketone bodies", "biochemistry", "liver", "fatty acids", "acetyl-CoA", "HMG-CoA", "acetoacetate", "beta-hydroxybutyrate", "TCA cycle", "ATP"]
     },
     {
       "id": "insulin-ketones-brain",
       "filename": "info-keto.png",
       "title": "The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain",
-      "description": "Infographic contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits",
-      "alt": "Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain",
+      "description": "Infographic contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits. Shows how high insulin creates debris in the brain linked to Alzheimer's, Parkinson's, and brain fog, while ketones provide cleaner, more efficient fuel with improved brain performance, reduced inflammation, mood stability, and preserved muscle mass",
+      "alt": "Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain - Contrasting glucose-burning state (high insulin, brain debris) with ketone-burning state (clean fuel, improved performance)",
       "category": "infographic",
       "usedIn": ["home"],
       "path": "/images/info-keto.png",
-      "keywords": ["insulin", "brain", "ketones", "Alzheimer's", "brain fog", "metabolic health"]
+      "keywords": ["insulin", "brain", "ketones", "Alzheimer's", "Parkinson's", "brain fog", "metabolic health", "glucose-burning", "ketone-burning", "inflammation", "mood stability"]
     },
     {
       "id": "keto-hero",
