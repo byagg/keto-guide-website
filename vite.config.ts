@@ -6,13 +6,29 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
+// Plugin to copy _redirects file to output directory
+const copyRedirectsPlugin = () => {
+  return {
+    name: "copy-redirects",
+    writeBundle() {
+      const redirectsPath = path.resolve(import.meta.dirname, "_redirects");
+      const outputPath = path.resolve(import.meta.dirname, "dist/public/_redirects");
+      if (fs.existsSync(redirectsPath)) {
+        fs.copyFileSync(redirectsPath, outputPath);
+        console.log("✓ Copied _redirects to dist/public/");
+      }
+    },
+  };
+};
+
 const plugins = [
   react({
     jsxRuntime: 'automatic',
   }),
   tailwindcss(),
   jsxLocPlugin(),
-  vitePluginManusRuntime()
+  vitePluginManusRuntime(),
+  copyRedirectsPlugin()
 ];
 
 export default defineConfig({
@@ -38,6 +54,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  publicDir: path.resolve(import.meta.dirname, "client/public"),
   server: {
     port: 3000,
     strictPort: false, // Will find next available port if 3000 is busy
