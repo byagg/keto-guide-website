@@ -31,9 +31,9 @@ export default function Science() {
 
       {/* Hero Image */}
       <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border/50">
-        <img 
-          src="https://images.pexels.com/photos/163117/calories-diet-fitness-health-163117.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-          alt="Molecular science and ketogenic diet research" 
+        <img
+          src="https://images.pexels.com/photos/163117/calories-diet-fitness-health-163117.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Molecular science and ketogenic diet research"
           className="w-full h-96 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -50,7 +50,7 @@ export default function Science() {
           </div>
           <h2 className="text-2xl font-bold font-serif text-foreground">{t("science.section1.title")}</h2>
         </div>
-        
+
         <div className="space-y-4">
           <p className="text-base font-sans text-muted-foreground leading-relaxed">{t("science.section1.p1")}</p>
           <p className="text-base font-sans text-muted-foreground leading-relaxed">{t("science.section1.p2")}</p>
@@ -63,9 +63,9 @@ export default function Science() {
             The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs.
           </p>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4 md:p-6">
-            <img 
-              src="/images/keto_molecular.png" 
-              alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs" 
+            <img
+              src="/images/keto_molecular.png"
+              alt="Ketogenesis: The Body's Alternative Fuel Factory - The biochemical pathway for producing ketone bodies from fatty acids during low glucose states, fueling vital organs"
               className="w-full h-auto object-contain max-w-full mx-auto"
               loading="lazy"
               onError={(e) => {
@@ -166,9 +166,9 @@ export default function Science() {
           </div>
           <div className="space-y-6">
             <div className="relative rounded-xl overflow-hidden shadow-lg border border-border/50">
-              <img 
-                src="/images/keto_molecular.png" 
-                alt="Ketone molecular structure" 
+              <img
+                src="/images/keto_molecular.png"
+                alt="Ketone molecular structure"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
@@ -194,9 +194,9 @@ export default function Science() {
         <div className="mt-6 md:mt-8 lg:mt-12 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
           <h3 className="text-xl md:text-2xl font-bold font-serif mb-6 text-center text-foreground">Why Keto Works for Weight Loss (Especially in Obesity)</h3>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4 md:p-6">
-            <img 
-              src="/images/info-keto.png" 
-              alt="Infographic: Why Keto Works for Weight Loss (Especially in Obesity)" 
+            <img
+              src="/images/info-keto.webp"
+              alt="Infographic: Why Keto Works for Weight Loss (Especially in Obesity)"
               className="w-full h-auto object-contain max-w-full mx-auto block"
               loading="lazy"
               onError={(e) => {
@@ -279,7 +279,7 @@ export default function Science() {
 
       {/* References */}
       <section className="bg-muted/30 p-4 md:p-6 lg:p-8 rounded-xl space-y-3 md:space-y-4 mt-6 md:mt-8 lg:mt-12">
-          <h3 className="text-xl md:text-2xl font-bold font-serif text-foreground">{t("science.references")}</h3>
+        <h3 className="text-xl md:text-2xl font-bold font-serif text-foreground">{t("science.references")}</h3>
         <ul className="space-y-2 text-base font-sans text-muted-foreground list-decimal list-inside leading-relaxed">
           <li>How the ketogenic diet works – down to the molecular level. (2022). <em>Online Library</em>.</li>
           <li>Ketone body metabolism. (2022). <em>PMC</em>.</li>

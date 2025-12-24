@@ -85,7 +85,7 @@ export default function Home() {
           <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
           <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
             <img
-              src="/images/info-keto.png"
+              src="/images/info-keto.webp"
               alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain"
               className="w-full h-auto"
             />
