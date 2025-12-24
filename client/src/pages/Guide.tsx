@@ -1,9 +1,11 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Calendar, Droplets, Pill, Utensils, AlertTriangle, Activity, Heart, Users, Target, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { KETO_PLAN_URL } from "@/const";
 
 export default function Guide() {
   const { t, getLocalizedPath } = useLanguage();
@@ -450,6 +452,11 @@ export default function Guide() {
               <li>{t("guide.step4.plan.3")}</li>
             </ul>
             <p className="text-sm text-muted-foreground italic mt-3">{t("guide.step4.plan.note")}</p>
+            <Button asChild className="mt-2">
+              <a href={KETO_PLAN_URL} download>
+                {t("guide.step4.plan.download")}
+              </a>
+            </Button>
           </CardContent>
         </Card>
 

@@ -21,6 +21,7 @@ const translations = {
     "nav.benefits": "Benefits & Risks",
     "nav.guide": "Start Guide",
     "nav.recipes": "Recipes",
+    "nav.plan": "7-Day Plan PDF",
     
     // Recipes Page
     "recipes.back": "Back to Home",
@@ -316,6 +317,7 @@ const translations = {
     "guide.step4.plan.2": "Keep go-to emergency options on hand (boiled eggs, canned fish, nuts, frozen low-carb veggies, ready-to-use salad greens)",
     "guide.step4.plan.3": "Think about social situations: what will you order at restaurants, what can you bring to gatherings, how will you respond to pressure to \"just have cake\"?",
     "guide.step4.plan.note": "A bit of planning reduces stress and makes it less likely you'll abandon keto at the first obstacle.",
+    "guide.step4.plan.download": "Download the 7-day keto plan (PDF)",
     "guide.step4.support": "Build a Support System",
     "guide.step4.support.desc": "You don't have to do this alone:",
     "guide.step4.support.1": "Involve a partner, friend, or family member if possible",
@@ -402,6 +404,7 @@ const translations = {
     "nav.benefits": "Beneficios y Riesgos",
     "nav.guide": "Guía de Inicio",
     "nav.recipes": "Recetas",
+    "nav.plan": "Plan de 7 Días (PDF)",
     
     // Recipes Page
     "recipes.back": "Volver al Inicio",
@@ -702,6 +705,7 @@ const translations = {
     "nav.benefits": "Výhody a riziká",
     "nav.guide": "Príručka",
     "nav.recipes": "Recepty",
+    "nav.plan": "7-dňový plán (PDF)",
     
     // Recipes Page
     "recipes.back": "Späť na domov",
@@ -788,6 +792,7 @@ const translations = {
     "nav.benefits": "益处与风险",
     "nav.guide": "入门指南",
     "nav.recipes": "食谱",
+    "nav.plan": "7天计划（PDF）",
     
     // Recipes Page
     "recipes.back": "返回首页",

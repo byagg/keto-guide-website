@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Activity, BookOpen, AlertTriangle, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { KETO_PLAN_URL } from "@/const";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -23,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Top Bar - High CTR Element */}
       <div className="bg-yellow-400 text-black text-center py-2 px-4 text-sm md:text-base font-bold relative z-50">
         <span className="mr-2">🚀 New to Keto?</span>
-        <a href="#" className="underline hover:text-gray-800">
+        <a href={KETO_PLAN_URL} download className="underline hover:text-gray-800">
           Get the FREE 7-Day Keto Blueprint Download Here »
         </a>
       </div>
@@ -58,6 +59,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 );
               })}
+              <a
+                href={KETO_PLAN_URL}
+                download
+                className="text-base font-bold hover:text-primary cursor-pointer uppercase tracking-tight text-gray-600"
+              >
+                {t("nav.plan")}
+              </a>
               <Link href={getLocalizedPath("/recipes")}>
                 <Button variant="default" size="lg" className="ml-4 font-bold bg-green-600 hover:bg-green-700 text-white border-none shadow-md">
                   {t("nav.recipes")}
@@ -95,6 +103,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 );
               })}
+              <a
+                href={KETO_PLAN_URL}
+                download
+                className="text-lg font-bold transition-colors hover:text-primary cursor-pointer block p-3 rounded-md hover:bg-gray-100 text-gray-600"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t("nav.plan")}
+              </a>
               <Link href={getLocalizedPath("/recipes")} className="w-full">
                 <Button className="w-full mt-2 font-bold text-lg py-6 bg-green-600 hover:bg-green-700 text-white">{t("nav.recipes")}</Button>
               </Link>

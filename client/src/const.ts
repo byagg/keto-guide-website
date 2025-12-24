@@ -1,5 +1,9 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
+export const KETO_PLAN_URL =
+  import.meta.env.VITE_KETO_PLAN_URL ||
+  "https://abb8e9ddc04f1a5f56a8085cb052058d.r2.cloudflarestorage.com/veinhealthhubweb-pdf/keto-pdf/7-day-keto-plan.pdf";
+
 // Generate login URL at runtime so redirect URI reflects the current origin.
 export const getLoginUrl = () => {
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
