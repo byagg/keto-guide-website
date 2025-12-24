@@ -32,7 +32,7 @@ export default function Science() {
       {/* Hero Image */}
       <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border/50">
         <img
-          src="https://images.pexels.com/photos/163117/calories-diet-fitness-health-163117.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          src="/images/keto_hero_v2.png"
           alt="Molecular science and ketogenic diet research"
           className="w-full h-96 object-cover"
         />
