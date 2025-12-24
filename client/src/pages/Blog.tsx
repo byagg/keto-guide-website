@@ -3,8 +3,9 @@ import { Link, useLocation } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag, ArrowRight } from "lucide-react";
 import axios from "axios";
+import Sidebar from "@/components/Sidebar";
 
 interface BlogPost {
   id: string;
@@ -90,80 +91,78 @@ export default function Blog() {
   }
 
   return (
-    <div className="container max-w-4xl py-12 md:py-24 space-y-12">
+    <div className="container py-12 md:py-16">
       {/* Header */}
-      <div className="space-y-6">
+      <div className="mb-12 text-center max-w-3xl mx-auto">
         <Link href={getLocalizedPath("/")}>
-          <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-4">
+          <div className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6">
             <ArrowLeft className="h-4 w-4" />
-            <span className="text-sm font-medium">Back to Home</span>
+            <span className="font-bold uppercase tracking-wide text-xs">Back to Home</span>
           </div>
         </Link>
-        <Badge variant="outline" className="px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
-          Blog
-        </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-foreground">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-4">
           KetoMindset Blog
         </h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-          Articles, tips, and insights about the ketogenic diet and lifestyle
+        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+          Actionable advice for your low-carb journey.
         </p>
       </div>
 
-      {/* Posts List */}
-      {posts.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">No posts yet. Check back soon!</p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {/* Main Content Column */}
+        <div className="lg:col-span-2 space-y-12">
+          {posts.length === 0 ? (
+            <div className="text-center py-12 border-2 border-dashed border-gray-200 rounded-lg">
+              <p className="text-muted-foreground font-medium">No posts available right now.</p>
+            </div>
+          ) : (
+            <div className="space-y-10">
+              {posts.map((post) => (
+                <Link key={post.id} href={getLocalizedPath(`/blog/${post.slug}`)}>
+                  <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-primary/10">
+                    {post.image && (
+                      <div className="h-64 sm:h-80 overflow-hidden relative">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <Badge className="bg-white/90 text-black hover:bg-white font-bold shadow-sm">
+                            <Calendar className="h-3 w-3 mr-1" /> {formatDate(post.publishedAt)}
+                          </Badge>
+                        </div>
+                      </div>
+                    )}
+                    <CardContent className="p-6 md:p-8">
+                      <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 group-hover:text-primary transition-colors mb-4 leading-tight">
+                        {post.title}
+                      </h2>
+                      <p className="text-lg text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <User className="h-4 w-4 text-gray-400" />
+                          <span className="text-sm font-bold text-gray-500 uppercase">{post.author}</span>
+                        </div>
+                        <span className="text-primary font-bold flex items-center group-hover:underline">
+                          Read Article <ArrowRight className="ml-1 h-4 w-4" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="grid gap-8">
-          {posts.map((post) => (
-            <Link key={post.id} href={getLocalizedPath(`/blog/${post.slug}`)}>
-              <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden">
-                {post.image && (
-                  <div className="h-64 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                )}
-                <CardContent className="p-8 space-y-4">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
-                      <span>{formatDate(post.publishedAt)}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
-                      <span>{post.author}</span>
-                    </div>
-                  </div>
-                  <h2 className="text-2xl font-bold font-serif text-foreground hover:text-primary transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
-                  {post.tags && post.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {post.tags.map((tag) => (
-                        <Badge
-                          key={tag}
-                          variant="outline"
-                          className="text-xs border-primary/20 text-primary bg-primary/5"
-                        >
-                          <Tag className="h-3 w-3 mr-1" />
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      )}
+
+        {/* Sidebar Column */}
+        <aside className="lg:col-span-1">
+          <Sidebar />
+        </aside>
+      </div>
     </div>
   );
 }

@@ -11,60 +11,64 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-muted/30 pt-8 pb-12 md:pt-16 md:pb-24 lg:pt-32 lg:pb-40">
+      {/* Hero Section - Direct Response Style */}
+      <section className="relative overflow-hidden bg-white pt-10 pb-16 md:pt-20 md:pb-24 lg:pt-32 lg:pb-32 border-b-4 border-yellow-400">
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 md:space-y-6 lg:space-y-8 animate-in slide-in-from-left-10 duration-700 fade-in">
-              <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide uppercase text-primary border border-primary/20 bg-primary/5">
-                {t("home.badge")}
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+
+            {/* Copy Side */}
+            <div className="space-y-6 md:space-y-8 animate-in slide-in-from-left-10 duration-700 fade-in order-2 lg:order-1">
+              <div className="inline-block px-4 py-2 text-sm md:text-base font-bold tracking-wide uppercase text-white bg-red-600 rounded-sm shadow-sm rotate-1">
+                ⚠️ WARNING: Don't Start Keto Until You Read This
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight text-foreground font-serif leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-[1.1]">
                 {t("home.title")}
+                <span className="block text-primary mt-2">Without The Struggle.</span>
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                {t("home.subtitle")}
+              <p className="text-lg md:text-xl text-gray-800 leading-relaxed max-w-xl font-medium">
+                {t("home.subtitle")} Stop guessing and start burning fat. Discover the simple, science-backed way to increased energy and mental clarity.
               </p>
-              <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl mt-3 md:mt-4">
-                {t("home.subtitle2")}
-              </p>
+
+              <div className="highlight-box bg-yellow-100 border-l-8 border-yellow-500 p-6 my-6 rounded-r-lg">
+                <p className="font-bold text-lg text-black">
+                  "I finally lost the weight and kept it off!"
+                </p>
+                <p className="text-sm text-gray-700 mt-2">- Verified Reader</p>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={getLocalizedPath("/guide")}>
-                  <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20">
-                    {t("home.cta.start")} <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button size="lg" className="text-lg md:text-xl font-bold px-10 py-8 h-auto shadow-xl shadow-red-200 bg-red-600 hover:bg-red-700 text-white uppercase tracking-wider w-full sm:w-auto border-2 border-red-700">
+                    {t("home.cta.start")} <ArrowRight className="ml-2 h-6 w-6" />
                   </Button>
                 </Link>
                 <Link href={getLocalizedPath("/science")}>
-                  <Button variant="outline" size="lg" className="text-base px-8 h-12 bg-background/50 backdrop-blur">
+                  <Button variant="outline" size="lg" className="text-lg md:text-xl font-bold px-10 py-8 h-auto bg-white border-2 border-black text-black hover:bg-gray-100 w-full sm:w-auto uppercase">
                     {t("home.cta.science")}
                   </Button>
                 </Link>
               </div>
+              <p className="text-sm text-gray-500 italic">
+                * 100% Free Guide. No Credit Card Required.
+              </p>
             </div>
-            <div className="relative animate-in slide-in-from-right-10 duration-700 fade-in delay-200">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 aspect-[4/3]">
-                <img 
-                  src="/images/keto_hero_v2.png" 
-                  alt="Healthy ketogenic meal with avocado, salmon, and eggs" 
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+
+            {/* Image Side */}
+            <div className="relative animate-in slide-in-from-right-10 duration-700 fade-in delay-200 order-1 lg:order-2">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img
+                  src="/images/keto_hero_v2.png"
+                  alt="Healthy ketogenic meal with avocado, salmon, and eggs"
+                  className="object-cover w-full h-full"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-              </div>
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-card p-6 shadow-xl border border-border max-w-xs hidden md:block animate-in fade-in zoom-in delay-500 duration-500">
-                <div className="mb-2">
-                  <span className="font-semibold text-sm text-foreground block mb-1">{t("home.card.metabolic")}</span>
+                {/* Badge Overlay */}
+                <div className="absolute top-4 right-4 bg-yellow-400 text-black font-extrabold px-4 py-2 rounded-full shadow-lg transform rotate-3 border-2 border-black">
+                  New for 2025!
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {t("home.card.metabolic.desc")}
-                </p>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 -z-10 w-1/3 h-1/3 bg-secondary/5 rounded-full blur-3xl" />
       </section>
 
       {/* Key Benefits Section */}
@@ -78,26 +82,25 @@ export default function Home() {
 
         {/* Infographic Feature */}
         <div className="mb-8 md:mb-12 lg:mb-16 bg-muted/30 rounded-2xl p-4 md:p-6 lg:p-8 border border-border/50">
-          <h3 className="text-xl font-bold font-serif mb-6 text-center">The Hidden Danger of High Insulin: How Ketones Clean Up Your Brain</h3>
-          <div className="relative rounded-xl overflow-hidden shadow-xl bg-blue-50 p-4">
-            <img 
-              src="/images/info-keto.png" 
-              alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain" 
-              className="w-full h-auto object-contain max-w-full mx-auto"
-              loading="lazy"
+          <h3 className="text-xl font-bold font-serif mb-6 text-center">{t("science.infographic.title")}</h3>
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-white">
+            <img
+              src="/images/info-keto.png"
+              alt="Infographic: The Hidden Danger of High Insulin vs How Ketones Clean Up Your Brain"
+              className="w-full h-auto"
             />
           </div>
           <p className="text-sm text-muted-foreground text-center mt-4 max-w-3xl mx-auto">
-            Contrasting the effects of glucose-burning state (high insulin) with ketone-burning state benefits for brain health
+            {t("science.infographic.desc")}
           </p>
         </div>
 
         <div className="space-y-6 md:space-y-8 lg:space-y-12">
           <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img 
-                src="/images/keto_brain.png" 
-                alt="Brain health visualization" 
+              <img
+                src="/images/keto_brain.png"
+                alt="Brain health visualization"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -116,7 +119,7 @@ export default function Home() {
                     <li>Crashes in focus and mood</li>
                   </ul>
                 </div>
-                
+
                 <div className="space-y-2">
                   <h4 className="font-bold text-foreground mb-2">Ketones as a stable fuel for the brain</h4>
                   <p>Nutritional ketosis offers the brain a second fuel line: <strong>ketone bodies</strong>. These are small, water-soluble molecules produced by the liver when carbohydrate intake is low and fat oxidation is high.</p>
@@ -152,9 +155,9 @@ export default function Home() {
 
           <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img 
-                src="/images/keto_molecular.png" 
-                alt="Molecular process of ketosis" 
+              <img
+                src="/images/keto_molecular.png"
+                alt="Molecular process of ketosis"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -213,9 +216,9 @@ export default function Home() {
 
           <Card className="border-border/50 shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img 
-                src="/images/keto_weightloss.png" 
-                alt="Healthy weight management" 
+              <img
+                src="/images/keto_weightloss.png"
+                alt="Healthy weight management"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -290,9 +293,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border/50">
-                <img 
-                  src="/images/keto_foods.png" 
-                  alt="Diverse ketogenic diet foods" 
+                <img
+                  src="/images/keto_foods.png"
+                  alt="Diverse ketogenic diet foods"
                   className="w-full h-auto"
                 />
               </div>
@@ -314,19 +317,19 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="order-1 lg:order-2 space-y-4 md:space-y-6 lg:space-y-8">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{t("home.how.title")}</h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 {t("home.how.desc")}
               </p>
-              
+
               <div className="space-y-4 md:space-y-6 lg:space-y-8">
                 <div className="border-l-2 border-primary pl-6">
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t("home.how.fuel")}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{t("home.how.fuel.desc")}</p>
                 </div>
-                
+
                 <div className="border-l-2 border-primary pl-6">
                   <h3 className="font-bold text-lg mb-2 text-foreground">{t("home.how.hormones")}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{t("home.how.hormones.desc")}</p>
@@ -364,7 +367,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          
+
           {/* Abstract shapes */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
