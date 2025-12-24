@@ -8,6 +8,7 @@ import Benefits from "@/pages/Benefits";
 import Guide from "@/pages/Guide";
 import Recipes from "@/pages/Recipes";
 import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -25,7 +26,7 @@ function Router() {
         <Route path="/">
           {() => <Redirect to={`/${DEFAULT_LANGUAGE}`} />}
         </Route>
-        
+
         {/* Language-specific routes */}
         {SUPPORTED_LANGUAGES.map((lang) => (
           <Route key={lang} path={`/${lang}`} component={Home} />
@@ -45,7 +46,10 @@ function Router() {
         {SUPPORTED_LANGUAGES.map((lang) => (
           <Route key={`${lang}-blog`} path={`/${lang}/blog`} component={Blog} />
         ))}
-        
+        {SUPPORTED_LANGUAGES.map((lang) => (
+          <Route key={`${lang}-blog-post`} path={`/${lang}/blog/:slug`} component={BlogPost} />
+        ))}
+
         <Route component={NotFound} />
       </Switch>
     </Layout>

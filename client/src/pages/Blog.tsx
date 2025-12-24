@@ -4,7 +4,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, User, Tag, ArrowRight } from "lucide-react";
-import axios from "axios";
 import Sidebar from "@/components/Sidebar";
 
 interface BlogPost {
@@ -33,29 +32,16 @@ export default function Blog() {
   const fetchPosts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("/api/posts", {
-        timeout: 3000,
-        validateStatus: () => true, // Don't throw on any status code
-      });
-      
-      // If API is not available (404, 400, etc.), use empty array
-      if (response.status >= 400 || !response.data) {
-        console.warn("API endpoint not available (expected on Cloudflare Pages static hosting)");
-        setPosts([]);
-        setError(null); // Don't show error for missing API
-      } else {
-        setPosts(Array.isArray(response.data) ? response.data : []);
-        setError(null);
+      const response = await fetch("/data/posts.json");
+      if (!response.ok) {
+        throw new Error("Failed to fetch posts");
       }
-    } catch (err: any) {
-      // Network errors or timeouts - API not available (expected on static hosting)
-      if (err.code === 'ECONNABORTED' || err.code === 'ERR_NETWORK' || err.message?.includes('timeout')) {
-        console.warn("API not available (expected on static hosting)");
-      } else {
-        console.warn("Error fetching posts:", err);
-      }
-      setPosts([]);
-      setError(null); // Don't show error for missing API
+      const data = await response.json();
+      setPosts(data);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching posts:", err);
+      setError("Failed to load posts");
     } finally {
       setLoading(false);
     }
