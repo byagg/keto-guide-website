@@ -9,6 +9,9 @@ import Guide from "@/pages/Guide";
 import Recipes from "@/pages/Recipes";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Disclaimer from "@/pages/Disclaimer";
 import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -48,6 +51,15 @@ function Router() {
         ))}
         {SUPPORTED_LANGUAGES.map((lang) => (
           <Route key={`${lang}-blog-post`} path={`/${lang}/blog/:slug`} component={BlogPost} />
+        ))}
+        {SUPPORTED_LANGUAGES.map((lang) => (
+          <Route key={`${lang}-privacy`} path={`/${lang}/privacy`} component={Privacy} />
+        ))}
+        {SUPPORTED_LANGUAGES.map((lang) => (
+          <Route key={`${lang}-terms`} path={`/${lang}/terms`} component={Terms} />
+        ))}
+        {SUPPORTED_LANGUAGES.map((lang) => (
+          <Route key={`${lang}-disclaimer`} path={`/${lang}/disclaimer`} component={Disclaimer} />
         ))}
 
         <Route component={NotFound} />

@@ -147,9 +147,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="font-bold mb-4 text-gray-900 uppercase tracking-wider">{t("footer.legal")}</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><span className="hover:text-primary cursor-pointer hover:underline">{t("footer.privacy")}</span></li>
-                <li><span className="hover:text-primary cursor-pointer hover:underline">{t("footer.terms")}</span></li>
-                <li><span className="hover:text-primary cursor-pointer hover:underline">{t("footer.disclaimer")}</span></li>
+                <li>
+                  <Link href={getLocalizedPath("/privacy")}>
+                    <span className="hover:text-primary cursor-pointer hover:underline">{t("footer.privacy")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getLocalizedPath("/terms")}>
+                    <span className="hover:text-primary cursor-pointer hover:underline">{t("footer.terms")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getLocalizedPath("/disclaimer")}>
+                    <span className="hover:text-primary cursor-pointer hover:underline">{t("footer.disclaimer")}</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
