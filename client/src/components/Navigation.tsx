@@ -7,6 +7,8 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleDownloadPDF = () => {
+    // TODO: Update this URL with publicly accessible PDF link
+    // Current R2 URL requires public access to be enabled in Cloudflare R2 settings
     window.open('https://pub-a7352293629341aba0c417463676ed63.r2.dev/keto-pdf/7-day-keto-plan.pdf', '_blank');
   };
 
