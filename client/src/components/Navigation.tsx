@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -64,10 +64,11 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button 
-              className="bg-accent hover:bg-accent/90 text-white font-semibold"
+              className="bg-accent hover:bg-accent/90 text-white font-semibold flex items-center gap-2"
               style={{ fontFamily: 'var(--font-heading)' }}
               onClick={handleDownloadPDF}
             >
+              <Download size={18} />
               Free 7-Day Plan
             </Button>
           </div>
@@ -135,12 +136,13 @@ export default function Navigation() {
                 </span>
               </Link>
               <Button 
-                className="bg-accent hover:bg-accent/90 text-white font-semibold mt-2"
+                className="bg-accent hover:bg-accent/90 text-white font-semibold mt-2 flex items-center gap-2 justify-center"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   handleDownloadPDF();
                 }}
               >
+                <Download size={18} />
                 Free 7-Day Plan
               </Button>
             </div>
