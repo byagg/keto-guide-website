@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   AlertCircle
 } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
 
 /**
@@ -23,6 +23,8 @@ import { useEffect } from "react";
  */
 
 export default function Home() {
+  const [, setLocation] = useLocation();
+  
   useEffect(() => {
     // Add structured data for SEO
     const script = document.createElement('script');
@@ -74,23 +76,21 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/start-guide">
-                  <Button 
-                    size="lg" 
-                    className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
-                  >
-                    Start Keto <ArrowRight className="ml-2" size={20} />
-                  </Button>
-                </Link>
-                <Link href="/science">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8"
-                  >
-                    Explore the Science
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
+                  onClick={() => setLocation('/start-guide')}
+                >
+                  Start Keto <ArrowRight className="ml-2" size={20} />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8"
+                  onClick={() => setLocation('/science')}
+                >
+                  Explore the Science
+                </Button>
               </div>
               
               <div className="flex items-center gap-6 text-sm text-white/80">
@@ -444,23 +444,21 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/start-guide">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
-              >
-                Beginner's Guide <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
-            <Link href="/benefits">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="font-semibold text-lg px-8"
-              >
-                Benefits & Risks
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
+              onClick={() => setLocation('/start-guide')}
+            >
+              Beginner's Guide <ArrowRight className="ml-2" size={20} />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="font-semibold text-lg px-8"
+              onClick={() => setLocation('/benefits')}
+            >
+              Benefits & Risks
+            </Button>
           </div>
         </div>
       </section>
