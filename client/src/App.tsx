@@ -12,6 +12,12 @@ import Benefits from "./pages/Benefits";
 import GetStarted from "./pages/GetStarted";
 import Recipes from "./pages/Recipes";
 import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import KetoCalculator from "./pages/KetoCalculator";
+import FoodList from "./pages/FoodList";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+import MedicalDisclaimer from "./pages/MedicalDisclaimer";
 
 function Router() {
   return (
@@ -22,6 +28,12 @@ function Router() {
       <Route path={"/start-guide"} component={GetStarted} />
       <Route path={"/recipes"} component={Recipes} />
       <Route path={"/blog"} component={Blog} />
+      <Route path={"/faq"} component={FAQ} />
+      <Route path={"/keto-calculator"} component={KetoCalculator} />
+      <Route path={"/food-list"} component={FoodList} />
+      <Route path={"/privacy-policy"} component={PrivacyPolicy} />
+      <Route path={"/terms-of-use"} component={TermsOfUse} />
+      <Route path={"/medical-disclaimer"} component={MedicalDisclaimer} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
