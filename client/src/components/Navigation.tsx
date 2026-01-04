@@ -1,10 +1,11 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
@@ -61,6 +62,7 @@ export default function Navigation() {
             <Button 
               className="bg-accent hover:bg-accent/90 text-white font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
+              onClick={() => setLocation('/start-guide')}
             >
               Free 7-Day Plan
             </Button>
@@ -130,7 +132,10 @@ export default function Navigation() {
               </Link>
               <Button 
                 className="bg-accent hover:bg-accent/90 text-white font-semibold mt-2"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setLocation('/start-guide');
+                }}
               >
                 Free 7-Day Plan
               </Button>
