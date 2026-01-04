@@ -12,47 +12,47 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
               <div className="w-10 h-10 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">K</span>
               </div>
               <span className="text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-display)' }}>
                 KetoMindset
               </span>
-            </a>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="/">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
-                Domov
-              </a>
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
+                Home
+              </span>
             </Link>
-            <Link href="/veda">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
-                Veda
-              </a>
+            <Link href="/science">
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
+                Science
+              </span>
             </Link>
-            <Link href="/benefity">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
-                Výhody & Riziká
-              </a>
+            <Link href="/benefits">
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
+                Benefits & Risks
+              </span>
             </Link>
             <Link href="/start-guide">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
-                Začať
-              </a>
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
+                Get Started
+              </span>
             </Link>
-            <Link href="/recepty">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
-                Recepty
-              </a>
+            <Link href="/recipes">
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
+                Recipes
+              </span>
             </Link>
             <Link href="/blog">
-              <a className="text-foreground hover:text-secondary transition-colors font-medium">
+              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
                 Blog
-              </a>
+              </span>
             </Link>
           </div>
 
@@ -62,7 +62,7 @@ export default function Navigation() {
               className="bg-accent hover:bg-accent/90 text-white font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              7-dňový plán zadarmo
+              Free 7-Day Plan
             </Button>
           </div>
 
@@ -81,58 +81,58 @@ export default function Navigation() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               <Link href="/">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Domov
-                </a>
+                  Home
+                </span>
               </Link>
-              <Link href="/veda">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+              <Link href="/science">
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Veda
-                </a>
+                  Science
+                </span>
               </Link>
-              <Link href="/benefity">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+              <Link href="/benefits">
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Výhody & Riziká
-                </a>
+                  Benefits & Risks
+                </span>
               </Link>
               <Link href="/start-guide">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Začať
-                </a>
+                  Get Started
+                </span>
               </Link>
-              <Link href="/recepty">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+              <Link href="/recipes">
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Recepty
-                </a>
+                  Recipes
+                </span>
               </Link>
               <Link href="/blog">
-                <a 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2"
+                <span 
+                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Blog
-                </a>
+                </span>
               </Link>
               <Button 
                 className="bg-accent hover:bg-accent/90 text-white font-semibold mt-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                7-dňový plán zadarmo
+                Free 7-Day Plan
               </Button>
             </div>
           </div>

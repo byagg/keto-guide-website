@@ -32,7 +32,7 @@ export default function Home() {
       "@type": "WebSite",
       "name": "KetoMindset",
       "url": "https://ketomindset.org",
-      "description": "Komplexný, vedecky podložený zdroj pre pochopenie a implementáciu ketogénnej diéty",
+      "description": "A comprehensive, science-based resource for understanding and implementing the ketogenic diet",
       "publisher": {
         "@type": "Organization",
         "name": "KetoMindset"
@@ -62,15 +62,15 @@ export default function Home() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-accent/30">
                 <AlertCircle size={16} />
-                <span className="text-sm font-semibold">UPOZORNENIE: Prečítajte si pred začatím</span>
+                <span className="text-sm font-semibold">IMPORTANT: Read Before Starting</span>
               </div>
               
               <h1 className="text-white mb-6">
-                Kompletný sprievodca ketogénnou diétou
+                Complete Guide to the Ketogenic Diet
               </h1>
               
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Vedecky podložená cesta k transformácii metabolizmu — od molekulárnych mechanizmov v bunkách až po praktické využitie pri chudnutí, cukrovke 2. typu a metabolickom syndróme.
+                A science-based journey to metabolic transformation — from molecular mechanisms in cells to practical applications for weight loss, type 2 diabetes, and metabolic syndrome.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -79,16 +79,16 @@ export default function Home() {
                     size="lg" 
                     className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
                   >
-                    Začať s keto <ArrowRight className="ml-2" size={20} />
+                    Start Keto <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
-                <Link href="/veda">
+                <Link href="/science">
                   <Button 
                     size="lg" 
                     variant="outline" 
                     className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8"
                   >
-                    Preskúmať vedu
+                    Explore the Science
                   </Button>
                 </Link>
               </div>
@@ -96,15 +96,15 @@ export default function Home() {
               <div className="flex items-center gap-6 text-sm text-white/80">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} />
-                  <span>100% zadarmo</span>
+                  <span>100% Free</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} />
-                  <span>Bez kreditnej karty</span>
+                  <span>No Credit Card</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={16} />
-                  <span>Vedecky overené</span>
+                  <span>Science-Backed</span>
                 </div>
               </div>
             </div>
@@ -114,13 +114,13 @@ export default function Home() {
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                 <img 
                   src="/images/keto-salmon-avocado.jpg" 
-                  alt="Ketogénne jedlo - losos s avokádom"
+                  alt="Ketogenic food - salmon with avocado"
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent text-white px-6 py-4 rounded-xl shadow-lg">
                 <div className="text-3xl font-bold">2025</div>
-                <div className="text-sm">Nové poznatky</div>
+                <div className="text-sm">Latest Research</div>
               </div>
             </div>
           </div>
@@ -133,17 +133,17 @@ export default function Home() {
           <div className="flex flex-wrap justify-center items-center gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-secondary">10,000+</div>
-              <div className="text-sm text-muted-foreground">Spokojných čitateľov</div>
+              <div className="text-sm text-muted-foreground">Happy Readers</div>
             </div>
             <div className="hidden md:block w-px h-12 bg-border"></div>
             <div>
               <div className="text-3xl font-bold text-secondary">50+</div>
-              <div className="text-sm text-muted-foreground">Vedeckých štúdií</div>
+              <div className="text-sm text-muted-foreground">Scientific Studies</div>
             </div>
             <div className="hidden md:block w-px h-12 bg-border"></div>
             <div>
               <div className="text-3xl font-bold text-secondary">100%</div>
-              <div className="text-sm text-muted-foreground">Založené na dôkazoch</div>
+              <div className="text-sm text-muted-foreground">Evidence-Based</div>
             </div>
           </div>
         </div>
@@ -152,31 +152,31 @@ export default function Home() {
       {/* Main Content - What is Keto */}
       <section className="container py-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="section-header">Čo je ketogénna diéta?</h2>
+          <h2 className="section-header">What is the Ketogenic Diet?</h2>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              Ketogénna diéta je stravovací režim charakterizovaný <span className="data-highlight">veľmi nízkym príjmom sacharidov (5-10% kalórií)</span>, vysokým príjmom tukov (70-80% kalórií) a stredným príjmom bielkovín (15-25% kalórií). Tento makronutrientový pomer vedie k metabolickému stavu nazývanému <strong>ketóza</strong>, v ktorom telo primárne využíva ketóny namiesto glukózy ako zdroj energie.
+              The ketogenic diet is a dietary regimen characterized by <span className="data-highlight">very low carbohydrate intake (5-10% of calories)</span>, high fat intake (70-80% of calories), and moderate protein intake (15-25% of calories). This macronutrient ratio leads to a metabolic state called <strong>ketosis</strong>, in which the body primarily uses ketones instead of glucose as an energy source.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <Card className="editorial-card">
               <div className="text-4xl font-bold text-secondary mb-3">5-10%</div>
-              <h4 className="font-bold mb-2">Sacharidy</h4>
-              <p className="text-sm text-muted-foreground">Typicky 20-50g denne pre dosiahnutie ketózy</p>
+              <h4 className="font-bold mb-2">Carbohydrates</h4>
+              <p className="text-sm text-muted-foreground">Typically 20-50g daily to achieve ketosis</p>
             </Card>
             
             <Card className="editorial-card">
               <div className="text-4xl font-bold text-secondary mb-3">70-80%</div>
-              <h4 className="font-bold mb-2">Tuky</h4>
-              <p className="text-sm text-muted-foreground">Zdravé tuky ako primárny zdroj energie</p>
+              <h4 className="font-bold mb-2">Fats</h4>
+              <p className="text-sm text-muted-foreground">Healthy fats as the primary energy source</p>
             </Card>
             
             <Card className="editorial-card">
               <div className="text-4xl font-bold text-secondary mb-3">15-25%</div>
-              <h4 className="font-bold mb-2">Bielkoviny</h4>
-              <p className="text-sm text-muted-foreground">Dostatočné pre udržanie svalovej hmoty</p>
+              <h4 className="font-bold mb-2">Protein</h4>
+              <p className="text-sm text-muted-foreground">Sufficient to maintain muscle mass</p>
             </Card>
           </div>
         </div>
@@ -186,9 +186,9 @@ export default function Home() {
       <section className="bg-muted py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Viac ako len chudnutie</h2>
+            <h2 className="mb-4">More Than Just Weight Loss</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Moderný výskum odhaľuje, že ketóny sú silné signálne molekuly, ktoré regulujú kritické bunkové procesy
+              Modern research reveals that ketones are powerful signaling molecules that regulate critical cellular processes
             </p>
           </div>
 
@@ -198,23 +198,23 @@ export default function Home() {
               <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
                 <Brain className="text-secondary" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Kognitívne funkcie</h3>
-              <h4 className="text-lg font-semibold mb-3 text-secondary">Neuroprotekcia</h4>
+              <h3 className="text-xl mb-3">Cognitive Function</h3>
+              <h4 className="text-lg font-semibold mb-3 text-secondary">Neuroprotection</h4>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Ketóny poskytujú mozgu stabilný zdroj energie, čo vedie k zlepšenej mentálnej jasnosti, koncentrácii a potenciálne neuroprotektívnym účinkom.
+                Ketones provide the brain with a stable energy source, leading to improved mental clarity, focus, and potentially neuroprotective effects.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-secondary mt-1 flex-shrink-0" />
-                  <span>Stabilná mentálna energia</span>
+                  <span>Stable mental energy</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-secondary mt-1 flex-shrink-0" />
-                  <span>Menej "mozgovej hmly"</span>
+                  <span>Less "brain fog"</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-secondary mt-1 flex-shrink-0" />
-                  <span>Lepšia koncentrácia</span>
+                  <span>Better concentration</span>
                 </li>
               </ul>
             </Card>
@@ -224,23 +224,23 @@ export default function Home() {
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                 <Shield className="text-accent" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Metabolické zdravie</h3>
-              <h4 className="text-lg font-semibold mb-3 text-accent">Kontrola zápalu</h4>
+              <h3 className="text-xl mb-3">Metabolic Health</h3>
+              <h4 className="text-lg font-semibold mb-3 text-accent">Inflammation Control</h4>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Beta-hydroxybutyrát priamo inhibuje NLRP3 inflammazóm, čím znižuje chronický zápal spojený s metabolickými ochoreniami.
+                Beta-hydroxybutyrate directly inhibits the NLRP3 inflammasome, reducing chronic inflammation associated with metabolic diseases.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-accent mt-1 flex-shrink-0" />
-                  <span>Zníženie systémového zápalu</span>
+                  <span>Reduced systemic inflammation</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-accent mt-1 flex-shrink-0" />
-                  <span>Zlepšená inzulínová senzitivita</span>
+                  <span>Improved insulin sensitivity</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-accent mt-1 flex-shrink-0" />
-                  <span>Nižšia hladina cukru v krvi</span>
+                  <span>Lower blood sugar levels</span>
                 </li>
               </ul>
             </Card>
@@ -250,23 +250,23 @@ export default function Home() {
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                 <TrendingDown className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Kardiovaskulárne zdravie</h3>
-              <h4 className="text-lg font-semibold mb-3 text-primary">Riadenie hmotnosti</h4>
+              <h3 className="text-xl mb-3">Cardiovascular Health</h3>
+              <h4 className="text-lg font-semibold mb-3 text-primary">Weight Management</h4>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Ketogénna diéta podporuje chudnutie prostredníctvom potlačenia hladu, zvýšeného výdaja energie a zníženia inzulínu.
+                The ketogenic diet promotes weight loss through appetite suppression, increased energy expenditure, and reduced insulin levels.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-primary mt-1 flex-shrink-0" />
-                  <span>Efektívne spaľovanie tukov</span>
+                  <span>Efficient fat burning</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-primary mt-1 flex-shrink-0" />
-                  <span>Znížené triglycerídy</span>
+                  <span>Reduced triglycerides</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={16} className="text-primary mt-1 flex-shrink-0" />
-                  <span>Zvýšené HDL cholesterol</span>
+                  <span>Increased HDL cholesterol</span>
                 </li>
               </ul>
             </Card>
@@ -276,9 +276,9 @@ export default function Home() {
               <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
                 <Zap className="text-secondary" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Stabilná energia</h3>
+              <h3 className="text-xl mb-3">Stable Energy</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Ketóny poskytujú konštantný prísun energie bez výkyvov hladiny cukru v krvi, čo eliminuje energetické "krachy" počas dňa.
+                Ketones provide a constant supply of energy without blood sugar fluctuations, eliminating energy "crashes" throughout the day.
               </p>
             </Card>
 
@@ -287,9 +287,9 @@ export default function Home() {
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                 <Heart className="text-accent" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Diabetes 2. typu</h3>
+              <h3 className="text-xl mb-3">Type 2 Diabetes</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Výrazné zlepšenie kontroly hladiny cukru v krvi, zníženie HbA1c a často umožňuje zníženie diabetických liekov.
+                Significant improvement in blood sugar control, reduced HbA1c, and often allows for reduction of diabetes medications.
               </p>
             </Card>
 
@@ -298,9 +298,9 @@ export default function Home() {
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                 <Activity className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl mb-3">Stukovatená pečeň</h3>
+              <h3 className="text-xl mb-3">Fatty Liver Disease</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Štúdie ukazujú zníženie obsahu tuku v pečeni o 20-50% v priebehu 6-12 mesiacov na ketogénnej diéte.
+                Studies show a 20-50% reduction in liver fat content over 6-12 months on a ketogenic diet.
               </p>
             </Card>
           </div>
@@ -310,15 +310,15 @@ export default function Home() {
       {/* How It Works */}
       <section className="container py-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="section-header">Ako funguje ketogénna diéta</h2>
+          <h2 className="section-header">How the Ketogenic Diet Works</h2>
           
           <div className="space-y-8 mt-12">
             <div className="numbered-item">
               <div className="numbered-item-number">1</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Zníženie inzulínu</h3>
+                <h3 className="text-xl font-bold mb-2">Insulin Reduction</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Obmedzenie sacharidov výrazne znižuje hladinu inzulínu v krvi. Nízky inzulín je signál pre telo, aby začalo uvoľňovať tuk z tukových buniek (lipolýza).
+                  Restricting carbohydrates significantly lowers insulin levels in the blood. Low insulin signals the body to start releasing fat from fat cells (lipolysis).
                 </p>
               </div>
             </div>
@@ -326,9 +326,9 @@ export default function Home() {
             <div className="numbered-item">
               <div className="numbered-item-number">2</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Rozklad tukov (Lipolýza)</h3>
+                <h3 className="text-xl font-bold mb-2">Fat Breakdown (Lipolysis)</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mastné kyseliny sa uvoľňujú z adipocytov a transportujú sa do pečene, kde sa konvertujú na ketónové telesá prostredníctvom procesu nazývaného ketogenéza.
+                  Fatty acids are released from adipocytes and transported to the liver, where they are converted into ketone bodies through a process called ketogenesis.
                 </p>
               </div>
             </div>
@@ -336,9 +336,9 @@ export default function Home() {
             <div className="numbered-item">
               <div className="numbered-item-number">3</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Produkcia ketónov (Ketogenéza)</h3>
+                <h3 className="text-xl font-bold mb-2">Ketone Production (Ketogenesis)</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Pečeň produkuje tri typy ketónových telies: <span className="data-highlight">beta-hydroxybutyrát (BHB)</span>, acetoacetat a acetón. BHB je primárny ketón, ktorý slúži ako palivo pre mozog, srdce a svaly.
+                  The liver produces three types of ketone bodies: <span className="data-highlight">beta-hydroxybutyrate (BHB)</span>, acetoacetate, and acetone. BHB is the primary ketone that serves as fuel for the brain, heart, and muscles.
                 </p>
               </div>
             </div>
@@ -346,9 +346,9 @@ export default function Home() {
             <div className="numbered-item">
               <div className="numbered-item-number">4</div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Metabolická adaptácia</h3>
+                <h3 className="text-xl font-bold mb-2">Metabolic Adaptation</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Po 2-4 týždňoch sa telo plne adaptuje na využívanie ketónov a tukov ako primárneho zdroja energie. Tento stav sa nazýva <strong>keto-adaptácia</strong> alebo <strong>metabolická flexibilita</strong>.
+                  After 2-4 weeks, the body fully adapts to using ketones and fats as the primary energy source. This state is called <strong>keto-adaptation</strong> or <strong>metabolic flexibility</strong>.
                 </p>
               </div>
             </div>
@@ -356,35 +356,35 @@ export default function Home() {
 
           {/* Visual Timeline */}
           <div className="mt-16 bg-gradient-to-r from-secondary/10 via-accent/10 to-primary/10 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-8 text-center">Timeline adaptácie</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center">Adaptation Timeline</h3>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
                   1-2
                 </div>
-                <div className="font-semibold mb-2">Deň 1-2</div>
-                <p className="text-sm text-muted-foreground">Vyčerpanie glykogénu</p>
+                <div className="font-semibold mb-2">Day 1-2</div>
+                <p className="text-sm text-muted-foreground">Glycogen depletion</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
                   3-4
                 </div>
-                <div className="font-semibold mb-2">Deň 3-4</div>
-                <p className="text-sm text-muted-foreground">Začiatok ketózy</p>
+                <div className="font-semibold mb-2">Day 3-4</div>
+                <p className="text-sm text-muted-foreground">Ketosis begins</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
                   1
                 </div>
-                <div className="font-semibold mb-2">Týždeň 1</div>
-                <p className="text-sm text-muted-foreground">Adaptácia, keto chrípka</p>
+                <div className="font-semibold mb-2">Week 1</div>
+                <p className="text-sm text-muted-foreground">Adaptation, keto flu</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
                   2-4
                 </div>
-                <div className="font-semibold mb-2">Týždeň 2-4</div>
-                <p className="text-sm text-muted-foreground">Plná keto-adaptácia</p>
+                <div className="font-semibold mb-2">Week 2-4</div>
+                <p className="text-sm text-muted-foreground">Full keto-adaptation</p>
               </div>
             </div>
           </div>
@@ -394,41 +394,41 @@ export default function Home() {
       {/* FAQ Section with Schema */}
       <section className="bg-muted py-20">
         <div className="container max-w-4xl">
-          <h2 className="section-header mb-12">Často kladené otázky</h2>
+          <h2 className="section-header mb-12">Frequently Asked Questions</h2>
           
           <div className="space-y-6">
             <Card className="editorial-card">
-              <h3 className="text-lg font-bold mb-3 text-secondary">Čo je ketogénna diéta?</h3>
+              <h3 className="text-lg font-bold mb-3 text-secondary">What is the ketogenic diet?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Ketogénna diéta (keto) je stravovací režim s veľmi nízkym obsahom sacharidov, stredným obsahom bielkovín a vysokým obsahom tukov. Cieľom je dostať telo do metabolického stavu nazývaného ketóza, v ktorom telo spaľuje tuky ako primárny zdroj energie namiesto sacharidov.
+                The ketogenic diet (keto) is a dietary regimen with very low carbohydrate content, moderate protein, and high fat content. The goal is to get the body into a metabolic state called ketosis, where the body burns fat as its primary energy source instead of carbohydrates.
               </p>
             </Card>
 
             <Card className="editorial-card">
-              <h3 className="text-lg font-bold mb-3 text-secondary">Ako funguje ketóza?</h3>
+              <h3 className="text-lg font-bold mb-3 text-secondary">How does ketosis work?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Ketóza nastáva, keď obmedzíte príjem sacharidov na približne 20-50 gramov denne. Pečeň začne z mastných kyselín produkovať molekuly nazývané ketóny (napr. beta-hydroxybutyrát alebo BHB), ktoré slúžia ako alternatívny zdroj paliva pre mozog, svaly a ďalšie orgány.
+                Ketosis occurs when you restrict carbohydrate intake to approximately 20-50 grams per day. The liver begins producing molecules called ketones (e.g., beta-hydroxybutyrate or BHB) from fatty acids, which serve as an alternative fuel source for the brain, muscles, and other organs.
               </p>
             </Card>
 
             <Card className="editorial-card">
-              <h3 className="text-lg font-bold mb-3 text-secondary">Je ketogénna diéta bezpečná?</h3>
+              <h3 className="text-lg font-bold mb-3 text-secondary">Is the ketogenic diet safe?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Pre väčšinu zdravých ľudí je ketogénna diéta považovaná za bezpečnú, ak sa dodržiava správne a ideálne pod dohľadom odborníka. Nie je vhodná pre ľudí s určitými zdravotnými problémami (napr. ochorenia pankreasu, pečene, obličiek). Pred začatím akejkoľvek diéty je dôležité konzultovať to so svojím lekárom.
+                For most healthy people, the ketogenic diet is considered safe when followed correctly and ideally under professional supervision. It is not suitable for people with certain health conditions (e.g., pancreatic, liver, or kidney diseases). It's important to consult with your doctor before starting any diet.
               </p>
             </Card>
 
             <Card className="editorial-card">
-              <h3 className="text-lg font-bold mb-3 text-secondary">Aké sú hlavné výhody keto diéty?</h3>
+              <h3 className="text-lg font-bold mb-3 text-secondary">What are the main benefits of the keto diet?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Medzi hlavné výhody patrí efektívne chudnutie, zlepšená kontrola hladiny cukru v krvi, zvýšená mentálna jasnosť a energia, zníženie zápalu v tele a potenciálne zlepšenie niektorých neurologických ochorení.
+                Main benefits include effective weight loss, improved blood sugar control, increased mental clarity and energy, reduced inflammation in the body, and potential improvement of certain neurological conditions.
               </p>
             </Card>
 
             <Card className="editorial-card">
-              <h3 className="text-lg font-bold mb-3 text-secondary">Čo môžem jesť na keto diéte?</h3>
+              <h3 className="text-lg font-bold mb-3 text-secondary">What can I eat on the keto diet?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Zamerajte sa na zdravé tuky (avokádo, olivový olej, orechy), mäso, ryby, vajcia a nízkosacharidovú zeleninu (listová zelenina, brokolica, karfiol). Vyhnite sa cukru, obilninám, strukovinám, väčšine ovocia a škrobovej zelenine.
+                Focus on healthy fats (avocado, olive oil, nuts), meat, fish, eggs, and low-carb vegetables (leafy greens, broccoli, cauliflower). Avoid sugar, grains, legumes, most fruits, and starchy vegetables.
               </p>
             </Card>
           </div>
@@ -438,9 +438,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="container py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="mb-6">Pripravení transformovať svoje zdravie?</h2>
+          <h2 className="mb-6">Ready to Transform Your Health?</h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Získajte kompletný sprievodca ako bezpečne začať s keto, zvládnuť vedľajšie účinky a dosiahnuť dlhodobý úspech.
+            Get the complete guide on how to safely start keto, manage side effects, and achieve long-term success.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -449,16 +449,16 @@ export default function Home() {
                 size="lg" 
                 className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-8"
               >
-                Sprievodca pre začiatočníkov <ArrowRight className="ml-2" size={20} />
+                Beginner's Guide <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-            <Link href="/benefity">
+            <Link href="/benefits">
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="font-semibold text-lg px-8"
               >
-                Výhody & Riziká
+                Benefits & Risks
               </Button>
             </Link>
           </div>
