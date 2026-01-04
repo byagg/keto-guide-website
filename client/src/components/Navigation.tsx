@@ -1,11 +1,14 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [, setLocation] = useLocation();
+
+  const handleDownloadPDF = () => {
+    window.open('https://pub-a7352293629341aba0c417463676ed63.r2.dev/keto-pdf/7-day-keto-plan.pdf', '_blank');
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
@@ -62,7 +65,7 @@ export default function Navigation() {
             <Button 
               className="bg-accent hover:bg-accent/90 text-white font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
-              onClick={() => setLocation('/start-guide')}
+              onClick={handleDownloadPDF}
             >
               Free 7-Day Plan
             </Button>
@@ -134,7 +137,7 @@ export default function Navigation() {
                 className="bg-accent hover:bg-accent/90 text-white font-semibold mt-2"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  setLocation('/start-guide');
+                  handleDownloadPDF();
                 }}
               >
                 Free 7-Day Plan
