@@ -80,7 +80,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/calculator">
+                <Link href="/keto-calculator">
                   <span className="text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer">
                     Keto Calculator
                   </span>
