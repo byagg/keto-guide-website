@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ShoppingCart, Utensils, Calculator } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 /**
  * Design Philosophy: Scientific Editorial
@@ -8,6 +10,51 @@ import { CheckCircle2, ShoppingCart, Utensils, Calculator } from "lucide-react";
  */
 
 export default function GetStarted() {
+  useSEO({
+    title: "How to Start the Ketogenic Diet: Complete Beginner's Guide",
+    description: "A practical, step-by-step guide to transitioning into ketosis safely and successfully. Learn how to calculate macros, plan meals, and avoid common mistakes.",
+    url: "/start-guide",
+    type: "article",
+  });
+
+  useEffect(() => {
+    // Add HowTo Schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Start the Ketogenic Diet",
+      "description": "A practical, step-by-step guide to transitioning into ketosis safely and successfully",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Calculate Your Macros",
+          "text": "Start by determining your personalized macronutrient targets based on your age, weight, height, activity level, and goals."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Plan Your Meals",
+          "text": "Create a meal plan focusing on healthy fats, moderate protein, and low-carb vegetables."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Stock Your Kitchen",
+          "text": "Purchase keto-friendly foods and remove high-carb items from your pantry."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Start Your Keto Journey",
+          "text": "Begin with a 7-day plan, track your macros, and monitor your body's adaptation to ketosis."
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

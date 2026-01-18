@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Brain, Zap, Activity, TrendingUp, Atom, Microscope } from "lucide-react";
 import { useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 /**
  * Design Philosophy: Scientific Editorial
@@ -8,6 +9,13 @@ import { useEffect } from "react";
  */
 
 export default function Science() {
+  useSEO({
+    title: "The Science Behind Ketosis: Molecular Mechanisms",
+    description: "Comprehensive scientific explanation of how ketosis works at the cellular level. Learn about insulin suppression, lipolysis, ketogenesis, and ketone utilization.",
+    url: "/science",
+    type: "article",
+  });
+
   useEffect(() => {
     // Add structured data for SEO
     const script = document.createElement('script');
@@ -20,7 +28,13 @@ export default function Science() {
       "author": {
         "@type": "Organization",
         "name": "KetoMindset"
-      }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KetoMindset"
+      },
+      "datePublished": "2025-01-27",
+      "dateModified": "2025-01-27"
     });
     document.head.appendChild(script);
 

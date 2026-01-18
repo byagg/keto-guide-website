@@ -1,7 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { BookOpen } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Blog() {
+  useSEO({
+    title: "Keto Blog: Latest Research, Tips & Success Stories",
+    description: "Latest research, tips, and success stories from the keto community. In-depth articles covering keto science, practical tips, and real-world experiences.",
+    url: "/blog",
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

@@ -1,7 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, X } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function FoodList() {
+  useSEO({
+    title: "Keto Food List: What to Eat and Avoid",
+    description: "Complete guide to keto-friendly foods and foods to avoid. Comprehensive list of proteins, vegetables, fats, and snacks for your ketogenic diet.",
+    url: "/food-list",
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

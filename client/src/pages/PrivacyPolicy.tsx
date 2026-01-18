@@ -1,4 +1,12 @@
+import { useSEO } from "@/hooks/useSEO";
+
 export default function PrivacyPolicy() {
+  useSEO({
+    title: "Privacy Policy",
+    description: "KetoMindset Privacy Policy. Learn how we collect, use, and protect your information.",
+    url: "/privacy-policy",
+    noindex: true,
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

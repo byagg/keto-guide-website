@@ -9,6 +9,7 @@ import {
   Zap,
   Shield
 } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 /**
  * Design Philosophy: Scientific Editorial
@@ -16,6 +17,12 @@ import {
  */
 
 export default function Benefits() {
+  useSEO({
+    title: "Benefits & Risks of the Ketogenic Diet",
+    description: "An evidence-based analysis of what the ketogenic diet can—and cannot—do for your health. Learn about proven benefits and potential risks.",
+    url: "/benefits",
+    type: "article",
+  });
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Calculator, Info } from "lucide-react";
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 /**
  * Design Philosophy: Scientific Editorial
@@ -28,6 +29,11 @@ interface MacroResults {
 }
 
 export default function KetoCalculator() {
+  useSEO({
+    title: "Keto Macro Calculator: Calculate Your Daily Macros",
+    description: "Free keto macro calculator to determine your personalized daily macronutrient targets. Calculate calories, protein, fat, and carbs for optimal ketosis.",
+    url: "/keto-calculator",
+  });
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [weight, setWeight] = useState("");

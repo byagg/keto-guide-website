@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 /**
  * Design Philosophy: Scientific Editorial
@@ -24,6 +25,12 @@ import { useEffect } from "react";
 
 export default function Home() {
   const [, setLocation] = useLocation();
+  
+  useSEO({
+    title: "Complete Ketogenic Diet Guide 2025",
+    description: "Discover how the ketogenic diet transforms metabolism, supports weight loss, and improves mental clarity. Science-based guide for beginners and advanced users.",
+    url: "/",
+  });
   
   useEffect(() => {
     // Add structured data for SEO
@@ -38,6 +45,11 @@ export default function Home() {
       "publisher": {
         "@type": "Organization",
         "name": "KetoMindset"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ketomindset.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     });
     document.head.appendChild(script);

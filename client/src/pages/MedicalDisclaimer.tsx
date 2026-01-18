@@ -1,7 +1,13 @@
 import { AlertTriangle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function MedicalDisclaimer() {
+  useSEO({
+    title: "Medical Disclaimer",
+    description: "Important medical disclaimer for KetoMindset. This website provides educational information only and is not a substitute for professional medical advice.",
+    url: "/medical-disclaimer",
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

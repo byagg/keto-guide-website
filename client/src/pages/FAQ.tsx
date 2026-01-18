@@ -4,8 +4,96 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useSEO } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function FAQ() {
+  useSEO({
+    title: "Frequently Asked Questions About Keto Diet",
+    description: "Everything you need to know about the ketogenic diet. Answers to common questions about ketosis, safety, benefits, foods, and more.",
+    url: "/faq",
+  });
+
+  useEffect(() => {
+    // Add FAQPage Schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the ketogenic diet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ketogenic diet (keto) is a dietary regimen with very low carbohydrate content (5-10% of calories), moderate protein (15-25%), and high fat content (70-80%). The goal is to get the body into a metabolic state called ketosis, where the body burns fat as its primary energy source instead of carbohydrates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ketosis work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ketosis occurs when you restrict carbohydrate intake to approximately 20-50 grams per day. The liver begins producing molecules called ketones (e.g., beta-hydroxybutyrate or BHB) from fatty acids, which serve as an alternative fuel source for the brain, muscles, and other organs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the ketogenic diet safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most healthy people, the ketogenic diet is considered safe when followed correctly and ideally under professional supervision. It is not suitable for people with certain health conditions (e.g., pancreatic, liver, or kidney diseases). It's important to consult with your doctor before starting any diet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the main benefits of the keto diet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Main benefits include effective weight loss (8-10 kg in 6 months), improved blood sugar control (HbA1c reduction of 0.9-1.5%), increased mental clarity and energy, reduced inflammation in the body, improved cardiovascular markers (30-50% triglyceride reduction), and potential improvement of certain neurological conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I eat on the keto diet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Focus on healthy fats (avocado, olive oil, nuts, butter), meat, fish, eggs, and low-carb vegetables (leafy greens, broccoli, cauliflower, zucchini). Avoid sugar, grains, legumes, most fruits, and starchy vegetables. Aim for 20-50g net carbs per day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is \"keto flu\" and how do I avoid it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keto flu refers to flu-like symptoms (fatigue, headache, irritability, nausea) during the first 1-2 weeks as your body adapts to ketosis. It's caused by electrolyte imbalances and dehydration. Prevent it by increasing sodium (3-5g/day), potassium (3-4g/day), and magnesium (300-400mg/day), and staying well-hydrated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to enter ketosis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most people enter ketosis within 2-4 days of restricting carbs to 20-50g per day. However, full keto-adaptation (where your body becomes efficient at using ketones) takes 2-4 weeks. Blood ketone levels of 0.5-3.0 mmol/L indicate nutritional ketosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I'm in ketosis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signs include increased energy, mental clarity, reduced hunger, weight loss, and sometimes \"keto breath\" (fruity smell). For accurate measurement, use blood ketone meters (most accurate, target 0.5-3.0 mmol/L), breath ketone meters, or urine strips (less reliable after adaptation)."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

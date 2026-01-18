@@ -1,4 +1,12 @@
+import { useSEO } from "@/hooks/useSEO";
+
 export default function TermsOfUse() {
+  useSEO({
+    title: "Terms of Use",
+    description: "KetoMindset Terms of Use. Read our terms and conditions for using this website.",
+    url: "/terms-of-use",
+    noindex: true,
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">

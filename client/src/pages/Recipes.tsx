@@ -1,7 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Utensils } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Recipes() {
+  useSEO({
+    title: "Keto Recipes: Delicious Low-Carb Meals",
+    description: "Delicious, easy-to-make ketogenic recipes for every meal. Breakfast, lunch, dinner, snacks, and desserts that fit your keto lifestyle.",
+    url: "/recipes",
+  });
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">
