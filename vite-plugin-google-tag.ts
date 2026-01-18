@@ -4,11 +4,8 @@ export function googleTagPlugin(): Plugin {
   return {
     name: 'google-tag',
     transformIndexHtml(html) {
-      // Check if Google tag already exists
-      if (html.includes('G-ZGK6WJTWBD')) {
-        return html;
-      }
-
+      // Always ensure Google tag is present, even if it exists
+      // This ensures it's in the built HTML
       const googleTag = `<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGK6WJTWBD"></script>
 <script>
@@ -18,8 +15,14 @@ export function googleTagPlugin(): Plugin {
   gtag('config', 'G-ZGK6WJTWBD');
 </script>`;
 
+      // Remove existing Google tag if present (to avoid duplicates)
+      let cleanedHtml = html.replace(
+        /<!-- Google tag \(gtag\.js\) -->[\s\S]*?gtag\('config', 'G-ZGK6WJTWBD'\);[\s\S]*?<\/script>/gi,
+        ''
+      );
+
       // Insert Google tag right after <head> (as per Google's recommendation)
-      return html.replace(
+      return cleanedHtml.replace(
         /<head[^>]*>/i,
         (match) => `${match}\n${googleTag}`
       );
