@@ -45,7 +45,7 @@ function Router() {
 function App() {
   useEffect(() => {
     // Ensure Google tag is loaded (fallback if not in HTML)
-    if (typeof window !== 'undefined' && !window.gtag) {
+    if (typeof window !== 'undefined' && !(window as any).gtag) {
       const script1 = document.createElement('script');
       script1.async = true;
       script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZGK6WJTWBD';
