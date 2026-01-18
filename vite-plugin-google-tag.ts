@@ -20,7 +20,14 @@ export function googleTagPlugin(): Plugin {
   gtag('config', 'G-ZGK6WJTWBD');
 </script>`;
 
-        // Insert Google tag right after <head>
+        // Insert Google tag right after <body> (more reliable)
+        if (html.includes('<body')) {
+          return html.replace(
+            /<body[^>]*>/i,
+            (match) => `${match}\n${googleTag}`
+          );
+        }
+        // Fallback: Insert after <head>
         return html.replace(
           /<head[^>]*>/i,
           (match) => `${match}\n${googleTag}`
