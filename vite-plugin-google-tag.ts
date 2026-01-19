@@ -6,53 +6,51 @@ export function googleTagPlugin(): Plugin {
   return {
     name: 'google-tag',
     transformIndexHtml(html) {
-      // Always ensure Google tag is present
+      const tagId = process.env.VITE_GOOGLE_TAG_ID || 'G-ZGK6WJTWBD';
+      
       const googleTag = `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGK6WJTWBD"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${tagId}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-ZGK6WJTWBD');
+  gtag('config', '${tagId}');
 </script>`;
 
       // Remove existing Google tag if present (to avoid duplicates)
       let cleanedHtml = html.replace(
-        /<!-- Google tag \(gtag\.js\) -->[\s\S]*?gtag\('config', 'G-ZGK6WJTWBD'\);[\s\S]*?<\/script>/gi,
+        /<!-- Google tag \(gtag\.js\) -->[\s\S]*?gtag\('config', '.*?'\);[\s\S]*?<\/script>/gi,
         ''
       );
 
-      // Insert Google tag right after <head> (as per Google's recommendation)
+      // Insert Google tag right after <head>
       return cleanedHtml.replace(
         /<head[^>]*>/i,
         (match) => `${match}\n${googleTag}`
       );
     },
     writeBundle(options, bundle) {
-      // Also inject into built HTML file as a safety measure
       if (options.dir) {
+        const tagId = process.env.VITE_GOOGLE_TAG_ID || 'G-ZGK6WJTWBD';
         const indexPath = join(options.dir, 'index.html');
         try {
           let html = readFileSync(indexPath, 'utf-8');
           
-          // Always ensure Google tag is present (remove old one first to avoid duplicates)
           const googleTag = `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGK6WJTWBD"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${tagId}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-ZGK6WJTWBD');
+  gtag('config', '${tagId}');
 </script>`;
 
-          // Remove any existing Google tag
           html = html.replace(
-            /<!-- Google tag \(gtag\.js\) -->[\s\S]*?gtag\('config', 'G-ZGK6WJTWBD'\);[\s\S]*?<\/script>/gi,
+            /<!-- Google tag \(gtag\.js\) -->[\s\S]*?gtag\('config', '.*?'\);[\s\S]*?<\/script>/gi,
             ''
           );
 
-          // Insert Google tag right after <head>
-          if (!html.includes('G-ZGK6WJTWBD')) {
+          if (!html.includes(tagId)) {
             html = html.replace(
               /<head[^>]*>/i,
               (match) => `${match}\n${googleTag}`
