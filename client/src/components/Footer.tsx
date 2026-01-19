@@ -103,21 +103,21 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/privacy">
+                <Link href="/privacy-policy">
                   <span className="text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer">
                     Privacy Policy
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/terms">
+                <Link href="/terms-of-use">
                   <span className="text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer">
                     Terms of Use
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/disclaimer">
+                <Link href="/medical-disclaimer">
                   <span className="text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer">
                     Medical Disclaimer
                   </span>
