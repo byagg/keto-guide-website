@@ -57,6 +57,10 @@ export default function Science() {
             <p className="text-xl text-white/90 leading-relaxed">
               Understanding the molecular mechanisms that make the ketogenic diet a powerful metabolic intervention
             </p>
+            <div className="mt-8 space-x-4">
+              <Link href="/benefits" className="text-white/80 hover:text-white transition-colors">Benefits & Risks</Link>
+              <Link href="/faq" className="text-white/80 hover:text-white transition-colors">FAQ</Link>
+            </div>
           </div>
         </div>
       </section>

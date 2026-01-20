@@ -83,7 +83,7 @@ export default function Home() {
                 Complete Guide to the Ketogenic Diet
               </h1>
               
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
                 A science-based journey to metabolic transformation — from molecular mechanisms in cells to practical applications for weight loss, type 2 diabetes, and metabolic syndrome.
               </p>
               
@@ -97,12 +97,21 @@ export default function Home() {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8"
-                  onClick={() => setLocation('/science')}
+                      variant="outline" 
+                  className="text-white border-white/50 hover:bg-white/10 hover:text-white font-semibold text-lg px-8"
+                  onClick={() => setLocation("/calculator")}
                 >
-                  Explore the Science
+                  Keto Calculator
                 </Button>
+              </div>
+              <div className="mt-8 space-y-4">
+                <h3 className="text-lg font-semibold text-white">Explore More:</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <Link href="/recipes" className="text-white/80 hover:text-white transition-colors">Recipes</Link>
+                  <Link href="/food-list" className="text-white/80 hover:text-white transition-colors">Food List</Link>
+                  <Link href="/science" className="text-white/80 hover:text-white transition-colors">The Science</Link>
+                  <Link href="/faq" className="text-white/80 hover:text-white transition-colors">FAQ</Link>
+                </div>
               </div>
               
               <div className="flex items-center gap-6 text-sm text-white/80">
@@ -144,17 +153,17 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-wrap justify-center items-center gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-secondary">10,000+</div>
+              <div className="text-2xl md:text-3xl font-bold text-secondary">10,000+</div>
               <div className="text-sm text-muted-foreground">Happy Readers</div>
             </div>
             <div className="hidden md:block w-px h-12 bg-border"></div>
             <div>
-              <div className="text-3xl font-bold text-secondary">50+</div>
+              <div className="text-2xl md:text-3xl font-bold text-secondary">50+</div>
               <div className="text-sm text-muted-foreground">Scientific Studies</div>
             </div>
             <div className="hidden md:block w-px h-12 bg-border"></div>
             <div>
-              <div className="text-3xl font-bold text-secondary">100%</div>
+              <div className="text-2xl md:text-3xl font-bold text-secondary">100%</div>
               <div className="text-sm text-muted-foreground">Evidence-Based</div>
             </div>
           </div>

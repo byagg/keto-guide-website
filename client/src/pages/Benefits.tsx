@@ -33,6 +33,10 @@ export default function Benefits() {
             <p className="text-xl text-white/90 leading-relaxed">
               An evidence-based analysis of what the ketogenic diet can—and cannot—do for your health
             </p>
+            <div className="mt-8 space-x-4">
+              <Link href="/science" className="text-white/80 hover:text-white transition-colors">The Science</Link>
+              <Link href="/faq" className="text-white/80 hover:text-white transition-colors">FAQ</Link>
+            </div>
           </div>
         </div>
       </section>
