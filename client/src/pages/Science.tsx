@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Brain, Zap, Activity, TrendingUp, Atom, Microscope } from "lucide-react";
 import { useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
+import { Link } from "wouter";
 
 /**
  * Design Philosophy: Scientific Editorial

@@ -10,6 +10,7 @@ import {
   Shield
 } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import { Link } from "wouter";
 
 /**
  * Design Philosophy: Scientific Editorial

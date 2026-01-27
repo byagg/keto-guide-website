@@ -10,10 +10,12 @@ interface SEOProps {
   canonical?: string;
 }
 
-const SITE_URL = 'https://ketomindset.org';
-const DEFAULT_IMAGE = `${SITE_URL}/images/keto-salmon-avocado.jpg`;
-const DEFAULT_TITLE = 'Complete Ketogenic Diet Guide 2025 | KetoMindset';
-const DEFAULT_DESCRIPTION = 'Discover how the ketogenic diet transforms metabolism, supports weight loss, and improves mental clarity. Science-based guide for beginners and advanced users.';
+const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ||
+  "https://ketomindset.org";
+const DEFAULT_IMAGE = `${SITE_URL}/images/og-ketomindset.jpg`;
+const DEFAULT_TITLE = "KetoMindset | Complete Ketogenic Diet Guide";
+const DEFAULT_DESCRIPTION =
+  "A science-based ketogenic diet guide: how keto works, benefits & risks, beginner steps, recipes, and tools like a keto macro calculator.";
 
 export function useSEO({
   title,
