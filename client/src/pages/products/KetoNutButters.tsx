@@ -5,19 +5,19 @@ const products = [
     "name": "Justin's Classic Almond Butter",
     "rating": 4.8,
     "link": "https://www.amazon.com/Justins-Classic-Almond-Butter-Ounce/dp/B00E1XPY96",
-    "description": "Čisté mandľové maslo s minimom ingrediencií. Prirodzene keto a vynikajúce ako rýchly snack."
+    "description": "Pure almond butter with minimal ingredients. Naturally keto and excellent as a quick snack."
   },
   {
     "name": "NuttZo Organic Power Fuel 7 Nut & Seed Butter",
     "rating": 4.7,
     "link": "https://www.amazon.com/NuttZo-Organic-Power-Crunchy-Butter/dp/B005P0U2MK",
-    "description": "Unikátna zmes 7 druhov orechov a semienok bez arašidov. Bohaté na živiny a zdravé tuky."
+    "description": "Unique blend of 7 types of nuts and seeds without peanuts. Rich in nutrients and healthy fats."
   },
   {
     "name": "Perfect Keto Nut Butter",
     "rating": 4.5,
     "link": "https://www.amazon.com/Perfect-Keto-Nut-Butter-Macadamia/dp/B07KPP7B3G",
-    "description": "Zmes makadamových a kešu orechov s prídavkom MCT oleja. Navrhnuté pre maximálny pôžitok bez cukru."
+    "description": "Blend of macadamia and cashew nuts with added MCT oil. Designed for maximum enjoyment without sugar."
   }
 ];
 
