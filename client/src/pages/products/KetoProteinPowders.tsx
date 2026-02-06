@@ -16,7 +16,7 @@ const products = [
   {
     "name": "Keto Science Keto Shake",
     "rating": 4.5,
-    "link": "https://www.amazon.com/Keto-Science-Ketogenic-Meal-Replacement/dp/B078XG9N5T?tag=veinhealthhub-20",
+    "link": "https://www.amazon.com/Keto-Science-Ketogenic-Meal-Replacement/dp/B07K2X5JKN?tag=veinhealthhub-20",
     "description": "A comprehensive meal replacement designed specifically for keto, containing MCT oils and quality fats to support ketosis."
   }
 ];

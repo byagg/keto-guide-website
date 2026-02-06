@@ -10,13 +10,13 @@ const products = [
   {
     "name": "Lakanto Monk Fruit Sweetener",
     "rating": 4.7,
-    "link": "https://www.amazon.com/Lakanto-Monkfruit-Sweetener-Sugar-Substitute/dp/B00CF2B0BC?tag=veinhealthhub-20",
+    "link": "https://www.amazon.com/Lakanto-Monkfruit-Sweetener-Sugar-Substitute/dp/B00CF2B04Q?tag=veinhealthhub-20",
     "description": "A blend of monk fruit and erythritol. A natural zero-calorie sweetener with great taste and no bitter aftertaste."
   },
   {
     "name": "Wholesome Allulose Sweetener",
     "rating": 4.6,
-    "link": "https://www.amazon.com/Wholesome-Sweeteners-Allulose-12-Ounce/dp/B07H8QHD7Z?tag=veinhealthhub-20",
+    "link": "https://www.amazon.com/Wholesome-Sweeteners-Allulose-12-Ounce/dp/B07YBTWGPM?tag=veinhealthhub-20",
     "description": "A rare sugar that the body doesn't metabolize. It caramelizes like sugar and is ideal for ice cream and desserts."
   }
 ];
