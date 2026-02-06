@@ -19,6 +19,17 @@ import FoodList from "./pages/FoodList";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import MedicalDisclaimer from "./pages/MedicalDisclaimer";
+import Products from "./pages/Products";
+import KetoSnacks from "./pages/products/KetoSnacks";
+import KetoProteinPowders from "./pages/products/KetoProteinPowders";
+import KetoElectrolytes from "./pages/products/KetoElectrolytes";
+import KetoSweeteners from "./pages/products/KetoSweeteners";
+import KetoMCTOils from "./pages/products/KetoMCTOils";
+import KetoBakingMixes from "./pages/products/KetoBakingMixes";
+import KetoCoffeeAndCreamers from "./pages/products/KetoCoffeeAndCreamers";
+import KetoBars from "./pages/products/KetoBars";
+import KetoSupplements from "./pages/products/KetoSupplements";
+import KetoNutButters from "./pages/products/KetoNutButters";
 
 function Router() {
   return (
@@ -35,6 +46,20 @@ function Router() {
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-of-use"} component={TermsOfUse} />
       <Route path={"/medical-disclaimer"} component={MedicalDisclaimer} />
+      
+      {/* Product Routes */}
+      <Route path={"/products"} component={Products} />
+      <Route path={"/products/snacks"} component={KetoSnacks} />
+      <Route path={"/products/protein-powders"} component={KetoProteinPowders} />
+      <Route path={"/products/electrolytes"} component={KetoElectrolytes} />
+      <Route path={"/products/sweeteners"} component={KetoSweeteners} />
+      <Route path={"/products/mct-oils"} component={KetoMCTOils} />
+      <Route path={"/products/baking-mixes"} component={KetoBakingMixes} />
+      <Route path={"/products/coffee-creamers"} component={KetoCoffeeAndCreamers} />
+      <Route path={"/products/bars"} component={KetoBars} />
+      <Route path={"/products/supplements"} component={KetoSupplements} />
+      <Route path={"/products/nut-butters"} component={KetoNutButters} />
+
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

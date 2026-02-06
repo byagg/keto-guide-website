@@ -41,12 +41,12 @@ export default function Navigation() {
             </Link>
             <Link href="/benefits">
               <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
-                Benefits & Risks
+                Benefits
               </span>
             </Link>
-            <Link href="/start-guide">
+            <Link href="/products">
               <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
-                Get Started
+                Products
               </span>
             </Link>
             <Link href="/recipes">
@@ -108,15 +108,15 @@ export default function Navigation() {
                   className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Benefits & Risks
+                  Benefits
                 </span>
               </Link>
-              <Link href="/start-guide">
+              <Link href="/products">
                 <span 
                   className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Started
+                  Products
                 </span>
               </Link>
               <Link href="/recipes">
