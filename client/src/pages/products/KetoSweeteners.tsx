@@ -4,7 +4,7 @@ const products = [
   {
     "name": "Swerve Ultimate Sugar Replacement",
     "rating": 4.8,
-    "link": "https://www.amazon.com/Swerve-Sweetener-Granular-12-Ounce/dp/B0079OYALS?tag=veinhealthhub-20",
+    "link": "https://www.amazon.com/Swerve-Sweetener-Granular-12-Ounce/dp/B01LLMUG22?tag=veinhealthhub-20",
     "description": "The best 1:1 sugar replacement that behaves and tastes like real sugar with no glycemic impact. Ideal for baking."
   },
   {
