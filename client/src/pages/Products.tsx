@@ -15,22 +15,22 @@ import {
 } from "lucide-react";
 
 const categories = [
-  { name: "Keto Snacks", slug: "snacks", icon: Cookie, desc: "Slané a sladké pochúťky s nízkym obsahom sacharidov." },
-  { name: "Keto Protein Powders", slug: "protein-powders", icon: Dumbbell, desc: "Proteíny optimalizované pre udržanie svalov v ketóze." },
-  { name: "Keto Electrolytes", slug: "electrolytes", icon: Droplets, desc: "Nevyhnutné minerály pre prevenciu keto chrípky." },
-  { name: "Keto Sweeteners", slug: "sweeteners", icon: Candy, desc: "Prírodné náhrady cukru, ktoré nezvyšujú inzulín." },
-  { name: "Keto MCT Oils", slug: "mct-oils", icon: Flame, desc: "Rýchly zdroj energie pre mozog a spaľovanie tukov." },
-  { name: "Keto Baking Mixes", slug: "baking-mixes", icon: ChefHat, desc: "Zmesi na pečenie chleba, palaciniek a koláčov." },
-  { name: "Keto Coffee & Creamers", slug: "coffee-creamers", icon: Coffee, desc: "Vylepšite svoju rannú kávu zdravými tukmi." },
-  { name: "Keto Bars", slug: "bars", icon: Zap, desc: "Praktické tyčinky na cesty s čistým zložením." },
-  { name: "Keto Supplements", slug: "supplements", icon: ShieldCheck, desc: "Exogénne ketóny a doplnky pre podporu metabolizmu." },
-  { name: "Keto Nut Butters", slug: "nut-butters", icon: Nut, desc: "Lahodné orechové maslá bez pridaného cukru." },
+  { name: "Keto Snacks", slug: "snacks", icon: Cookie, desc: "Low-carb savory and sweet treats." },
+  { name: "Keto Protein Powders", slug: "protein-powders", icon: Dumbbell, desc: "Proteins optimized for muscle maintenance in ketosis." },
+  { name: "Keto Electrolytes", slug: "electrolytes", icon: Droplets, desc: "Essential minerals to prevent keto flu." },
+  { name: "Keto Sweeteners", slug: "sweeteners", icon: Candy, desc: "Natural sugar substitutes that don't spike insulin." },
+  { name: "Keto MCT Oils", slug: "mct-oils", icon: Flame, desc: "Quick energy source for brain and fat burning." },
+  { name: "Keto Baking Mixes", slug: "baking-mixes", icon: ChefHat, desc: "Mixes for baking bread, pancakes, and cakes." },
+  { name: "Keto Coffee & Creamers", slug: "coffee-creamers", icon: Coffee, desc: "Upgrade your morning coffee with healthy fats." },
+  { name: "Keto Bars", slug: "bars", icon: Zap, desc: "Convenient on-the-go bars with clean ingredients." },
+  { name: "Keto Supplements", slug: "supplements", icon: ShieldCheck, desc: "Exogenous ketones and supplements for metabolic support." },
+  { name: "Keto Nut Butters", slug: "nut-butters", icon: Nut, desc: "Delicious nut butters without added sugar." },
 ];
 
 export default function Products() {
   useSEO({
-    title: "Najlepšie Keto Produkty 2026 | Porovnanie a Recenzie",
-    description: "Kompletný sprievodca najlepšími keto produktmi na trhu. Porovnávame top 3 produkty v 10 kategóriách podľa Amazonu.",
+    title: "Best Keto Products 2026 | Comparison & Reviews",
+    description: "Complete guide to the best keto products on the market. We compare the top 3 products in 10 categories according to Amazon.",
     url: "/products",
   });
 
@@ -38,9 +38,9 @@ export default function Products() {
     <div className="min-h-screen bg-background py-20">
       <div className="container">
         <div className="text-center mb-16">
-          <h1 className="mb-4">Najlepšie Keto Produkty 2026</h1>
+          <h1 className="mb-4">Best Keto Products 2026</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Vybrali sme pre vás tie najlepšie hodnotené a najobľúbenejšie produkty, ktoré vám uľahčia cestu v ketogénnej diéte.
+            We have selected the highest-rated and most popular products to make your ketogenic diet journey easier.
           </p>
         </div>
 

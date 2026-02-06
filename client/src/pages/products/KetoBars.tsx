@@ -5,19 +5,19 @@ const products = [
     "name": "IQBAR Brain + Body Protein Bars",
     "rating": 4.6,
     "link": "https://www.amazon.com/IQBAR-Brain-Body-Protein-Bars/dp/B07M9S6L9G",
-    "description": "Proteínové tyčinky s nootropikami pre podporu mozgu."
+    "description": "Protein bars with nootropics for brain support."
   },
   {
     "name": "Perfect Keto Bars",
     "rating": 4.4,
     "link": "https://www.amazon.com/Perfect-Keto-Bars-Chocolate-Chip/dp/B07M9S6L9G",
-    "description": "Čisté zloženie bez umelých sladidiel a plnív."
+    "description": "Clean ingredients without artificial sweeteners and fillers."
   },
   {
     "name": "Built Bar Protein Bars",
     "rating": 4.5,
     "link": "https://www.amazon.com/Built-Bar-Protein-Bars-Variety/dp/B07M9S6L9G",
-    "description": "Tyčinky s textúrou podobnou marshmallow a skvelou chuťou."
+    "description": "Bars with a marshmallow-like texture and great taste."
   }
 ];
 

@@ -54,11 +54,6 @@ export default function Navigation() {
                 Recipes
               </span>
             </Link>
-            <Link href="/blog">
-              <span className="text-foreground hover:text-secondary transition-colors font-medium cursor-pointer">
-                Blog
-              </span>
-            </Link>
           </div>
 
           {/* CTA Button */}
@@ -125,14 +120,6 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Recipes
-                </span>
-              </Link>
-              <Link href="/blog">
-                <span 
-                  className="text-foreground hover:text-secondary transition-colors font-medium py-2 cursor-pointer block"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Blog
                 </span>
               </Link>
               <Button 

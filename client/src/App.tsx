@@ -12,7 +12,6 @@ import Science from "./pages/Science";
 import Benefits from "./pages/Benefits";
 import GetStarted from "./pages/GetStarted";
 import Recipes from "./pages/Recipes";
-import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import KetoCalculator from "./pages/KetoCalculator";
 import FoodList from "./pages/FoodList";
@@ -39,7 +38,6 @@ function Router() {
       <Route path={"/benefits"} component={Benefits} />
       <Route path={"/start-guide"} component={GetStarted} />
       <Route path={"/recipes"} component={Recipes} />
-      <Route path={"/blog"} component={Blog} />
       <Route path={"/faq"} component={FAQ} />
       <Route path={"/keto-calculator"} component={KetoCalculator} />
       <Route path={"/food-list"} component={FoodList} />

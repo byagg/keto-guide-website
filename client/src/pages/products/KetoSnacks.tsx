@@ -5,19 +5,19 @@ const products = [
     "name": "HighKey Mini Cookies",
     "rating": 4.8,
     "link": "https://www.amazon.com/HighKey-Snacks-Keto-Food-Cookies/dp/B07JGR6N7Y",
-    "description": "Nízkosacharidové sušienky bez pridaného cukru, ideálne pre keto diétu."
+    "description": "Low-carb cookies without added sugar, ideal for the keto diet."
   },
   {
     "name": "Quest Tortilla Style Protein Chips",
     "rating": 4.7,
     "link": "https://www.amazon.com/Quest-Nutrition-Tortilla-Protein-Chips/dp/B07F9S6L9G",
-    "description": "Chrumkavé proteínové chipsy s minimom sacharidov."
+    "description": "Crunchy protein chips with minimal carbohydrates."
   },
   {
     "name": "Whisps Cheese Crisps",
     "rating": 4.6,
     "link": "https://www.amazon.com/Whisps-Cheese-Crisps-Parmesan-Gluten-Free/dp/B01B36A9PU",
-    "description": "100% syrové snacky, prirodzene bez sacharidov."
+    "description": "100% cheese snacks, naturally carb-free."
   }
 ];
 
