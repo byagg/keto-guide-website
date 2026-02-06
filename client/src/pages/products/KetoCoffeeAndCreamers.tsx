@@ -2,25 +2,25 @@ import ProductPage from "./ProductPage";
 
 const products = [
   {
-    "name": "NutPods Dairy-Free Creamer",
+    "name": "LevelUp Keto Creamer",
     "rating": 4.7,
-    "link": "https://www.amazon.com/nutpods-Unsweetened-Dairy-Free-Creamer-Variety/dp/B01B36A9PU",
-    "description": "Plant-based coffee creamer without sugar and carbs."
+    "link": "https://www.amazon.com/LevelUp-Clean-Keto-Creamer-MCT/dp/B07KPP7B3G",
+    "description": "Prémiová smotana do kávy s MCT olejom a kolagénom. Dodá káve krémovú textúru a energiu na celé dopoludnie."
   },
   {
-    "name": "Laird Superfood Creamer",
+    "name": "Rapid Fire Keto Creamer",
     "rating": 4.5,
-    "link": "https://www.amazon.com/Laird-Superfood-Creamer-Unsweetened-Gluten-Free/dp/B01B36A9PU",
-    "description": "Functional creamer with coconut milk and Aquamin."
+    "link": "https://www.amazon.com/Rapid-Fire-Ketogenic-Creamer-Ounces/dp/B071L6V23S",
+    "description": "Prášková zmes zdravých tukov pre rýchlu prípravu keto kávy kdekoľvek. Obsahuje maslo z trávy a MCT."
   },
   {
-    "name": "Rapid Fire Ketogenic Coffee",
+    "name": "Laird Superfood Coconut Creamer",
     "rating": 4.4,
-    "link": "https://www.amazon.com/Rapid-Fire-Ketogenic-Coffee-Instant/dp/B01B36A9PU",
-    "description": "Instant keto coffee with butter and MCT oil."
+    "link": "https://www.amazon.com/Laird-Superfood-Non-Dairy-Creamer-Unsweetened/dp/B01N23V8K1",
+    "description": "Rastlinná alternatíva na báze kokosu. Bez pridaného cukru, bohatá na prírodné tuky pre lahodnú chuť kávy."
   }
 ];
 
-export default function KetoCoffeeAndCreamers() {{
-  return <ProductPage category="Keto Coffee & Creamers" products={{products}} />;
-}}
+export default function KetoCoffeeAndCreamers() {
+  return <ProductPage category="Keto Coffee & Creamers" products={products} />;
+}

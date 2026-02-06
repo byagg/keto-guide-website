@@ -2,25 +2,25 @@ import ProductPage from "./ProductPage";
 
 const products = [
   {
-    "name": "Transparent Labs Whey Protein Isolate",
-    "rating": 4.9,
-    "link": "https://www.transparentlabs.com/products/protein-series-100-grass-fed-whey-protein-isolate",
-    "description": "High-quality whey isolate from grass-fed cows."
+    "name": "Optimum Nutrition Gold Standard 100% Whey",
+    "rating": 4.8,
+    "link": "https://www.amazon.com/Optimum-Nutrition-Standard-Protein-Chocolate/dp/B000QSNYGI",
+    "description": "Svetovo najpredávanejší srvátkový proteín s vynikajúcou chuťou a nízkym obsahom sacharidov, ideálny pre regeneráciu svalov."
   },
   {
-    "name": "Keto Science Keto Shake Powder",
+    "name": "Isopure Zero Carb Protein Powder",
+    "rating": 4.7,
+    "link": "https://www.amazon.com/Isopure-Protein-Powder-Isolate-Flavor/dp/B000E95HP0",
+    "description": "Čistý srvátkový izolát s absolútne nulovým obsahom sacharidov. Perfektný pre tých, ktorí chcú maximalizovať príjem bielkovín bez cukru."
+  },
+  {
+    "name": "Keto Science Keto Shake",
     "rating": 4.5,
-    "link": "https://www.amazon.com/Keto-Science-Chocolate-Replacement-Collagen/dp/B07B9S6L9G",
-    "description": "Complete meal replacement with MCT oil and collagen."
-  },
-  {
-    "name": "Nutricost Whey Protein Isolate",
-    "rating": 4.6,
-    "link": "https://www.amazon.com/Nutricost-Whey-Protein-Isolate-Unflavored/dp/B01B36A9PU",
-    "description": "Pure whey isolate without flavor or additives."
+    "link": "https://www.amazon.com/Keto-Science-Ketogenic-Meal-Replacement/dp/B078XG9N5T",
+    "description": "Komplexná náhrada jedla navrhnutá špeciálne pre keto, s obsahom MCT olejov a kvalitných tukov pre podporu ketózy."
   }
 ];
 
-export default function KetoProteinPowders() {{
-  return <ProductPage category="Keto Protein Powders" products={{products}} />;
-}}
+export default function KetoProteinPowders() {
+  return <ProductPage category="Keto Protein Powders" products={products} />;
+}
