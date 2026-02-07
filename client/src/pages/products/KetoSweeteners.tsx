@@ -5,19 +5,37 @@ const products = [
     "name": "Swerve Ultimate Sugar Replacement",
     "rating": 4.8,
     "link": "https://www.amazon.com/Swerve-Sweetener-Granular-12-Ounce/dp/B01LLMUG22?tag=veinhealthhub-20",
-    "description": "The best 1:1 sugar replacement that behaves and tastes like real sugar with no glycemic impact. Ideal for baking."
+    "description": "The best 1:1 sugar replacement that behaves and tastes like real sugar with no glycemic impact. Ideal for baking.",
+    "features": [
+      "1:1 sugar replacement ratio",
+      "Zero glycemic impact",
+      "Perfect for baking",
+      "No bitter aftertaste"
+    ]
   },
   {
     "name": "Lakanto Monk Fruit Sweetener",
     "rating": 4.7,
     "link": "https://www.amazon.com/Lakanto-Monkfruit-Sweetener-Sugar-Substitute/dp/B00CF2B04Q?tag=veinhealthhub-20",
-    "description": "A blend of monk fruit and erythritol. A natural zero-calorie sweetener with great taste and no bitter aftertaste."
+    "description": "A blend of monk fruit and erythritol. A natural zero-calorie sweetener with great taste and no bitter aftertaste.",
+    "features": [
+      "Monk fruit extract",
+      "Zero calories",
+      "Natural ingredients",
+      "Clean taste"
+    ]
   },
   {
     "name": "Wholesome Allulose Sweetener",
     "rating": 4.6,
     "link": "https://www.amazon.com/Wholesome-Sweeteners-Allulose-12-Ounce/dp/B07YBTWGPM?tag=veinhealthhub-20",
-    "description": "A rare sugar that the body doesn't metabolize. It caramelizes like sugar and is ideal for ice cream and desserts."
+    "description": "A rare sugar that the body doesn't metabolize. It caramelizes like sugar and is ideal for ice cream and desserts.",
+    "features": [
+      "Rare sugar alternative",
+      "Caramelizes like sugar",
+      "Perfect for desserts",
+      "Minimal glycemic impact"
+    ]
   }
 ];
 
