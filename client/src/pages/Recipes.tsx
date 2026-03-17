@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Utensils } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import { Link } from "wouter";
 
 export default function Recipes() {
   useSEO({
@@ -26,9 +27,15 @@ export default function Recipes() {
         <div className="max-w-4xl mx-auto text-center">
           <Card className="editorial-card">
             <h2 className="text-2xl mb-4">Coming Soon</h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               We're working on a comprehensive collection of keto recipes including breakfast, lunch, dinner, snacks, and desserts. Check back soon!
             </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/food-list" className="text-secondary hover:text-secondary/80 transition-colors font-semibold">Food List</Link>
+              <Link href="/keto-calculator" className="text-secondary hover:text-secondary/80 transition-colors font-semibold">Keto Calculator</Link>
+              <Link href="/science" className="text-secondary hover:text-secondary/80 transition-colors font-semibold">The Science</Link>
+              <Link href="/faq" className="text-secondary hover:text-secondary/80 transition-colors font-semibold">FAQ</Link>
+            </div>
           </Card>
         </div>
       </section>

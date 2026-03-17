@@ -7,6 +7,7 @@ export default function MedicalDisclaimer() {
     title: "Medical Disclaimer",
     description: "Important medical disclaimer for KetoMindset. This website provides educational information only and is not a substitute for professional medical advice.",
     url: "/medical-disclaimer",
+    noindex: true,
   });
   return (
     <div className="min-h-screen">

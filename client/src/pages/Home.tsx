@@ -99,7 +99,7 @@ export default function Home() {
                   size="lg" 
                       variant="outline" 
                   className="text-white border-white/50 hover:bg-white/10 hover:text-white font-semibold text-lg px-8"
-                  onClick={() => setLocation("/calculator")}
+                  onClick={() => setLocation("/keto-calculator")}
                 >
                   Keto Calculator
                 </Button>

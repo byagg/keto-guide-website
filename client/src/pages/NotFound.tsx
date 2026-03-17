@@ -2,9 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
+
+  useSEO({
+    title: "Page Not Found",
+    description: "The page you are looking for doesn't exist. It may have been moved or deleted.",
+    url: "/404",
+    noindex: true,
+  });
 
   const handleGoHome = () => {
     setLocation("/");
@@ -32,6 +40,18 @@ export default function NotFound() {
             <br />
             It may have been moved or deleted.
           </p>
+          <div className="mt-8 pt-6 border-t border-slate-200">
+            <p className="text-sm text-slate-500 mb-4">Explore these popular pages instead:</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <button onClick={() => setLocation("/science")} className="text-sm text-blue-600 hover:text-blue-700 underline">The Science</button>
+              <span className="text-slate-300">•</span>
+              <button onClick={() => setLocation("/benefits")} className="text-sm text-blue-600 hover:text-blue-700 underline">Benefits</button>
+              <span className="text-slate-300">•</span>
+              <button onClick={() => setLocation("/food-list")} className="text-sm text-blue-600 hover:text-blue-700 underline">Food List</button>
+              <span className="text-slate-300">•</span>
+              <button onClick={() => setLocation("/keto-calculator")} className="text-sm text-blue-600 hover:text-blue-700 underline">Calculator</button>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button
@@ -40,6 +60,12 @@ export default function NotFound() {
             >
               <Home className="w-4 h-4 mr-2" />
               Go Home
+            </Button>
+            <Button
+              onClick={() => setLocation("/faq")}
+              className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Visit FAQ
             </Button>
           </div>
         </CardContent>

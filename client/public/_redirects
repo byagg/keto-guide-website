@@ -1,1 +1,12 @@
+# Redirect common URL patterns
+/beginner-guide /start-guide 301
+/keto-guide /start-guide 301
+/calculator /keto-calculator 301
+/macro-calculator /keto-calculator 301
+/food /food-list 301
+/foods /food-list 301
+/recipe /recipes 301
+/blog-post/* /blog 301
+
+# SPA fallback
 /* /index.html 200
